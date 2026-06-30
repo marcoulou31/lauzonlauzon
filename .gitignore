@@ -20,6 +20,9 @@
 # production
 /build
 
+# nested empty clone (not part of this project)
+/lauzonlauzon/
+
 # misc
 .DS_Store
 *.pem
