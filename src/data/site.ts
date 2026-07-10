@@ -63,6 +63,12 @@ export const siteConfig = {
         "Condominiums, maisons unifamiliales et propriétés de prestige dans les secteurs les plus recherchés de Québec.",
     },
     {
+      title: "Terrains et propriétés secondaires",
+      subtitle: "Excellente connaissance du marché",
+      description:
+        "Expertise approfondie dans l'identification et la commercialisation de terrains et propriétés résidentielles secondaires.",
+    },
+    {
       title: "Immeubles à revenus",
       subtitle: "Résidentiel et commercial",
       description:

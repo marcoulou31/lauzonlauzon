@@ -87,8 +87,8 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div className="border border-gold/30 bg-gold/10 p-8 text-center">
-        <h3 className="font-serif text-2xl text-navy">Merci pour votre message</h3>
-        <p className="mt-3 text-navy/70">
+        <h3 className="font-serif text-3xl text-navy">Merci pour votre message</h3>
+        <p className="mt-3 text-lg text-navy/70">
           Nous vous contacterons sous peu. En attendant, n&apos;hésitez pas à
           nous appeler au{" "}
           <a
@@ -106,7 +106,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-navy">
+        <label htmlFor="name" className="mb-2 block text-base font-medium text-navy">
           Nom complet <span className="text-gold">*</span>
         </label>
         <input
@@ -114,18 +114,18 @@ export function ContactForm() {
           type="text"
           value={formData.name}
           onChange={(e) => handleChange("name", e.target.value)}
-          className={`w-full border bg-white px-4 py-3 text-navy outline-none transition-colors focus:border-gold ${
+          className={`w-full border bg-white px-4 py-4 text-navy outline-none transition-colors focus:border-gold ${
             errors.name ? "border-red-400" : "border-cream-dark"
           }`}
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+          <p className="mt-1 text-base text-red-600">{errors.name}</p>
         )}
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-navy">
+          <label htmlFor="email" className="mb-2 block text-base font-medium text-navy">
             Courriel <span className="text-gold">*</span>
           </label>
           <input
@@ -133,17 +133,17 @@ export function ContactForm() {
             type="email"
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
-            className={`w-full border bg-white px-4 py-3 text-navy outline-none transition-colors focus:border-gold ${
+            className={`w-full border bg-white px-4 py-4 text-navy outline-none transition-colors focus:border-gold ${
               errors.email ? "border-red-400" : "border-cream-dark"
             }`}
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+            <p className="mt-1 text-base text-red-600">{errors.email}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-navy">
+          <label htmlFor="phone" className="mb-2 block text-base font-medium text-navy">
             Téléphone
           </label>
           <input
@@ -151,20 +151,20 @@ export function ContactForm() {
             type="tel"
             value={formData.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
-            className="w-full border border-cream-dark bg-white px-4 py-3 text-navy outline-none transition-colors focus:border-gold"
+            className="w-full border border-cream-dark bg-white px-4 py-4 text-navy outline-none transition-colors focus:border-gold"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="property" className="mb-2 block text-sm font-medium text-navy">
+        <label htmlFor="property" className="mb-2 block text-base font-medium text-navy">
           Propriété d&apos;intérêt
         </label>
         <select
           id="property"
           value={formData.property}
           onChange={(e) => handleChange("property", e.target.value)}
-          className="w-full border border-cream-dark bg-white px-4 py-3 text-navy outline-none transition-colors focus:border-gold"
+          className="w-full border border-cream-dark bg-white px-4 py-4 text-navy outline-none transition-colors focus:border-gold"
         >
           <option value="">Sélectionner une propriété</option>
           {properties.map((p) => (
@@ -177,7 +177,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-navy">
+        <label htmlFor="message" className="mb-2 block text-base font-medium text-navy">
           Message <span className="text-gold">*</span>
         </label>
         <textarea
@@ -185,18 +185,18 @@ export function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => handleChange("message", e.target.value)}
-          className={`w-full resize-y border bg-white px-4 py-3 text-navy outline-none transition-colors focus:border-gold ${
+          className={`w-full resize-y border bg-white px-4 py-4 text-navy outline-none transition-colors focus:border-gold ${
             errors.message ? "border-red-400" : "border-cream-dark"
           }`}
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+          <p className="mt-1 text-base text-red-600">{errors.message}</p>
         )}
       </div>
 
       <button
         type="submit"
-        className="w-full bg-navy px-6 py-3 text-sm font-medium tracking-wide text-cream transition-colors hover:bg-navy-light sm:w-auto"
+        className="w-full bg-navy px-6 py-4 text-base font-medium tracking-wide text-cream transition-colors hover:bg-navy-light sm:w-auto"
       >
         Envoyer le message
       </button>

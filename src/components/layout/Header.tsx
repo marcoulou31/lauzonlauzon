@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks, siteConfig } from "@/data/site";
@@ -16,14 +17,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-cream-dark/60 bg-cream/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         <Link href="/" className="group">
-          <span className="font-serif text-2xl text-navy transition-colors group-hover:text-gold">
-            {siteConfig.name}
-          </span>
-          <span className="mt-0.5 block text-xs uppercase tracking-[0.15em] text-navy/60">
-            {siteConfig.tagline}
-          </span>
+          <Image
+            src="/logo.png"
+            alt={siteConfig.name}
+            width={240}
+            height={60}
+            priority
+            className="h-auto w-auto transition-opacity group-hover:opacity-80"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -31,8 +34,8 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium tracking-wide transition-colors hover:text-gold ${
-                isActive(link.href) ? "text-gold" : "text-navy"
+              className={`text-lg font-medium tracking-wide transition-all hover:text-gold hover:border-b-4 hover:border-gold ${
+                isActive(link.href) ? "text-gold border-b-4 border-gold" : "text-navy border-b-4 border-transparent"
               }`}
             >
               {link.label}
@@ -42,7 +45,7 @@ export function Header() {
 
         <Link
           href={siteConfig.contact.phoneHref}
-          className="hidden text-sm font-medium text-navy transition-colors hover:text-gold md:block"
+          className="hidden text-base font-medium text-navy transition-colors hover:text-gold md:block"
         >
           {siteConfig.contact.phone}
         </Link>
@@ -74,7 +77,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-base font-medium ${
+                className={`text-lg font-medium ${
                   isActive(link.href) ? "text-gold" : "text-navy"
                 }`}
               >
@@ -83,7 +86,7 @@ export function Header() {
             ))}
             <Link
               href={siteConfig.contact.phoneHref}
-              className="text-base font-medium text-gold"
+              className="text-lg font-medium text-gold"
             >
               {siteConfig.contact.phone}
             </Link>

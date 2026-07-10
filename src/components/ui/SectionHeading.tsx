@@ -22,18 +22,18 @@ export function SectionHeading({
     <div className={`max-w-2xl ${alignClass}`}>
       {eyebrow && (
         <p
-          className={`mb-3 text-sm font-medium uppercase tracking-[0.2em] ${eyebrowColor}`}
+          className={`mb-3 text-base font-medium uppercase tracking-[0.2em] ${eyebrowColor}`}
         >
           {eyebrow}
         </p>
       )}
       <h2
-        className={`font-serif text-3xl md:text-4xl lg:text-5xl leading-tight ${textColor}`}
+        className={`font-serif text-4xl md:text-5xl lg:text-6xl leading-tight ${textColor}`}
       >
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 text-lg leading-relaxed ${descColor}`}>
+        <p className={`mt-4 text-xl leading-relaxed ${descColor}`}>
           {description}
         </p>
       )}

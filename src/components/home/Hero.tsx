@@ -13,20 +13,20 @@ export function Hero() {
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-navy/60" />
+      <div className="absolute inset-0 bg-navy/75" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <div className="max-w-2xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-light">
+          <p className="mb-4 text-lg font-medium uppercase tracking-[0.25em] text-gold-light">
             {siteConfig.tagline}
           </p>
-          <h1 className="font-serif text-5xl leading-tight text-cream md:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-7xl leading-tight text-cream md:text-8xl lg:text-9xl">
             {siteConfig.name}
           </h1>
-          <p className="mt-6 text-xl text-cream/90 md:text-2xl">
+          <p className="mt-6 text-3xl text-cream/90 md:text-4xl">
             {siteConfig.slogan}
           </p>
-          <p className="mt-4 max-w-lg text-base leading-relaxed text-cream/75">
+          <p className="mt-4 max-w-lg text-xl leading-relaxed text-cream/75">
             Courtier immobilier résidentiel et commercial à Québec. Plus de 25
             ans d&apos;expérience au service de votre projet.
           </p>

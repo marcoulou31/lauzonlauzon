@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site";
@@ -8,16 +7,6 @@ export function AboutPreview() {
     <section className="bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
-              alt={siteConfig.broker.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
           <div>
             <SectionHeading
               eyebrow="À propos"
