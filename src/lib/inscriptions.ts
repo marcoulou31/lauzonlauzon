@@ -170,7 +170,6 @@ export async function getInscriptionByNo(no: string): Promise<{
   property: Property;
   detail: InscriptionDetail;
 } | null> {
-  const safeNo = no.replace(/'/g, "''");
   const noInt = parseInt(no, 10);
 
   const [inscResult, photosResult, depResult, piecesResult, caractResult, addendaResult] =
@@ -220,27 +219,30 @@ export async function getInscriptionByNo(no: string): Promise<{
         OUTER APPLY (
           SELECT TOP 1 NOM_FICHIER_PHOTO
           FROM dbo.PHOTOS
-          WHERE noSIA = ${noInt}
+          WHERE noSIA = @noInt
             AND NOM_FICHIER_PHOTO IS NOT NULL
           ORDER BY rang
         ) p
-        WHERE i.NO_INSCRIPTION = '${safeNo}'
+        WHERE i.NO_INSCRIPTION = @no
         `,
+        { no, noInt },
       ),
       runSqlQuery<PhotoRow>(
         "LauzonConn",
         `
         SELECT NOM_FICHIER_PHOTO, piece, rang
         FROM dbo.PHOTOS
-        WHERE noSIA = ${noInt}
+        WHERE noSIA = @noInt
           AND NOM_FICHIER_PHOTO IS NOT NULL
         ORDER BY rang
         `,
+        { noInt },
       ).catch(() => ({ recordset: [] as PhotoRow[] })),
       runSqlQuery<DepenseRow>(
         "LauzonConn",
         `SELECT TDEP_CODE, MONTANT_DEPENSE, FREQUENCE
-         FROM dbo.DEPENSES WHERE NO_INSCRIPTION = '${safeNo}'`,
+         FROM dbo.DEPENSES WHERE NO_INSCRIPTION = @no`,
+        { no },
       ).catch(() => ({ recordset: [] as DepenseRow[] })),
       runSqlQuery<PieceRow>(
         "LauzonConn",
@@ -254,9 +256,10 @@ export async function getInscriptionByNo(no: string): Promise<{
         LEFT JOIN dbo.VALEURS_FIXES vp ON vp.DOMAINE='PIECE_CODE' AND vp.VALEUR=pc.PIECE_CODE
         LEFT JOIN dbo.VALEURS_FIXES ve ON ve.DOMAINE='ETAGE' AND ve.VALEUR=pc.ETAGE
         LEFT JOIN dbo.VALEURS_FIXES vpc ON vpc.DOMAINE='COUVRE_PLANCHER_CODE' AND vpc.VALEUR=pc.COUVRE_PLANCHER_CODE
-        WHERE pc.NO_INSCRIPTION = '${safeNo}'
+        WHERE pc.NO_INSCRIPTION = @no
         ORDER BY pc.NO_ORDRE
         `,
+        { no },
       ).catch(() => ({ recordset: [] as PieceRow[] })),
       runSqlQuery<CaractRow>(
         "LauzonConn",
@@ -268,14 +271,16 @@ export async function getInscriptionByNo(no: string): Promise<{
         LEFT JOIN dbo.SOUS_TYPE_CARACTERISTIQUES stc
           ON stc.TCAR_CODE = c.TYPE_CARACTERISTIQUE
          AND stc.CODE = c.SOUS_TYPE_CARACTERISTIQUE
-        WHERE c.NO_INSCRIPTION = '${safeNo}'
+        WHERE c.NO_INSCRIPTION = @no
         ORDER BY c.TYPE_CARACTERISTIQUE, c.SOUS_TYPE_CARACTERISTIQUE
         `,
+        { no },
       ).catch(() => ({ recordset: [] as CaractRow[] })),
       runSqlQuery<AddendaRow>(
         "LauzonConn",
         `SELECT TOP 1 TEXTE FROM dbo.ADDENDA
-         WHERE NO_INSCRIPTION='${safeNo}' AND CODE_LANGUE='F'`,
+         WHERE NO_INSCRIPTION = @no AND CODE_LANGUE='F'`,
+        { no },
       ).catch(() => ({ recordset: [] as AddendaRow[] })),
     ]);
 
@@ -295,8 +300,9 @@ export async function getInscriptionByNo(no: string): Promise<{
       ON vf.DOMAINE = 'TYPE_CERTIFICAT_MEMBRE'
      AND vf.VALEUR = mb.TYPE_CERTIFICAT
     JOIN dbo.INSCRIPTIONS i ON i.AGENT_INSCRIPTEUR_1 = mb.CODE
-    WHERE i.NO_INSCRIPTION = '${safeNo}'
+    WHERE i.NO_INSCRIPTION = @no
     `,
+    { no },
   ).catch(() => ({ recordset: [] as MembreRow[] }));
 
   void agentCode; // unused after the join approach

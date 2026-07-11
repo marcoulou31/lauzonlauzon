@@ -47,8 +47,16 @@ export async function getSqlPool(
 export async function runSqlQuery<T extends Record<string, unknown>>(
   connectionName: SqlConnectionName,
   query: string,
+  params?: Record<string, unknown>,
 ): Promise<sql.IResult<T>> {
   const pool = await getSqlPool(connectionName);
+  const request = pool.request();
 
-  return pool.request().query<T>(query);
+  if (params) {
+    for (const [name, value] of Object.entries(params)) {
+      request.input(name, value);
+    }
+  }
+
+  return request.query<T>(query);
 }
