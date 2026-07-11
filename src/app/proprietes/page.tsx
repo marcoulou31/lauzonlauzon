@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PropertySpotlight } from "@/components/properties/PropertySpotlight";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { getAllProperties } from "@/data/properties";
+import { getAllInscriptionsForPage } from "@/lib/inscriptions";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: `Découvrez les inscriptions actuelles de ${siteConfig.name}. Propriétés résidentielles et commerciales à Québec.`,
 };
 
-export default function PropertiesPage() {
-  const allProperties = getAllProperties();
+export default async function PropertiesPage() {
+  const allProperties = await getAllInscriptionsForPage();
 
   return (
     <>

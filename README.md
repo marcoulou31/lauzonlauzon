@@ -20,6 +20,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## SQL Server
+
+The project now includes a reusable SQL Server connection layer for the named connection:
+
+- `LauzonConn`
+
+### Environment variables
+
+Copy `.env.example` to `.env.local` and set:
+
+```bash
+LAUZON_CONNECTION_STRING="Server=..."
+```
+
+`/.env.local` is ignored by git, so secrets stay local.
+
+### Test endpoints
+
+The connection name is supported through the route handler:
+
+- `GET /api/db/LauzonConn`
+
+Each endpoint opens the SQL Server connection and returns the current server and database name.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

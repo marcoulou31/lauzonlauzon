@@ -3,6 +3,9 @@ import { Suspense } from "react";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site";
+import { getInscriptionsList } from "@/lib/inscriptions";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -15,7 +18,8 @@ function ContactFormFallback() {
   );
 }
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const inscriptions = await getInscriptionsList();
   return (
     <>
       <section className="bg-navy py-20">
@@ -87,7 +91,7 @@ export default function ContactPage() {
 
             <div className="lg:col-span-3">
               <Suspense fallback={<ContactFormFallback />}>
-                <ContactForm />
+                <ContactForm inscriptions={inscriptions} />
               </Suspense>
             </div>
           </div>

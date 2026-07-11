@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PropertyGallery } from "@/components/properties/PropertyGallery";
 import { PropertyStats } from "@/components/properties/PropertyStats";
+import { InscriptionFiche } from "@/components/properties/InscriptionFiche";
 import { Button } from "@/components/ui/Button";
 import { getAllPropertySlugs, getPropertyBySlug } from "@/data/properties";
+import { getInscriptionByNo, isInscriptionNo } from "@/lib/inscriptions";
 import { formatPrice } from "@/lib/format";
 
 type PageProps = {
@@ -17,12 +19,24 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const property = getPropertyBySlug(slug);
 
-  if (!property) {
-    return { title: "Propriété introuvable" };
+  if (isInscriptionNo(slug)) {
+    const result = await getInscriptionByNo(slug);
+    if (!result) return { title: "Propriété introuvable" };
+    const { property, detail } = result;
+    return {
+      title: property.title,
+      description: property.description,
+      openGraph: {
+        title: property.title,
+        description: property.description,
+        images: detail.photoUrl ? [detail.photoUrl] : [],
+      },
+    };
   }
 
+  const property = getPropertyBySlug(slug);
+  if (!property) return { title: "Propriété introuvable" };
   return {
     title: property.title,
     description: property.description,
@@ -36,15 +50,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function PropertyPage({ params }: PageProps) {
   const { slug } = await params;
-  const property = getPropertyBySlug(slug);
 
-  if (!property) {
-    notFound();
+  // ── Inscription Centris (slug numérique) ──────────────────────────────────
+  if (isInscriptionNo(slug)) {
+    const result = await getInscriptionByNo(slug);
+    if (!result) notFound();
+    return <InscriptionFiche detail={result.detail} />;
   }
 
-  const mapsQuery = encodeURIComponent(
-    `${property.address}, ${property.city}`,
-  );
+  // ── Propriété statique ────────────────────────────────────────────────────
+  const property = getPropertyBySlug(slug);
+  if (!property) notFound();
+
+  const mapsQuery = encodeURIComponent(`${property.address}, ${property.city}`);
 
   return (
     <article className="bg-cream">
@@ -93,10 +111,7 @@ export default async function PropertyPage({ params }: PageProps) {
             </p>
 
             <div className="mt-8">
-              <Button
-                href={`/contact?propriete=${property.slug}`}
-                variant="primary"
-              >
+              <Button href={`/contact?propriete=${property.slug}`} variant="primary">
                 Demander une visite
               </Button>
             </div>
@@ -105,15 +120,10 @@ export default async function PropertyPage({ params }: PageProps) {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="font-serif text-2xl text-navy">
-              Caractéristiques
-            </h2>
+            <h2 className="font-serif text-2xl text-navy">Caractéristiques</h2>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {property.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-center gap-2 text-navy/80"
-                >
+                <li key={feature} className="flex items-center gap-2 text-navy/80">
                   <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                   {feature}
                 </li>

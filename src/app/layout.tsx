@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${cormorant.variable} h-full`}>
+    <html lang="fr" data-scroll-behavior="smooth" className={`${inter.variable} ${cormorant.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
