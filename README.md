@@ -32,9 +32,17 @@ Copy `.env.example` to `.env.local` and set:
 
 ```bash
 LAUZON_CONNECTION_STRING="Server=..."
+CONTACT_FORM_FORMSPARK_ID="zOyTj4RtB"
+NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY="pk_a6aae5ef-c4a2-46e7-a8b2-b2eda12e7f8b"
 ```
 
 `/.env.local` is ignored by git, so secrets stay local.
+
+For contact submissions, you can override the default Formspark destination with:
+
+```bash
+CONTACT_FORM_FORMSPARK_ENDPOINT="https://submit-form.com/yourFormId"
+```
 
 ### Test endpoints
 

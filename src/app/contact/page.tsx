@@ -22,10 +22,12 @@ export default async function ContactPage() {
   const inscriptions = await getInscriptionsList();
   return (
     <>
-      <section className="bg-navy py-20">
+      <section className="relative isolate overflow-hidden py-20">
+        <div className="absolute inset-0 -z-10 bg-[url('/contact-hero.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Contact"
+            eyebrow="Contactez-nous"
             title="Parlons de votre projet"
             description="Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous vous répondrons dans les plus brefs délais."
             light
@@ -79,14 +81,15 @@ export default async function ContactPage() {
                 </div>
               </address>
 
-              <a
-                href={siteConfig.contact.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-block text-sm font-medium text-gold transition-colors hover:text-navy"
-              >
-                Voir sur Google Maps &rarr;
-              </a>
+              <div className="mt-8 overflow-hidden border border-navy/20">
+                <iframe
+                  title="Carte Google Maps - Lauzon & Lauzon"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.contact.fullAddress)}&output=embed`}
+                  className="h-72 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
 
             <div className="lg:col-span-3">

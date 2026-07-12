@@ -11,11 +11,13 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-navy py-20">
+      <section className="relative isolate overflow-hidden py-20">
+        <div className="absolute inset-0 -z-10 bg-[url('/about-hero.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Notre histoire"
-            title={siteConfig.broker.name}
+            title={siteConfig.name}
             description={siteConfig.slogan}
             light
           />
