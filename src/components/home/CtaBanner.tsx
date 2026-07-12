@@ -5,7 +5,7 @@ export function CtaBanner() {
   return (
     <section className="relative bg-navy py-24 lg:py-32">
       {/* Decorative top accent */}
-      <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-gold to-transparent" />
+      <div className="absolute left-0 top-0 h-1 w-full bg-linear-to-r from-transparent via-gold to-transparent" />
       
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         {/* Decorative accent line above heading */}
@@ -43,7 +43,7 @@ export function CtaBanner() {
           <Button 
             href="/contact" 
             variant="outline" 
-            className="!border-cream !text-cream !bg-transparent hover:!border-gold hover:!bg-gold hover:!text-navy"
+            className="border-cream! text-cream! bg-transparent! hover:border-gold! hover:bg-gold! hover:text-navy!"
           >
             <svg className="mr-2 inline h-5 w-5 stroke-gold-light" viewBox="0 0 24 24" fill="none" strokeWidth="2">
               <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -60,7 +60,7 @@ export function CtaBanner() {
       </div>
 
       {/* Decorative bottom accent */}
-      <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-gold to-transparent" />
+      <div className="absolute bottom-0 left-0 h-1 w-full bg-linear-to-r from-transparent via-gold to-transparent" />
     </section>
   );
 }

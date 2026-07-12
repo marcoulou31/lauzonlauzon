@@ -27,7 +27,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-lg">
+            <div className="relative aspect-4/5 overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/chantal-lauzon.jpg"
                 alt={siteConfig.broker.name}

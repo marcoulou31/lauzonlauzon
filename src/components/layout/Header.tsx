@@ -20,7 +20,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         <Link href="/" className="group">
           <Image
-            src="/logo.png"
+            src="/logo-v2.png"
             alt={siteConfig.name}
             width={240}
             height={60}

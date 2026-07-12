@@ -61,12 +61,22 @@ export const siteConfig = {
       subtitle: "Montcalm, Saint-Sacrement, Sillery, Sainte-Foy, Lac Saint-Joseph",
       description:
         "Condominiums, maisons unifamiliales et propriétés de prestige dans les secteurs les plus recherchés de Québec.",
+      images: [
+        "/residentiel-1.jpg",
+        "/residentiel-2.jpg",
+        "/residentiel-3.jpg",
+      ],
     },
     {
       title: "Terrains et propriétés secondaires",
       subtitle: "Excellente connaissance du marché",
       description:
         "Expertise approfondie dans l'identification et la commercialisation de terrains et propriétés résidentielles secondaires.",
+      images: [
+        "/secondaire-1.jpg",
+        "/secondaire-2.jpg",
+        "/secondaire-3.jpg",
+      ],
     },
     {
       title: "Immeubles à revenus",
