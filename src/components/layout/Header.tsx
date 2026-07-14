@@ -17,24 +17,32 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-cream-dark/60 bg-cream/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
-        <Link href="/" className="group">
-          <Image
-            src="/logo-v2.png"
-            alt={siteConfig.name}
-            width={240}
-            height={60}
-            priority
-            className="h-auto w-auto transition-opacity group-hover:opacity-80"
-          />
-        </Link>
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 lg:px-6">
+        <div className="flex shrink-0 flex-col items-start">
+          <Link href="/" className="group">
+            <Image
+              src="/logo-v2.png"
+              alt={siteConfig.name}
+              width={2329}
+              height={428}
+              priority
+              className="h-14 w-auto transition-opacity group-hover:opacity-80"
+            />
+          </Link>
+          <Link
+            href={siteConfig.contact.phoneHref}
+            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-base font-medium tracking-wide text-navy/80 transition-colors hover:text-gold md:block lg:hidden"
+          >
+            {siteConfig.contact.phone}
+          </Link>
+        </div>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-lg font-medium tracking-wide transition-all hover:text-gold hover:border-b-4 hover:border-gold ${
+              className={`whitespace-nowrap text-lg font-medium tracking-wide transition-all hover:text-gold hover:border-b-4 hover:border-gold ${
                 isActive(link.href) ? "text-gold border-b-4 border-gold" : "text-navy border-b-4 border-transparent"
               }`}
             >
@@ -45,7 +53,7 @@ export function Header() {
 
         <Link
           href={siteConfig.contact.phoneHref}
-          className="hidden text-base font-medium text-navy transition-colors hover:text-gold md:block"
+          className="hidden shrink-0 whitespace-nowrap text-lg font-semibold tracking-wide text-navy transition-colors hover:text-gold lg:block"
         >
           {siteConfig.contact.phone}
         </Link>

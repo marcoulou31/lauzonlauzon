@@ -11,8 +11,9 @@ export const metadata: Metadata = {
 export default function CalculettePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden py-20">
-        <div className="absolute inset-0 -z-10 bg-navy" />
+      <section className="relative isolate overflow-hidden py-12">
+        <div className="absolute inset-0 -z-10 bg-[url('/calculette-hero.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-navy/70" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Outils de calcul"

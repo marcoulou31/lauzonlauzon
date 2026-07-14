@@ -97,12 +97,26 @@ export const siteConfig = {
         "Expérience reconnue dans le secteur hôtelier et compétence en évaluation financière.",
     },
   ],
+  guides: [
+    {
+      title: "Guide de l'acheteur",
+      description:
+        "Un aide-mémoire complet qui vous accompagne à chaque étape de l'achat d'une propriété résidentielle : la promesse d'achat, la mise de fonds, les avantages de faire affaire avec un courtier et bien plus.",
+      pdfHref: "https://www.oaciq.com/fr/guide-acheteur",
+    },
+    {
+      title: "Guide du vendeur",
+      description:
+        "Toutes les informations pratiques pour vendre en toute confiance : le contrat de courtage – vente, le formulaire Déclarations du vendeur sur l'immeuble, les spécificités de la copropriété et les étapes clés de la transaction.",
+      pdfHref: "https://www.oaciq.com/fr/guide-vendeur",
+    },
+  ],
 } as const;
 
 export const navLinks: NavLink[] = [
-  { href: "/", label: "Accueil" },
   { href: "/proprietes", label: "Propriétés" },
   { href: "/calculette", label: "Calculette" },
+  { href: "/guides", label: "Guides" },
   { href: "/a-propos", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];
