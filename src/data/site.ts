@@ -17,6 +17,7 @@ export const siteConfig = {
     phoneHref: "tel:+14189522359",
     email: "lauzonlauzoncourtier@videotron.ca",
     emailHref: "mailto:lauzonlauzoncourtier@videotron.ca",
+    legalName: "Lauzon & Lauzon Courtier inc.",
     address: "1043, avenue Holland",
     city: "Québec (Sillery)",
     postalCode: "G1S 3T4",
@@ -58,9 +59,9 @@ export const siteConfig = {
   expertise: [
     {
       title: "Résidentiel",
-      subtitle: "Montcalm, Saint-Sacrement, Sillery, Sainte-Foy, Lac Saint-Joseph",
+      subtitle: "Lac St-Joseph, Sillery, Montcalm, Ste-Foy et St-Sacrement",
       description:
-        "Condominiums, maisons unifamiliales et propriétés de prestige dans les secteurs les plus recherchés de Québec.",
+        "Résidence secondaire, maisons unifamiliales, condominiums dans les secteurs les plus recherchés.",
       images: [
         "/residentiel-1.jpg",
         "/residentiel-2.jpg",
@@ -95,6 +96,13 @@ export const siteConfig = {
       subtitle: "Évaluation financière",
       description:
         "Expérience reconnue dans le secteur hôtelier et compétence en évaluation financière.",
+    },
+    {
+      title: "Bâtiment industriel",
+      subtitle: "Vente et location",
+      description:
+        "Commercialisation et location de bâtiments industriels pour vos projets d'affaires.",
+      image: "/batiment-industriel.jpg",
     },
   ],
   guides: [

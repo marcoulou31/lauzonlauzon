@@ -31,7 +31,7 @@ export function Header() {
           </Link>
           <Link
             href={siteConfig.contact.phoneHref}
-            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-base font-medium tracking-wide text-navy/80 transition-colors hover:text-gold md:block lg:hidden"
+            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-lg font-medium tracking-wide text-navy/80 transition-colors hover:text-gold md:block lg:hidden"
           >
             {siteConfig.contact.phone}
           </Link>

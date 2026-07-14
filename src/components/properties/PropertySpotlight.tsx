@@ -34,9 +34,6 @@ export function PropertySpotlight({ property, index }: PropertySpotlightProps) {
           </div>
 
           <div className="lg:col-span-2 lg:[direction:ltr]">
-            <p className="mb-2 text-sm font-medium uppercase tracking-[0.2em] text-gold">
-              {property.city || `Propriété ${index + 1}`}
-            </p>
             <h3 className="font-serif text-3xl text-navy md:text-4xl">
               <Link
                 href={`/proprietes/${property.slug}`}
@@ -45,9 +42,10 @@ export function PropertySpotlight({ property, index }: PropertySpotlightProps) {
                 {property.title}
               </Link>
             </h3>
-            <p className="mt-2 text-navy/70">
-              {property.address}
-            </p>
+            <p className="mt-2 text-navy/70">{property.address}</p>
+            {property.city && (
+              <p className="text-navy/70">{property.city}</p>
+            )}
 
             <p className="mt-6 font-serif text-4xl text-navy">
               {formatPrice(property.price)}

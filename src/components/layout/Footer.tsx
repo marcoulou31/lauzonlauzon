@@ -7,8 +7,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <p className="font-serif text-2xl">{siteConfig.name}</p>
-            <p className="mt-2 text-sm text-cream/70">{siteConfig.slogan}</p>
+            <p className="font-serif text-2xl uppercase">
+              {siteConfig.contact.legalName}
+            </p>
+            <p className="mt-2 text-sm italic text-cream/70">
+              {siteConfig.slogan}
+            </p>
             <p className="mt-4 text-sm leading-relaxed text-cream/70">
               {siteConfig.description}
             </p>

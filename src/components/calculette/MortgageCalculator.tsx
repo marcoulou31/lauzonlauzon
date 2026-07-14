@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-const NOTARY_FEE = 1600;
+const NOTARY_FEE = 2750;
 const EVALUATION_FEE = 700;
 const INSPECTION_FEE = 690;
 
@@ -38,11 +38,15 @@ function calculateTransferTax(amount: number): number {
   if (amount <= 0) {
     return 0;
   }
-  if (amount > 250000) {
-    return (amount - 250000) * 0.015 + 250 + 2000;
+  const tier1 = 58900;
+  const tier2 = 294600;
+  if (amount > tier2) {
+    return (
+      tier1 * 0.005 + (tier2 - tier1) * 0.01 + (amount - tier2) * 0.015
+    );
   }
-  if (amount > 50000) {
-    return (amount - 50000) * 0.01 + 250;
+  if (amount > tier1) {
+    return tier1 * 0.005 + (amount - tier1) * 0.01;
   }
   return amount * 0.005;
 }
@@ -239,6 +243,13 @@ export function MortgageCalculator() {
         </div>
 
         <p className="text-sm leading-relaxed text-navy/60">
+          Les droits de mutation (taxe de bienvenue) sont calculés sur des
+          paliers progressifs : 0,5 % jusqu&apos;à 58 900 $, 1,0 % de 58 900 $ à
+          294 600 $ et 1,5 % au-delà. Montréal applique des paliers
+          supplémentaires (2,0 % de 500 000 $ à 1 M$ et 3,0 % au-delà de 1 M$).
+          Les seuils sont indexés annuellement.
+        </p>
+        <p className="text-sm leading-relaxed text-navy/60">
           Les montants pour les frais de notaire, l&apos;évaluation et
           l&apos;inspection sont des estimations moyennes. Cette calculette est
           fournie à titre indicatif seulement.
@@ -259,7 +270,12 @@ export function MortgageCalculator() {
               </dd>
             </div>
             <div className="flex items-center justify-between border-b border-cream-dark pb-3">
-              <dt>Frais de notaire</dt>
+              <dt>
+                Frais de notaire
+                <span className="mt-0.5 block text-xs text-navy/50">
+                  Acte de vente et acte de prêt, selon la nature du dossier
+                </span>
+              </dt>
               <dd className="font-medium text-navy">
                 {formatCurrency(NOTARY_FEE)}
               </dd>

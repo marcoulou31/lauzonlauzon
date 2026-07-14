@@ -47,7 +47,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export function InscriptionFiche({ detail }: Props) {
   const prix = detail.prix ?? detail.prixLocation;
-  const mapsQuery = encodeURIComponent(detail.adresseMaps);
 
   // Group caracteristiques by type
   const caractByType = detail.caracteristiques.reduce<Record<string, string[]>>(
@@ -90,7 +89,7 @@ export function InscriptionFiche({ detail }: Props) {
             <Section title="Propriété">
               <div className="grid sm:grid-cols-2 gap-4">
                 {detail.photoUrl && (
-                  <div className="relative aspect-[4/3] bg-cream-dark">
+                  <div className="relative aspect-4/3 bg-cream-dark">
                     <Image
                       src={detail.photoUrl}
                       alt={detail.adresseMaps}
@@ -335,7 +334,7 @@ export function InscriptionFiche({ detail }: Props) {
                   <div className="font-semibold text-navy">{detail.garage ?? "—"}</div>
                 </div>
                 <div className="text-center bg-cream p-3">
-                  <div className="text-xs text-navy/50">Abri d'auto</div>
+                  <div className="text-xs text-navy/50">Abri d&apos;auto</div>
                   <div className="font-semibold text-navy">{detail.abri ?? "—"}</div>
                 </div>
               </div>

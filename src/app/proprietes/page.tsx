@@ -21,7 +21,7 @@ export default async function PropertiesPage() {
           <SectionHeading
             eyebrow="Inscriptions"
             title="Nos propriétés"
-            description="Chaque propriété est présentée avec le soin qu'elle mérite. Découvrez nos inscriptions actuelles."
+            description="Découvrez nos propriétés."
             light
             align="center"
           />

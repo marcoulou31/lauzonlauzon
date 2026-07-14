@@ -25,7 +25,7 @@ export function PropertiesTeaser() {
               href={`/proprietes/${property.slug}`}
               className="group overflow-hidden bg-white"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-16/10 overflow-hidden">
                 <Image
                   src={property.images[0].src}
                   alt={property.images[0].alt}

@@ -99,12 +99,23 @@ export function ExpertiseShowcase() {
             <h4 className="font-serif text-3xl text-navy md:text-4xl">
               Également à votre service
             </h4>
-            <div className="mt-10 grid gap-8 md:grid-cols-3">
+            <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {services.map((item) => (
                 <div
                   key={item.title}
                   className="border-l-2 border-gold/40 pl-6"
                 >
+                  {"image" in item && item.image && (
+                    <div className="relative mb-4 aspect-video overflow-hidden rounded-lg shadow-md">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                   <h5 className="font-serif text-2xl text-navy">{item.title}</h5>
                   <p className="mt-2 text-sm font-medium uppercase tracking-wide text-gold">
                     {item.subtitle}

@@ -14,7 +14,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-[16/10] overflow-hidden bg-cream-dark">
+      <div className="relative aspect-16/10 overflow-hidden bg-cream-dark">
         <Image
           src={images[activeIndex].src}
           alt={images[activeIndex].alt}
@@ -32,7 +32,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
               key={image.src}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`relative aspect-[4/3] overflow-hidden transition-opacity ${
+              className={`relative aspect-4/3 overflow-hidden transition-opacity ${
                 activeIndex === index
                   ? "ring-2 ring-gold ring-offset-2"
                   : "opacity-70 hover:opacity-100"
