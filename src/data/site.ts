@@ -101,8 +101,7 @@ export const siteConfig = {
       title: "Bâtiment industriel",
       subtitle: "Vente et location",
       description:
-        "Commercialisation et location de bâtiments industriels pour vos projets d'affaires.",
-      image: "/batiment-industriel.jpg",
+        "Commercialisation et location de bâtiments industriels pour vos projets d'affaires. Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
     },
   ],
   guides: [

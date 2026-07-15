@@ -34,6 +34,7 @@ Copy `.env.example` to `.env.local` and set:
 LAUZON_CONNECTION_STRING="Server=..."
 CONTACT_FORM_FORMSPARK_ID="zOyTj4RtB"
 NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY="pk_a6aae5ef-c4a2-46e7-a8b2-b2eda12e7f8b"
+NEXT_PUBLIC_GA_MEASUREMENT_ID="G-4SPGD8D0N5"
 ```
 
 `/.env.local` is ignored by git, so secrets stay local.
@@ -43,6 +44,21 @@ For contact submissions, you can override the default Formspark destination with
 ```bash
 CONTACT_FORM_FORMSPARK_ENDPOINT="https://submit-form.com/yourFormId"
 ```
+
+## Analytics
+
+Google Analytics 4 is loaded only after explicit cookie consent from the user.
+
+- Use `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.local` to configure the GA4 measurement ID.
+- Consent choice is saved in local storage and can be changed via the footer link.
+- Pageviews on client-side navigation are handled by GA4 history tracking (Enhanced Measurement).
+
+To verify locally:
+
+1. Open the site in a new private window.
+2. Refuse cookies and confirm no request is sent to `googletagmanager.com`.
+3. Accept cookies and confirm `gtag/js?id=...` loads.
+4. Navigate between pages and validate events in GA4 DebugView.
 
 ### Test endpoints
 

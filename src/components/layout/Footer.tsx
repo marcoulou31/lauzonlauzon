@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookiePreferencesButton } from "@/components/analytics/CookiePreferencesButton";
 import { navLinks, siteConfig } from "@/data/site";
 
 export function Footer() {
@@ -67,6 +68,9 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. Tous droits
             réservés.
+          </p>
+          <p className="mt-2">
+            <CookiePreferencesButton />
           </p>
         </div>
       </div>
