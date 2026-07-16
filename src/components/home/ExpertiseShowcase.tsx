@@ -3,9 +3,14 @@ import { siteConfig } from "@/data/site";
 
 type ExpertiseItem = (typeof siteConfig.expertise)[number];
 type FeaturedItem = Extract<ExpertiseItem, { images: readonly string[] }>;
+type ServiceWithImage = ExpertiseItem & { image: string };
 
 function isFeatured(item: ExpertiseItem): item is FeaturedItem {
   return "images" in item;
+}
+
+function hasSingleImage(item: ExpertiseItem): item is ServiceWithImage {
+  return typeof (item as { image?: unknown }).image === "string";
 }
 
 const featured = siteConfig.expertise.filter(isFeatured);
@@ -105,7 +110,7 @@ export function ExpertiseShowcase() {
                   key={item.title}
                   className="border-l-2 border-gold/40 pl-6"
                 >
-                  {"image" in item && item.image && (
+                  {hasSingleImage(item) && (
                     <div className="relative mb-4 aspect-video overflow-hidden rounded-lg shadow-md">
                       <Image
                         src={item.image}

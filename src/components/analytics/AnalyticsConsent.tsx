@@ -94,7 +94,7 @@ export function AnalyticsConsent() {
             <div>
               <p className="font-serif text-lg text-navy">Vos préférences de confidentialité</p>
               <p className="mt-1 text-sm text-navy/80">
-                Nous utilisons des cookies et des technologies similaires à des fins de statistiques et d'amélioration du service. Vous pouvez accepter ou refuser ces cookies.
+                Nous utilisons des cookies et des technologies similaires à des fins de statistiques et d&apos;amélioration du service. Vous pouvez accepter ou refuser ces cookies.
               </p>
             </div>
             <div className="flex shrink-0 gap-3">
