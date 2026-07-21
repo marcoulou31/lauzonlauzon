@@ -308,8 +308,7 @@ export function InscriptionFiche({ detail }: Props) {
                   </div>
                 </div>
                 <div className="text-xs text-navy/50 border-t border-navy/10 pt-3">
-                  1043 avenue Holland, Québec (QC), G1S 3T4<br />
-                  Bur.&nbsp;418-648-2359 · Téléc.&nbsp;418-524-6666
+                  1043 avenue Holland, Québec (QC), G1S 3T4
                 </div>
               </Section>
             )}

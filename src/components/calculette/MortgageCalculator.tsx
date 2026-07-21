@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 
 const NOTARY_FEE = 2750;
-const EVALUATION_FEE = 700;
-const INSPECTION_FEE = 690;
+const EVALUATION_FEE = 1500;
+const INSPECTION_FEE = 1200;
 
 const AMORTIZATION_YEARS = Array.from({ length: 25 }, (_, i) => 25 - i);
 
@@ -245,7 +245,7 @@ export function MortgageCalculator() {
         <p className="text-sm leading-relaxed text-navy/60">
           Les droits de mutation (taxe de bienvenue) sont calculés sur des
           paliers progressifs : 0,5 % jusqu&apos;à 58 900 $, 1,0 % de 58 900 $ à
-          294 600 $ et 1,5 % au-delà. Montréal applique des paliers
+          294 600 $ et 1,5 % au-delà. Certaines municipalités appliquent des paliers
           supplémentaires (2,0 % de 500 000 $ à 1 M$ et 3,0 % au-delà de 1 M$).
           Les seuils sont indexés annuellement.
         </p>

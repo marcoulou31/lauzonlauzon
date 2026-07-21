@@ -19,6 +19,7 @@ export default function AboutPage() {
             eyebrow="Notre histoire"
             title={siteConfig.name}
             description={siteConfig.slogan}
+            descriptionClassName="italic"
             light
           />
         </div>

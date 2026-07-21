@@ -23,7 +23,7 @@ export function Hero() {
           <h1 className="font-serif text-6xl leading-tight text-cream md:text-7xl lg:text-8xl">
             {siteConfig.name}
           </h1>
-          <p className="mt-5 text-2xl text-cream/90 md:text-3xl">
+          <p className="mt-5 text-2xl italic text-cream/90 md:text-3xl">
             {siteConfig.slogan}
           </p>
           <p className="mt-4 max-w-lg text-lg leading-relaxed text-cream/75">

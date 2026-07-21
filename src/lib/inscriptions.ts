@@ -503,7 +503,7 @@ export async function getAllInscriptionsForPage(): Promise<Property[]> {
 
     return {
       slug: row.NO_INSCRIPTION,
-      title: `${genreDesc} – ${address || row.NO_INSCRIPTION}`,
+      title: genreDesc,
       address,
       city: row.MUNICIPALITE_DESC ?? "",
       price: row.PRIX_DEMANDE ?? row.PRIX_LOCATION_DEMANDE ?? 0,

@@ -2,6 +2,7 @@ type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
   description?: string;
+  descriptionClassName?: string;
   align?: "left" | "center";
   light?: boolean;
   eyebrowSize?: "base" | "lg";
@@ -11,6 +12,7 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
+  descriptionClassName = "",
   align = "left",
   light = false,
   eyebrowSize = "lg",
@@ -36,7 +38,9 @@ export function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 text-xl leading-relaxed ${descColor}`}>
+        <p
+          className={`mt-4 text-xl leading-relaxed ${descColor} ${descriptionClassName}`}
+        >
           {description}
         </p>
       )}

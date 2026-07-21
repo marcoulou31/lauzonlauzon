@@ -8,13 +8,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <p className="font-serif text-2xl uppercase">
+            <p className="font-serif text-2xl uppercase whitespace-nowrap">
               {siteConfig.contact.legalName}
             </p>
-            <p className="mt-2 text-sm italic text-cream/70">
+            <p className="mt-2 text-base italic text-cream/70">
               {siteConfig.slogan}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-cream/70">
+            <p className="mt-4 text-base leading-relaxed text-cream/70">
               {siteConfig.description}
             </p>
           </div>
@@ -28,7 +28,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-cream/80 transition-colors hover:text-gold-light"
+                    className="text-base text-cream/80 transition-colors hover:text-gold-light"
                   >
                     {link.label}
                   </Link>
@@ -41,7 +41,7 @@ export function Footer() {
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.15em] text-gold-light">
               Coordonnées
             </p>
-            <address className="space-y-2 not-italic text-sm text-cream/80">
+            <address className="space-y-1 not-italic text-base text-cream/80">
               <p>{siteConfig.broker.name}</p>
               <p>{siteConfig.contact.fullAddress}</p>
               <p>

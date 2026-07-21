@@ -17,22 +17,20 @@ export const siteConfig = {
     phoneHref: "tel:+14189522359",
     email: "lauzonlauzoncourtier@videotron.ca",
     emailHref: "mailto:lauzonlauzoncourtier@videotron.ca",
-    legalName: "Lauzon & Lauzon Courtier inc.",
+    legalName: "Lauzon & Lauzon",
     address: "1043, avenue Holland",
     city: "Québec (Sillery)",
     postalCode: "G1S 3T4",
-    fullAddress: "1043, avenue Holland, Québec (Sillery) G1S 3T4",
+    fullAddress: "1043, avenue Holland, Québec, G1S 3T4",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=1043+Avenue+Holland+Qu%C3%A9bec+QC+G1S+3T4",
   },
   territories: [
-    "Montcalm",
-    "Saint-Sacrement",
+    "Lac St-Joseph",
     "Sillery",
-    "Sainte-Foy",
-    "Lac Saint-Joseph",
-    "La Cité-Limoilou",
-    "Cap-Rouge",
+    "Montcalm",
+    "Ste-Foy",
+    "St-Sacrement",
   ],
   values: [
     {
@@ -101,7 +99,7 @@ export const siteConfig = {
       title: "Bâtiment industriel",
       subtitle: "Vente et location",
       description:
-        "Commercialisation et location de bâtiments industriels pour vos projets d'affaires. Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
+        "Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
     },
   ],
   guides: [
