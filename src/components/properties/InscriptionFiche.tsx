@@ -65,7 +65,7 @@ export function InscriptionFiche({ detail }: Props) {
       {/* Breadcrumb */}
       <div className="border-b border-cream-dark bg-cream-dark/30 py-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between flex-wrap gap-3">
-          <Link href="/proprietes" className="text-sm text-gold transition-colors hover:text-navy">
+          <Link href="/proprietes" className="text-sm text-gold-dark transition-colors hover:text-navy">
             &larr; Retour aux propriétés
           </Link>
           <span className="text-sm text-navy/40 font-mono">MLS® {detail.noInscription}</span>
@@ -294,14 +294,14 @@ export function InscriptionFiche({ detail }: Props) {
                       Tél.&nbsp;
                       <a
                         href={`tel:${detail.courtier.telephone}`}
-                        className="text-gold hover:text-navy"
+                        className="text-gold-dark hover:text-navy"
                       >
                         {detail.courtier.telephone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")}
                       </a>
                     </p>
                     <a
                       href={`mailto:${detail.courtier.courriel}`}
-                      className="text-sm text-gold hover:text-navy break-all"
+                      className="text-sm text-gold-dark hover:text-navy break-all"
                     >
                       {detail.courtier.courriel}
                     </a>
@@ -376,7 +376,7 @@ export function InscriptionFiche({ detail }: Props) {
             href={`https://www.centris.ca/fr/proprietes~a-vendre~${detail.noInscription}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gold hover:text-navy transition-colors"
+            className="text-sm text-gold-dark hover:text-navy transition-colors"
           >
             Voir sur Centris.ca →
           </a>

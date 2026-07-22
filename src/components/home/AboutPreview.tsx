@@ -24,7 +24,7 @@ export function AboutPreview() {
             </div>
 
             <div className="mt-8">
-              <p className="mb-3 text-sm font-medium uppercase tracking-[0.15em] text-gold">
+              <p className="mb-3 text-sm font-medium uppercase tracking-[0.15em] text-gold-dark">
                 Secteurs desservis
               </p>
               <div className="flex flex-wrap gap-2">
@@ -41,7 +41,7 @@ export function AboutPreview() {
 
             <Link
               href="/a-propos"
-              className="mt-8 inline-block text-sm font-medium text-gold transition-colors hover:text-navy"
+              className="mt-8 inline-block text-sm font-medium text-gold-dark transition-colors hover:text-navy"
             >
               En savoir plus &rarr;
             </Link>

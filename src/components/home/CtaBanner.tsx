@@ -11,7 +11,7 @@ export function CtaBanner() {
         {/* Decorative accent line above heading */}
         <div className="mb-6 flex items-center justify-center gap-3">
           <div className="h-px w-8 bg-gold sm:w-12" />
-          <span className="text-sm font-medium tracking-widest text-gold uppercase">
+          <span className="text-sm font-medium tracking-widest text-gold-light uppercase">
             Prochaine étape
           </span>
           <div className="h-px w-8 bg-gold sm:w-12" />
@@ -24,7 +24,7 @@ export function CtaBanner() {
 
         {/* Subheading */}
         <p className="mt-6 text-center text-lg text-cream/85 sm:text-xl md:text-2xl">
-          Contactez <span className="font-medium text-gold">{siteConfig.broker.name}</span> pour une consultation personnalisée.
+          Contactez <span className="font-medium text-gold-light">{siteConfig.broker.name}</span> pour une consultation personnalisée.
         </p>
 
         {/* CTA Buttons */}

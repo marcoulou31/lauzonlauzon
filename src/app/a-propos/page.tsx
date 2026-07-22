@@ -43,7 +43,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="font-serif text-5xl text-navy">
                   {siteConfig.broker.name}
-                  <span className="ml-3 text-lg font-medium uppercase tracking-wide text-gold">
+                  <span className="ml-3 text-lg font-medium uppercase tracking-wide text-gold-dark">
                     {siteConfig.broker.credentials}
                   </span>
                 </h2>

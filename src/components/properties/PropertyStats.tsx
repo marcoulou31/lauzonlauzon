@@ -21,7 +21,7 @@ export function PropertyStats({ property }: PropertyStatsProps) {
 
   return (
     <div className="flex flex-wrap gap-2">
-      <span className="bg-gold/15 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold">
+      <span className="bg-gold/15 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold-dark">
         {property.status}
       </span>
       {stats.map((stat) => (

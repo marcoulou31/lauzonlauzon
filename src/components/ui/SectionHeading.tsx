@@ -20,7 +20,7 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
   const textColor = light ? "text-cream" : "text-navy";
   const descColor = light ? "text-cream/80" : "text-navy/70";
-  const eyebrowColor = light ? "text-gold-light" : "text-gold";
+  const eyebrowColor = light ? "text-gold-light" : "text-gold-dark";
   const eyebrowSizeClass = eyebrowSize === "lg" ? "text-lg" : "text-base";
 
   return (

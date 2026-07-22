@@ -43,38 +43,38 @@ export default async function ContactPage() {
 
               <address className="mt-6 space-y-4 not-italic text-navy/80">
                 <div>
-                  <p className="text-sm font-medium uppercase tracking-wider text-gold">
+                  <p className="text-sm font-medium uppercase tracking-wider text-gold-dark">
                     Courtier
                   </p>
                   <p className="mt-1">{siteConfig.broker.name}</p>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium uppercase tracking-wider text-gold">
+                  <p className="text-sm font-medium uppercase tracking-wider text-gold-dark">
                     Adresse
                   </p>
                   <p className="mt-1">{siteConfig.contact.fullAddress}</p>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium uppercase tracking-wider text-gold">
+                  <p className="text-sm font-medium uppercase tracking-wider text-gold-dark">
                     Téléphone
                   </p>
                   <a
                     href={siteConfig.contact.phoneHref}
-                    className="mt-1 block transition-colors hover:text-gold"
+                    className="mt-1 block transition-colors hover:text-gold-dark"
                   >
                     {siteConfig.contact.phone}
                   </a>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium uppercase tracking-wider text-gold">
+                  <p className="text-sm font-medium uppercase tracking-wider text-gold-dark">
                     Courriel
                   </p>
                   <a
                     href={siteConfig.contact.emailHref}
-                    className="mt-1 block transition-colors hover:text-gold"
+                    className="mt-1 block transition-colors hover:text-gold-dark"
                   >
                     {siteConfig.contact.email}
                   </a>

@@ -242,14 +242,14 @@ export function MortgageCalculator() {
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-navy/60">
+        <p className="text-sm leading-relaxed text-navy/70">
           Les droits de mutation (taxe de bienvenue) sont calculés sur des
           paliers progressifs : 0,5 % jusqu&apos;à 58 900 $, 1,0 % de 58 900 $ à
           294 600 $ et 1,5 % au-delà. Certaines municipalités appliquent des paliers
           supplémentaires (2,0 % de 500 000 $ à 1 M$ et 3,0 % au-delà de 1 M$).
           Les seuils sont indexés annuellement.
         </p>
-        <p className="text-sm leading-relaxed text-navy/60">
+        <p className="text-sm leading-relaxed text-navy/70">
           Les montants pour les frais de notaire, l&apos;évaluation et
           l&apos;inspection sont des estimations moyennes. Cette calculette est
           fournie à titre indicatif seulement.
@@ -272,7 +272,7 @@ export function MortgageCalculator() {
             <div className="flex items-center justify-between border-b border-cream-dark pb-3">
               <dt>
                 Frais de notaire
-                <span className="mt-0.5 block text-xs text-navy/50">
+                <span className="mt-0.5 block text-xs text-navy/70">
                   Acte de vente et acte de prêt, selon la nature du dossier
                 </span>
               </dt>
@@ -296,7 +296,7 @@ export function MortgageCalculator() {
               <dt className="font-medium text-navy">
                 Total des frais approximatifs
               </dt>
-              <dd className="font-serif text-xl text-gold">
+              <dd className="font-serif text-xl text-gold-dark">
                 {formatCurrency(results.totalFees)}
               </dd>
             </div>
@@ -314,13 +314,13 @@ export function MortgageCalculator() {
             </div>
             <div className="flex items-center justify-between border-b border-cream-dark pb-3">
               <span>Remboursement mensuel</span>
-              <span className="font-serif text-xl text-gold">
+              <span className="font-serif text-xl text-gold-dark">
                 {formatCurrency(results.monthlyPayment)}
               </span>
             </div>
             <div className="flex items-center justify-between pt-1">
               <span>Remboursement aux 2 semaines</span>
-              <span className="font-serif text-xl text-gold">
+              <span className="font-serif text-xl text-gold-dark">
                 {formatCurrency(results.biweeklyPayment)}
               </span>
             </div>

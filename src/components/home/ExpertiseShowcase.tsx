@@ -56,7 +56,7 @@ export function ExpertiseShowcase() {
                   }
                 >
                   <h4 className="font-serif text-3xl text-navy">{item.title}</h4>
-                  <p className="mt-2 text-lg font-medium uppercase tracking-wide text-gold">
+                  <p className="mt-2 text-lg font-medium uppercase tracking-wide text-gold-dark">
                     {item.subtitle}
                   </p>
                   <p className="mt-4 leading-relaxed text-xl text-navy/70">

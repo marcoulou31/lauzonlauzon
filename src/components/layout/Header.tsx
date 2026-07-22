@@ -31,7 +31,7 @@ export function Header() {
           </Link>
           <Link
             href={siteConfig.contact.phoneHref}
-            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-lg font-medium tracking-wide text-navy/80 transition-colors hover:text-gold md:block lg:hidden"
+            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-lg font-medium tracking-wide text-navy/80 transition-colors hover:text-gold-dark md:block lg:hidden"
           >
             {siteConfig.contact.phone}
           </Link>
@@ -42,8 +42,8 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`whitespace-nowrap text-lg font-medium tracking-wide transition-all hover:text-gold hover:border-b-4 hover:border-gold ${
-                isActive(link.href) ? "text-gold border-b-4 border-gold" : "text-navy border-b-4 border-transparent"
+              className={`whitespace-nowrap text-lg font-medium tracking-wide transition-all hover:text-gold-dark hover:border-b-4 hover:border-gold ${
+                isActive(link.href) ? "text-gold-dark border-b-4 border-gold" : "text-navy border-b-4 border-transparent"
               }`}
             >
               {link.label}
@@ -53,7 +53,7 @@ export function Header() {
 
         <Link
           href={siteConfig.contact.phoneHref}
-          className="hidden shrink-0 whitespace-nowrap text-lg font-semibold tracking-wide text-navy transition-colors hover:text-gold lg:block"
+          className="hidden shrink-0 whitespace-nowrap text-lg font-semibold tracking-wide text-navy transition-colors hover:text-gold-dark lg:block"
         >
           {siteConfig.contact.phone}
         </Link>
@@ -86,7 +86,7 @@ export function Header() {
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className={`text-lg font-medium ${
-                  isActive(link.href) ? "text-gold" : "text-navy"
+                  isActive(link.href) ? "text-gold-dark" : "text-navy"
                 }`}
               >
                 {link.label}
@@ -94,7 +94,7 @@ export function Header() {
             ))}
             <Link
               href={siteConfig.contact.phoneHref}
-              className="text-lg font-medium text-gold"
+              className="text-lg font-medium text-gold-dark"
             >
               {siteConfig.contact.phone}
             </Link>

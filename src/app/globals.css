@@ -8,6 +8,7 @@
   --cream: #f8f6f2;
   --cream-dark: #ede9e1;
   --gold: #b8956a;
+  --gold-dark: #785c32;
   --gold-light: #d4b896;
 }
 
@@ -19,6 +20,7 @@
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
   --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
   --color-gold-light: var(--gold-light);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);

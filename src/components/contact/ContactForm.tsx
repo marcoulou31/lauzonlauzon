@@ -162,7 +162,7 @@ export function ContactForm({ inscriptions = [] }: Props) {
             nous appeler au{" "}
             <a
               href={siteConfig.contact.phoneHref}
-              className="font-medium text-gold hover:text-navy"
+              className="font-medium text-gold-dark hover:text-navy"
             >
               {siteConfig.contact.phone}
             </a>
@@ -173,7 +173,7 @@ export function ContactForm({ inscriptions = [] }: Props) {
         <form onSubmit={handleSubmit} className="space-y-6" noValidate>
           <div>
             <label htmlFor="name" className="mb-2 block text-base font-medium text-navy">
-              Nom complet <span className="text-gold">*</span>
+              Nom complet <span className="text-gold-dark">*</span>
             </label>
             <input
               id="name"
@@ -193,7 +193,7 @@ export function ContactForm({ inscriptions = [] }: Props) {
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label htmlFor="email" className="mb-2 block text-base font-medium text-navy">
-                Courriel <span className="text-gold">*</span>
+                Courriel <span className="text-gold-dark">*</span>
               </label>
               <input
                 id="email"
@@ -256,7 +256,7 @@ export function ContactForm({ inscriptions = [] }: Props) {
 
           <div>
             <label htmlFor="message" className="mb-2 block text-base font-medium text-navy">
-              Message <span className="text-gold">*</span>
+              Message <span className="text-gold-dark">*</span>
             </label>
             <textarea
               id="message"

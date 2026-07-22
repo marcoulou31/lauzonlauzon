@@ -35,10 +35,10 @@ export function PropertiesTeaser() {
                 />
               </div>
               <div className="p-6">
-                <p className="text-sm font-medium uppercase tracking-[0.15em] text-gold">
+                <p className="text-sm font-medium uppercase tracking-[0.15em] text-gold-dark">
                   {property.status}
                 </p>
-                <h3 className="mt-2 font-serif text-xl text-navy transition-colors group-hover:text-gold">
+                <h3 className="mt-2 font-serif text-xl text-navy transition-colors group-hover:text-gold-dark">
                   {property.title}
                 </h3>
                 <p className="mt-1 text-sm text-navy/70">

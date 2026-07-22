@@ -70,7 +70,7 @@ export default async function PropertyPage({ params }: PageProps) {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Link
             href="/proprietes"
-            className="text-sm text-gold transition-colors hover:text-navy"
+            className="text-sm text-gold-dark transition-colors hover:text-navy"
           >
             &larr; Retour aux propriétés
           </Link>
@@ -82,7 +82,7 @@ export default async function PropertyPage({ params }: PageProps) {
           <PropertyGallery images={property.images} title={property.title} />
 
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold-dark">
               {property.status}
             </p>
             <h1 className="mt-2 font-serif text-4xl text-navy md:text-5xl">
@@ -142,7 +142,7 @@ export default async function PropertyPage({ params }: PageProps) {
               href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm font-medium text-gold transition-colors hover:text-navy"
+              className="mt-4 inline-block text-sm font-medium text-gold-dark transition-colors hover:text-navy"
             >
               Voir sur Google Maps &rarr;
             </a>

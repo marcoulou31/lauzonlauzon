@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-cream/10 pt-8 text-center text-xs text-cream/50">
+        <div className="mt-12 border-t border-cream/10 pt-8 text-center text-xs text-cream/60">
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. Tous droits
             réservés.

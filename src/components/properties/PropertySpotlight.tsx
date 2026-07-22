@@ -37,7 +37,7 @@ export function PropertySpotlight({ property, index }: PropertySpotlightProps) {
             <h3 className="font-serif text-3xl text-navy md:text-4xl">
               <Link
                 href={`/proprietes/${property.slug}`}
-                className="transition-colors hover:text-gold"
+                className="transition-colors hover:text-gold-dark"
               >
                 {property.title}
               </Link>
