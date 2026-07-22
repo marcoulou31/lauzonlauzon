@@ -8,41 +8,108 @@ export type SoldPhoto = {
 };
 
 /**
- * Photos des propriétés vendues.
- * Les images ci-dessous sont des exemples (placeholders) en attendant les
- * vraies photos de la cliente. Déposer les fichiers dans
- * `public/proprietes-vendues/` puis remplacer `src` par `/proprietes-vendues/...`.
+ * Photos des propriétés vendues (fichiers dans public/proprietes-vendues/).
  */
 export const soldPhotos: SoldPhoto[] = [
   {
-    src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80",
-    alt: "Maison familiale vendue à Québec",
-    caption: "Maison familiale — Québec, vendue en 2025",
+    src: "/proprietes-vendues/lac-saint-joseph-residence-hiver.jpg",
+    alt: "Résidence au bord du lac Saint-Joseph en hiver",
+    caption: "Résidence au bord du lac Saint-Joseph",
   },
   {
-    src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-    alt: "Résidence contemporaine vendue",
-    caption: "Résidence contemporaine — Sainte-Foy",
+    src: "/proprietes-vendues/lac-saint-joseph-riveraine.jpg",
+    alt: "Propriété riveraine au lac Saint-Joseph",
+    caption: "Propriété riveraine — Lac Saint-Joseph",
   },
   {
-    src: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80",
-    alt: "Cottage rénové vendu",
-    caption: "Cottage rénové — Sillery",
+    src: "/proprietes-vendues/lac-saint-joseph-vue-aerienne.jpg",
+    alt: "Vue aérienne d'une propriété sur le lac Saint-Joseph",
+    caption: "Vue aérienne — Lac Saint-Joseph",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-    alt: "Condo lumineux vendu",
-    caption: "Condo lumineux — Vieux-Québec",
+    src: "/proprietes-vendues/lac-saint-joseph-domaine.jpg",
+    alt: "Domaine riverain au lac Saint-Joseph",
+    caption: "Domaine riverain — Lac Saint-Joseph",
   },
   {
-    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-    alt: "Bungalow chaleureux vendu",
-    caption: "Bungalow chaleureux — Charlesbourg",
+    src: "/proprietes-vendues/saint-augustin-residence-01.jpg",
+    alt: "Résidence à Saint-Augustin-de-Desmaures",
+    caption: "Résidence — Saint-Augustin-de-Desmaures",
   },
   {
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-    alt: "Propriété avec grand terrain vendue",
-    caption: "Propriété avec grand terrain — Lac-Beauport",
+    src: "/proprietes-vendues/saint-augustin-residence-02.jpg",
+    alt: "Extérieur d'une propriété à Saint-Augustin-de-Desmaures",
+    caption: "Propriété — Saint-Augustin-de-Desmaures",
+  },
+  {
+    src: "/proprietes-vendues/vue-aerienne-plan-eau.jpg",
+    alt: "Vue aérienne d'une propriété au bord de l'eau",
+    caption: "Vue aérienne sur le plan d'eau",
+  },
+  {
+    src: "/proprietes-vendues/grande-residence-familiale.jpg",
+    alt: "Grande résidence familiale",
+    caption: "Grande résidence familiale",
+  },
+  {
+    src: "/proprietes-vendues/acces-lac-quai.jpg",
+    alt: "Accès au lac et quai privé",
+    caption: "Accès au lac et quai privé",
+  },
+  {
+    src: "/proprietes-vendues/residence-contemporaine.jpg",
+    alt: "Résidence contemporaine de prestige",
+    caption: "Résidence contemporaine de prestige",
+  },
+  {
+    src: "/proprietes-vendues/lac-saint-joseph-coucher-soleil.jpg",
+    alt: "Coucher de soleil sur le lac Saint-Joseph",
+    caption: "Coucher de soleil sur le lac Saint-Joseph",
+  },
+  {
+    src: "/proprietes-vendues/chalet-bord-eau.jpg",
+    alt: "Chalet en bois au bord de l'eau",
+    caption: "Chalet chaleureux au bord de l'eau",
+  },
+  {
+    src: "/proprietes-vendues/propriete-nature.jpg",
+    alt: "Propriété nichée dans la nature",
+    caption: "Propriété nichée dans la nature",
+  },
+  {
+    src: "/proprietes-vendues/maison-campagne.jpg",
+    alt: "Maison de campagne rénovée",
+    caption: "Maison de campagne rénovée",
+  },
+  {
+    src: "/proprietes-vendues/terrain-paysager.jpg",
+    alt: "Terrain paysager au bord de l'eau",
+    caption: "Terrain paysager au bord de l'eau",
+  },
+  {
+    src: "/proprietes-vendues/plage-privee-quai.jpg",
+    alt: "Plage privée et quai",
+    caption: "Plage privée et quai",
+  },
+  {
+    src: "/proprietes-vendues/residence-vue-montagnes.jpg",
+    alt: "Résidence avec vue sur les montagnes",
+    caption: "Résidence avec vue sur les montagnes",
+  },
+  {
+    src: "/proprietes-vendues/amenagement-foyer.jpg",
+    alt: "Aménagement extérieur avec foyer",
+    caption: "Aménagement extérieur avec foyer",
+  },
+  {
+    src: "/proprietes-vendues/cottage-champetre.jpg",
+    alt: "Cottage au charme champêtre",
+    caption: "Cottage au charme champêtre",
+  },
+  {
+    src: "/proprietes-vendues/propriete-riveraine-quai.jpg",
+    alt: "Propriété riveraine avec quai",
+    caption: "Propriété riveraine avec quai",
   },
 ];
 

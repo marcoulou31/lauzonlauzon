@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PropertySpotlight } from "@/components/properties/PropertySpotlight";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 import { getAllInscriptionsForPage } from "@/lib/inscriptions";
 import { siteConfig } from "@/data/site";
 
@@ -35,6 +36,23 @@ export default async function PropertiesPage() {
           index={index}
         />
       ))}
+
+      <section className="bg-navy py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
+          <SectionHeading
+            eyebrow="Réalisations"
+            title="Propriétés vendues"
+            description="Découvrez un aperçu des propriétés que nous avons eu le plaisir de vendre."
+            light
+            align="center"
+          />
+          <div className="mt-8 flex justify-center">
+            <Button href="/proprietes-vendues-mosaique" variant="secondary">
+              Voir nos propriétés vendues
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

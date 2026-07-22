@@ -97,7 +97,7 @@ export function InscriptionPhotoAlbum({ photos, address }: Props) {
             key={photo.rang}
             type="button"
             onClick={() => open(index)}
-            className="group relative aspect-[4/3] bg-cream-dark overflow-hidden cursor-pointer"
+            className="group relative aspect-4/3 bg-cream-dark overflow-hidden cursor-pointer"
             aria-label={`Ouvrir la photo ${index + 1}`}
           >
             <Image
@@ -163,7 +163,7 @@ export function InscriptionPhotoAlbum({ photos, address }: Props) {
 
                 {/* Image encadree */}
                 <div className="relative bg-cream p-3 sm:p-4">
-                  <div className="relative mx-auto aspect-[4/3] max-h-[65vh] w-full overflow-hidden bg-cream-dark">
+                  <div className="relative mx-auto aspect-4/3 max-h-[65vh] w-full overflow-hidden bg-cream-dark">
                     <Image
                       key={activePhoto.rang}
                       src={activePhoto.srcLarge}

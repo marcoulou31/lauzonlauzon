@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { CookiePreferencesButton } from "@/components/analytics/CookiePreferencesButton";
 import { navLinks, siteConfig } from "@/data/site";
 
@@ -23,16 +24,28 @@ export function Footer() {
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.15em] text-gold-light">
               Navigation
             </p>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
               {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-base text-cream/80 transition-colors hover:text-gold-light"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+                <Fragment key={link.href}>
+                  <li>
+                    <Link
+                      href={link.href}
+                      className="text-base text-cream/80 transition-colors hover:text-gold-light"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                  {link.href === "/proprietes" && (
+                    <li>
+                      <Link
+                        href="/proprietes-vendues-mosaique"
+                        className="text-base text-cream/80 transition-colors hover:text-gold-light"
+                      >
+                        Propriétés vendues
+                      </Link>
+                    </li>
+                  )}
+                </Fragment>
               ))}
             </ul>
           </div>
