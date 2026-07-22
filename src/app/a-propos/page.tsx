@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-4/5 overflow-hidden rounded-lg shadow-lg">
+            <div className="relative aspect-[9/10] overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/chantal-lauzon.jpg"
                 alt={siteConfig.broker.name}
@@ -43,10 +43,10 @@ export default function AboutPage() {
               <div>
                 <h2 className="font-serif text-5xl text-navy">
                   {siteConfig.broker.name}
+                  <span className="ml-3 text-lg font-medium uppercase tracking-wide text-gold">
+                    {siteConfig.broker.credentials}
+                  </span>
                 </h2>
-                <p className="mt-2 text-lg font-medium uppercase tracking-wide text-gold">
-                  {siteConfig.broker.credentials}
-                </p>
               </div>
 
               <p className="text-2xl">

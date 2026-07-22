@@ -3,18 +3,12 @@ import { siteConfig } from "@/data/site";
 
 type ExpertiseItem = (typeof siteConfig.expertise)[number];
 type FeaturedItem = Extract<ExpertiseItem, { images: readonly string[] }>;
-type ServiceWithImage = ExpertiseItem & { image: string };
 
 function isFeatured(item: ExpertiseItem): item is FeaturedItem {
   return "images" in item;
 }
 
-function hasSingleImage(item: ExpertiseItem): item is ServiceWithImage {
-  return typeof (item as { image?: unknown }).image === "string";
-}
-
 const featured = siteConfig.expertise.filter(isFeatured);
-const services = siteConfig.expertise.filter((item) => !isFeatured(item));
 
 export function ExpertiseShowcase() {
   return (
@@ -98,39 +92,6 @@ export function ExpertiseShowcase() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-24 border-t border-navy/10 pt-16">
-            <h4 className="font-serif text-3xl text-navy md:text-4xl">
-              Également à votre service
-            </h4>
-            <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {services.map((item) => (
-                <div
-                  key={item.title}
-                  className="border-l-2 border-gold/40 pl-6"
-                >
-                  {hasSingleImage(item) && (
-                    <div className="relative mb-4 aspect-video overflow-hidden rounded-lg shadow-md">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-                  <h5 className="font-serif text-2xl text-navy">{item.title}</h5>
-                  <p className="mt-2 text-sm font-medium uppercase tracking-wide text-gold">
-                    {item.subtitle}
-                  </p>
-                  <p className="mt-3 leading-relaxed text-lg text-navy/70">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

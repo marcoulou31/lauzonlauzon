@@ -18,10 +18,10 @@ export const siteConfig = {
     email: "lauzonlauzoncourtier@videotron.ca",
     emailHref: "mailto:lauzonlauzoncourtier@videotron.ca",
     legalName: "Lauzon & Lauzon",
-    address: "1043, avenue Holland",
+    address: "1043 Avenue Holland",
     city: "Québec (Sillery)",
     postalCode: "G1S 3T4",
-    fullAddress: "1043, avenue Holland, Québec, G1S 3T4",
+    fullAddress: "1043 Avenue Holland, Québec, G1S 3T4",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=1043+Avenue+Holland+Qu%C3%A9bec+QC+G1S+3T4",
   },
@@ -82,24 +82,28 @@ export const siteConfig = {
       subtitle: "Résidentiel et commercial",
       description:
         "Liste importante de vendeurs et d'acheteurs potentiels pour vos projets d'investissement immobilier.",
+      images: ["/commercial-1.jpg"],
     },
     {
       title: "Cliniques médicales",
       subtitle: "Recherche de sites convoités",
       description:
         "Expertise en recherche de produits et de sites stratégiques pour les professionnels de la santé.",
+      images: ["/medicale-1.jpg"],
     },
     {
       title: "Hôtels",
       subtitle: "Évaluation financière",
       description:
         "Expérience reconnue dans le secteur hôtelier et compétence en évaluation financière.",
+      images: ["/hotel-1.jpg"],
     },
     {
       title: "Bâtiment industriel",
       subtitle: "Vente et location",
       description:
         "Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
+      images: ["/industriel-1.jpg"],
     },
   ],
   guides: [
