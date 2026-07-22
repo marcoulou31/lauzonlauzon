@@ -47,7 +47,7 @@ export default async function PropertiesPage() {
             align="center"
           />
           <div className="mt-8 flex justify-center">
-            <Button href="/proprietes-vendues-mosaique" variant="secondary">
+            <Button href="/proprietes-vendues" variant="secondary">
               Voir nos propriétés vendues
             </Button>
           </div>

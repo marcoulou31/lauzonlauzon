@@ -38,7 +38,7 @@ export function Footer() {
                   {link.href === "/proprietes" && (
                     <li>
                       <Link
-                        href="/proprietes-vendues-mosaique"
+                        href="/proprietes-vendues"
                         className="text-base text-cream/80 transition-colors hover:text-gold-light"
                       >
                         Propriétés vendues
