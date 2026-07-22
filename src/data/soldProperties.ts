@@ -111,6 +111,31 @@ export const soldPhotos: SoldPhoto[] = [
     alt: "Propriété riveraine avec quai",
     caption: "Propriété riveraine avec quai",
   },
+  {
+    src: "/proprietes-vendues/thomas-maher-lac-saint-joseph-residence.jpg",
+    alt: "Résidence riveraine sur Thomas-Maher au lac Saint-Joseph",
+    caption: "Résidence riveraine — Thomas-Maher, lac Saint-Joseph",
+  },
+  {
+    src: "/proprietes-vendues/thomas-maher-lac-saint-joseph-aerien.jpg",
+    alt: "Vue aérienne d'une propriété sur Thomas-Maher au lac Saint-Joseph",
+    caption: "Vue aérienne — Thomas-Maher, lac Saint-Joseph",
+  },
+  {
+    src: "/proprietes-vendues/condo-saint-jean-quebec.jpg",
+    alt: "Immeuble à condos contemporain rue Saint-Jean à Québec",
+    caption: "Condo contemporain — rue Saint-Jean, Québec",
+  },
+  {
+    src: "/proprietes-vendues/tour-residentielle.jpg",
+    alt: "Tour résidentielle entourée d'arbres matures",
+    caption: "Tour résidentielle",
+  },
+  {
+    src: "/proprietes-vendues/residence-pierre-terrain.jpg",
+    alt: "Résidence en pierre avec grand terrain paysager",
+    caption: "Résidence en pierre avec grand terrain",
+  },
 ];
 
 export function getSoldPhotos(): SoldPhoto[] {

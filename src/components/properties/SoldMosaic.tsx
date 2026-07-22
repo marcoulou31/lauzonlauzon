@@ -6,12 +6,14 @@ import type { SoldPhoto } from "@/data/soldProperties";
 
 type Props = {
   photos: SoldPhoto[];
+  /** Affiche les légendes sur les vignettes et dans la visionneuse. */
+  showCaptions?: boolean;
 };
 
 // Ratios variés pour donner l'effet mosaïque (hauteurs différentes).
 const ASPECTS = ["aspect-4/3", "aspect-3/4", "aspect-square", "aspect-4/5", "aspect-5/4"];
 
-export function SoldMosaic({ photos }: Props) {
+export function SoldMosaic({ photos, showCaptions = false }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
   const isOpen = activeIndex !== null;
@@ -106,9 +108,11 @@ export function SoldMosaic({ photos }: Props) {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <span className="pointer-events-none absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/10" />
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-linear-to-t from-navy/80 to-transparent px-4 pb-3 pt-10 text-sm text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                {photo.caption}
-              </span>
+              {showCaptions && (
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-linear-to-t from-navy/80 to-transparent px-4 pb-3 pt-10 text-sm text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  {photo.caption}
+                </span>
+              )}
             </button>
           </figure>
         ))}
@@ -137,7 +141,9 @@ export function SoldMosaic({ photos }: Props) {
               <div className="bg-white shadow-2xl overflow-hidden">
                 <div className="flex items-center justify-between gap-3 border-b border-cream-dark px-5 py-3">
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-medium text-navy">{activePhoto.caption}</p>
+                    {showCaptions && (
+                      <p className="truncate text-sm font-medium text-navy">{activePhoto.caption}</p>
+                    )}
                     <p className="text-xs text-navy/50">
                       Photo {safeIndex + 1} sur {photos.length}
                     </p>

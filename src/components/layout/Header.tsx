@@ -12,6 +12,8 @@ export function Header() {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
+    // « Propriétés » reste actif sur la page des propriétés vendues.
+    if (href === "/proprietes" && pathname.startsWith("/proprietes-vendues")) return true;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 

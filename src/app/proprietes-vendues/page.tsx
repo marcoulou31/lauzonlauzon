@@ -15,6 +15,8 @@ export default function SoldMosaicPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-navy py-20">
+        <div className="absolute inset-0 -z-10 bg-[url('/proprietes-vendues/thomas-maher-lac-saint-joseph-aerien.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Réalisations"

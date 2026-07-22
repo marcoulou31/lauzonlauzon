@@ -78,6 +78,13 @@ export const siteConfig = {
       ],
     },
     {
+      title: "Bâtiment industriel",
+      subtitle: "Vente et location",
+      description:
+        "Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
+      images: ["/industriel-1.jpg"],
+    },
+    {
       title: "Immeubles à revenus",
       subtitle: "Résidentiel et commercial",
       description:
@@ -97,13 +104,6 @@ export const siteConfig = {
       description:
         "Expérience reconnue dans le secteur hôtelier et compétence en évaluation financière.",
       images: ["/hotel-1.jpg"],
-    },
-    {
-      title: "Bâtiment industriel",
-      subtitle: "Vente et location",
-      description:
-        "Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
-      images: ["/industriel-1.jpg"],
     },
   ],
   guides: [
