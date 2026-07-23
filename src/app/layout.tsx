@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://lauzonlauzon.ca",
   },
+  icons: {
+    icon: [
+      { url: "/icon-light.png", media: "(prefers-color-scheme: light)", type: "image/png" },
+      { url: "/icon-dark.png", media: "(prefers-color-scheme: dark)", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

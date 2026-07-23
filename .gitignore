@@ -43,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scripts locaux (génération d'assets)
+/scripts/generate-favicon.cjs
