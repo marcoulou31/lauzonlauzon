@@ -16,17 +16,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Ancien site statique : /index.html → accueil
+      // Ancien site statique : /index.html → accueil (récupère les liens Bing).
+      // La canonicalisation www ↔ non-www est gérée au niveau de Vercel/Netlify,
+      // PAS ici, sinon boucle de redirection (ERR_TOO_MANY_REDIRECTS).
       {
         source: "/index.html",
         destination: "/",
-        permanent: true,
-      },
-      // Domaine canonique sans www : www.lauzonlauzon.ca → lauzonlauzon.ca
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.lauzonlauzon.ca" }],
-        destination: "https://lauzonlauzon.ca/:path*",
         permanent: true,
       },
     ];
