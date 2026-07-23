@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 
 export function CtaBanner() {
   return (
-    <section className="relative bg-navy py-24 lg:py-32">
+    <section id="cta" className="relative bg-navy py-24 lg:py-32">
       {/* Decorative top accent */}
       <div className="absolute left-0 top-0 h-1 w-full bg-linear-to-r from-transparent via-gold to-transparent" />
       

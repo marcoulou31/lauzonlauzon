@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
@@ -6,6 +8,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   light?: boolean;
   eyebrowSize?: "base" | "lg";
+  children?: ReactNode;
 };
 
 export function SectionHeading({
@@ -16,6 +19,7 @@ export function SectionHeading({
   align = "left",
   light = false,
   eyebrowSize = "lg",
+  children,
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
   const textColor = light ? "text-cream" : "text-navy";
@@ -43,6 +47,15 @@ export function SectionHeading({
         >
           {description}
         </p>
+      )}
+      {children && (
+        <div
+          className={`mt-8 flex ${
+            align === "center" ? "justify-center" : "justify-start"
+          }`}
+        >
+          {children}
+        </div>
       )}
     </div>
   );

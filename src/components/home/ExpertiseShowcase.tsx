@@ -1,20 +1,10 @@
-import Image from "next/image";
+import { ScrollIndicator } from "@/components/home/ScrollIndicator";
 import { siteConfig } from "@/data/site";
-
-type ExpertiseItem = (typeof siteConfig.expertise)[number];
-type FeaturedItem = Extract<ExpertiseItem, { images: readonly string[] }>;
-
-function isFeatured(item: ExpertiseItem): item is FeaturedItem {
-  return "images" in item;
-}
-
-const featured = siteConfig.expertise.filter(isFeatured);
 
 export function ExpertiseShowcase() {
   return (
-    <section>
-      <div className="bg-navy py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="expertise" className="relative bg-navy py-10 md:py-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="font-serif text-4xl text-cream md:text-5xl">
             Établie depuis plus de 25 années
           </h2>
@@ -35,66 +25,9 @@ export function ExpertiseShowcase() {
               </div>
             ))}
           </div>
-        </div>
       </div>
 
-      <div className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h3 className="font-serif text-4xl text-navy md:text-5xl mb-16">
-            Notre expertise
-          </h3>
-
-          <div className="space-y-20 lg:space-y-28">
-            {featured.map((item, index) => (
-              <div
-                key={item.title}
-                className="grid gap-8 lg:grid-cols-3 lg:items-start lg:gap-12"
-              >
-                <div
-                  className={
-                    index % 2 === 1 ? "lg:order-last lg:col-span-1" : "lg:col-span-1"
-                  }
-                >
-                  <h4 className="font-serif text-3xl text-navy">{item.title}</h4>
-                  <p className="mt-2 text-lg font-medium uppercase tracking-wide text-gold-dark">
-                    {item.subtitle}
-                  </p>
-                  <p className="mt-4 leading-relaxed text-xl text-navy/70">
-                    {item.description}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 lg:col-span-2">
-                  <div className="relative col-span-2 aspect-video overflow-hidden rounded-lg shadow-md">
-                    <Image
-                      src={item.images[0]}
-                      alt={item.title}
-                      fill
-                      sizes="(min-width: 1024px) 66vw, 100vw"
-                      className="object-cover"
-                      priority={index === 0}
-                    />
-                  </div>
-                  {item.images.slice(1).map((src) => (
-                    <div
-                      key={src}
-                      className="relative aspect-4/3 overflow-hidden rounded-lg shadow-md"
-                    >
-                      <Image
-                        src={src}
-                        alt={item.title}
-                        fill
-                        sizes="(min-width: 1024px) 33vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ScrollIndicator targetId="expertise-details" />
     </section>
   );
 }

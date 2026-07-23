@@ -59,7 +59,7 @@ export const siteConfig = {
       title: "Résidentiel",
       subtitle: "Lac St-Joseph, Sillery, Montcalm, Ste-Foy et St-Sacrement",
       description:
-        "Résidence secondaire, maisons unifamiliales, condominiums dans les secteurs les plus recherchés.",
+        "Résidences secondaires, maisons unifamiliales, condominiums dans les secteurs les plus recherchés.",
       images: [
         "/residentiel-1.jpg",
         "/residentiel-2.jpg",
@@ -70,7 +70,7 @@ export const siteConfig = {
       title: "Terrains et propriétés secondaires",
       subtitle: "Excellente connaissance du marché",
       description:
-        "Expertise approfondie dans l'identification et la commercialisation de terrains et propriétés résidentielles secondaires.",
+        "Expertise approfondie dans l'identification et la commercialisation de terrains et propriétés résidentiels secondaires.",
       images: [
         "/secondaire-1.jpg",
         "/secondaire-2.jpg",
@@ -78,10 +78,10 @@ export const siteConfig = {
       ],
     },
     {
-      title: "Bâtiment industriel",
+      title: "Bâtiments industriels",
       subtitle: "Vente et location",
       description:
-        "Filière importante d'une clientèle stable et fidèle dans plusieurs secteurs d'activités.",
+        "Filière importante de contacts dans plusieurs secteurs d'activités.",
       images: ["/industriel-1.jpg"],
     },
     {
@@ -123,9 +123,9 @@ export const siteConfig = {
 } as const;
 
 export const navLinks: NavLink[] = [
-  { href: "/proprietes", label: "Propriétés" },
-  { href: "/calculette", label: "Calculette" },
-  { href: "/guides", label: "Guides" },
   { href: "/a-propos", label: "À propos" },
+  { href: "/proprietes", label: "Propriétés" },
+  { href: "/guides", label: "Guides" },
+  { href: "/calculette", label: "Calculette" },
   { href: "/contact", label: "Contact" },
 ];
