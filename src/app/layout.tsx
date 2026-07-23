@@ -18,6 +18,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lauzonlauzon.ca"),
   title: {
     default: `${siteConfig.name} — Courtier immobilier à Québec`,
     template: `%s | ${siteConfig.name}`,
