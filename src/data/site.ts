@@ -123,6 +123,7 @@ export const siteConfig = {
 } as const;
 
 export const navLinks: NavLink[] = [
+  { href: "/", label: "Accueil" },
   { href: "/a-propos", label: "À propos" },
   { href: "/proprietes", label: "Propriétés" },
   { href: "/guides", label: "Guides" },

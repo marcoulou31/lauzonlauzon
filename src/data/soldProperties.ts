@@ -161,12 +161,6 @@ export const soldPhotos: SoldPhoto[] = [
     caption: "Cottage avec garage double",
   },
   {
-    src: "/proprietes-vendues/residence-facade-brique.jpg",
-    category: "residences",
-    alt: "Façade en briques d'une résidence unifamiliale",
-    caption: "Résidence en briques",
-  },
-  {
     src: "/proprietes-vendues/residence-brique-piscine.jpg",
     category: "residences",
     alt: "Résidence en briques avec piscine creusée",
@@ -216,7 +210,7 @@ export const soldPhotos: SoldPhoto[] = [
   },
   {
     src: "/proprietes-vendues/vieux-quebec-residence.jpg",
-    category: "residences",
+    category: "immeubles",
     alt: "Résidence dans le Vieux-Québec",
     caption: "Résidence — Vieux-Québec",
   },
@@ -225,12 +219,6 @@ export const soldPhotos: SoldPhoto[] = [
     category: "immeubles",
     alt: "Condo de prestige à Québec",
     caption: "Condo de prestige — Québec",
-  },
-  {
-    src: "/proprietes-vendues/jardins-merici-bloc-20.jpg",
-    category: "immeubles",
-    alt: "Bloc 20 des Jardins Mérici à Québec",
-    caption: "Jardins Mérici — Bloc 20, Québec",
   },
   {
     src: "/proprietes-vendues/vieux-quebec-granit.jpg",
@@ -243,12 +231,6 @@ export const soldPhotos: SoldPhoto[] = [
     category: "immeubles",
     alt: "Tour résidentielle avec entrée couverte à Québec",
     caption: "Tour résidentielle — Québec",
-  },
-  {
-    src: "/proprietes-vendues/tour-residentielle-02.jpg",
-    category: "immeubles",
-    alt: "Entrée couverte d'une tour résidentielle à Québec",
-    caption: "Tour résidentielle — entrée",
   },
   {
     src: "/proprietes-vendues/chalet-foret-bouleaux.jpg",
