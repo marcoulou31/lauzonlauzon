@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PropertySpotlight } from "@/components/properties/PropertySpotlight";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -16,7 +17,15 @@ export default async function PropertiesPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden py-8 md:py-12">
-        <div className="absolute inset-0 -z-10 bg-[url('/proprietes-hero.jpg')] bg-cover bg-center" />
+        <Image
+          src="/proprietes-hero.jpg"
+          alt="Nos propriétés à Québec"
+          fill
+          preload
+          className="absolute inset-0 -z-10 object-cover"
+          sizes="100vw"
+          quality={70}
+        />
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex justify-center">

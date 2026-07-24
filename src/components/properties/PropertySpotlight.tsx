@@ -27,7 +27,6 @@ export function PropertySpotlight({ property, index }: PropertySpotlightProps) {
               src={property.images[0].src}
               alt={property.images[0].alt}
               fill
-              priority={index === 0}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 60vw"
             />

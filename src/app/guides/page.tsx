@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site";
@@ -13,7 +14,15 @@ export default function GuidesPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden py-12">
-        <div className="absolute inset-0 -z-10 bg-[url('/guides-hero.jpg')] bg-cover bg-center" />
+        <Image
+          src="/guides-hero.jpg"
+          alt="Guides vendeur et acheteur"
+          fill
+          preload
+          className="absolute inset-0 -z-10 object-cover"
+          sizes="100vw"
+          quality={70}
+        />
         <div className="absolute inset-0 -z-10 bg-navy/70" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading

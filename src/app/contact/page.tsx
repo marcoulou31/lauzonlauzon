@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Suspense } from "react";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -23,7 +24,15 @@ export default async function ContactPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden py-20">
-        <div className="absolute inset-0 -z-10 bg-[url('/contact-hero.jpg')] bg-cover bg-center" />
+        <Image
+          src="/contact-hero.jpg"
+          alt="Contact Lauzon & Lauzon"
+          fill
+          preload
+          className="absolute inset-0 -z-10 object-cover"
+          sizes="100vw"
+          quality={70}
+        />
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading

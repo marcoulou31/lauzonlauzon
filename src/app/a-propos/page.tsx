@@ -12,7 +12,15 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden py-20">
-        <div className="absolute inset-0 -z-10 bg-[url('/about-hero.jpg')] bg-cover bg-center" />
+        <Image
+          src="/about-hero.jpg"
+          alt="À propos de Lauzon & Lauzon"
+          fill
+          preload
+          className="absolute inset-0 -z-10 object-cover"
+          sizes="100vw"
+          quality={70}
+        />
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
@@ -36,7 +44,6 @@ export default function AboutPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
               />
             </div>
 

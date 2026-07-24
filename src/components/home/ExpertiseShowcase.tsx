@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 
 export function ExpertiseShowcase() {
   return (
-    <section id="expertise" className="relative bg-navy py-10 md:py-12">
+    <section id="expertise" className="relative scroll-mt-21 bg-navy py-10 md:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="font-serif text-4xl text-cream md:text-5xl">
             Établie depuis plus de 25 années

@@ -27,7 +27,8 @@ export function Header() {
               alt={siteConfig.name}
               width={2329}
               height={428}
-              priority
+              sizes="(max-width: 768px) 160px, (max-width: 1280px) 200px, 220px"
+              quality={60}
               className="h-14 w-auto transition-opacity group-hover:opacity-80"
             />
           </Link>

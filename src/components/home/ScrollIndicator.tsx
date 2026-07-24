@@ -1,23 +1,11 @@
-"use client";
-
 type ScrollIndicatorProps = {
   targetId: string;
 };
 
 export function ScrollIndicator({ targetId }: ScrollIndicatorProps) {
-  const handleClick = () => {
-    const target = document.getElementById(targetId);
-    if (!target) return;
-    const header = document.querySelector("header");
-    const offset = header ? header.getBoundingClientRect().height : 0;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
   return (
-    <button
-      type="button"
-      onClick={handleClick}
+    <a
+      href={`#${targetId}`}
       aria-label="Défiler vers la section suivante"
       className="absolute bottom-4 right-4 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-cream/40 bg-navy/40 text-cream backdrop-blur-sm transition-colors hover:bg-navy/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
     >
@@ -34,6 +22,6 @@ export function ScrollIndicator({ targetId }: ScrollIndicatorProps) {
       >
         <path d="m6 9 6 6 6-6" />
       </svg>
-    </button>
+    </a>
   );
 }

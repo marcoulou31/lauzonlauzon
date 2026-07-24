@@ -7,12 +7,13 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[48vh] md:min-h-[50vh] lg:min-h-[54vh] items-center">
       <Image
-        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
+        src="/proprietes-hero.jpg"
         alt="Propriété de prestige à Québec"
         fill
-        priority
+        preload
         className="object-cover"
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 100vw"
+        quality={70}
       />
       <div className="absolute inset-0 bg-navy/75" />
 

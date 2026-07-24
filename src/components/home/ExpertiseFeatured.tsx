@@ -13,7 +13,7 @@ const featured = siteConfig.expertise.filter(isFeatured);
 
 export function ExpertiseFeatured() {
   return (
-    <section id="expertise-details" className="relative py-8 md:py-10">
+    <section id="expertise-details" className="relative scroll-mt-21 py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h3 className="font-serif text-4xl text-navy md:text-5xl mb-6">
           Notre expertise
@@ -45,9 +45,10 @@ export function ExpertiseFeatured() {
                     src={item.images[0]}
                     alt={item.title}
                     fill
-                    sizes="(min-width: 1024px) 66vw, 100vw"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
                     className="object-cover"
-                    priority={index === 0}
+                    quality={index === 0 ? 50 : 70}
+                    loading="lazy"
                   />
                 </div>
                 {item.images.slice(1).map((src) => (
@@ -61,6 +62,7 @@ export function ExpertiseFeatured() {
                       fill
                       sizes="(min-width: 1024px) 33vw, 50vw"
                       className="object-cover"
+                      quality={65}
                     />
                   </div>
                 ))}

@@ -432,7 +432,7 @@ export async function getInscriptionByNo(no: string): Promise<{
 
 // ─── Liste complète pour la page /proprietes ─────────────────────────────────
 
-const FALLBACK_IMAGE = "/images/placeholder-property.jpg";
+const FALLBACK_IMAGE = "/proprietes-hero.jpg";
 
 export async function getAllInscriptionsForPage(): Promise<Property[]> {
   type Row = {

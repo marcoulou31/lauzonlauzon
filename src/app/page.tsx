@@ -7,9 +7,15 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ExpertiseShowcase />
-      <ExpertiseFeatured />
-      <CtaBanner />
+      <section className="[content-visibility:auto] [contain-intrinsic-size:1200px]">
+        <ExpertiseShowcase />
+      </section>
+      <section className="[content-visibility:auto] [contain-intrinsic-size:1800px]">
+        <ExpertiseFeatured />
+      </section>
+      <section className="[content-visibility:auto] [contain-intrinsic-size:600px]">
+        <CtaBanner />
+      </section>
     </>
   );
 }

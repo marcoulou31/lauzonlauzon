@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SoldMosaic } from "@/components/properties/SoldMosaic";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getSoldPhotosByCategory } from "@/data/soldProperties";
@@ -15,7 +16,15 @@ export default function SoldMosaicPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-navy py-20">
-        <div className="absolute inset-0 -z-10 bg-[url('/proprietes-vendues/thomas-maher-lac-saint-joseph-aerien.jpg')] bg-cover bg-center" />
+        <Image
+          src="/proprietes-vendues/thomas-maher-lac-saint-joseph-aerien.jpg"
+          alt="Propriétés vendues à Québec"
+          fill
+          preload
+          className="absolute inset-0 -z-10 object-cover"
+          sizes="100vw"
+          quality={70}
+        />
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
