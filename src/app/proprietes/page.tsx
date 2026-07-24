@@ -72,6 +72,24 @@ export default async function PropertiesPage() {
           />
         ))}
       </div>
+
+      <section className="bg-navy py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex justify-center">
+            <SectionHeading
+              eyebrow="Réalisations"
+              title="Propriétés vendues"
+              description="Un aperçu des propriétés que nous avons eu le plaisir de vendre."
+              light
+              align="center"
+            >
+              <Button href="/proprietes-vendues" variant="secondary">
+                Voir nos propriétés vendues
+              </Button>
+            </SectionHeading>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
