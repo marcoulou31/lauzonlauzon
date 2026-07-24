@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SoldMosaic } from "@/components/properties/SoldMosaic";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { getSoldPhotos } from "@/data/soldProperties";
+import { getSoldPhotosByCategory } from "@/data/soldProperties";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function SoldMosaicPage() {
-  const photos = getSoldPhotos();
+  const groups = getSoldPhotosByCategory();
 
   return (
     <>
@@ -29,8 +29,16 @@ export default function SoldMosaicPage() {
       </section>
 
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SoldMosaic photos={photos} />
+        <div className="mx-auto max-w-7xl space-y-16 px-6 md:space-y-24 lg:px-8">
+          {groups.map((group) => (
+            <div key={group.id}>
+              <div className="mb-8 flex items-center gap-4">
+                <h2 className="font-serif text-2xl text-navy md:text-3xl">{group.title}</h2>
+                <span className="h-px flex-1 bg-cream-dark" aria-hidden />
+              </div>
+              <SoldMosaic photos={group.photos} />
+            </div>
+          ))}
         </div>
       </section>
     </>
