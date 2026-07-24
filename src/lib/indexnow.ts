@@ -1,4 +1,3 @@
-import { getAllPropertySlugs } from "@/data/properties";
 import { getAllInscriptionsForPage } from "@/lib/inscriptions";
 
 /**
@@ -29,10 +28,9 @@ export async function collectSiteUrls(): Promise<string[]> {
   ];
 
   const inscriptions = await getAllInscriptionsForPage();
-  const propertySlugs = new Set<string>([
-    ...getAllPropertySlugs(),
-    ...inscriptions.map((property) => property.slug),
-  ]);
+  const propertySlugs = new Set<string>(
+    inscriptions.map((property) => property.slug),
+  );
 
   const urls = [
     ...staticRoutes.map((route) => `${SITE_URL}${route}`),

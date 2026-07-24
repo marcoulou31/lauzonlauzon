@@ -3,7 +3,6 @@
 import Botpoison from "@botpoison/browser";
 import { useSearchParams } from "next/navigation";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { properties } from "@/data/properties";
 import { siteConfig } from "@/data/site";
 import type { InscriptionOption } from "@/lib/inscriptions";
 
@@ -237,19 +236,11 @@ export function ContactForm({ inscriptions = [] }: Props) {
               className="w-full border border-cream-dark bg-white px-4 py-4 text-navy outline-none transition-colors focus:border-gold"
             >
               <option value="">Sélectionner une propriété</option>
-              {inscriptions.length > 0 ? (
-                inscriptions.map((ins) => (
-                  <option key={ins.value} value={ins.value}>
-                    {ins.label}
-                  </option>
-                ))
-              ) : (
-                properties.map((p) => (
-                  <option key={p.slug} value={p.slug}>
-                    {p.title}
-                  </option>
-                ))
-              )}
+              {inscriptions.map((ins) => (
+                <option key={ins.value} value={ins.value}>
+                  {ins.label}
+                </option>
+              ))}
               <option value="autre">Autre / Demande générale</option>
             </select>
           </div>
