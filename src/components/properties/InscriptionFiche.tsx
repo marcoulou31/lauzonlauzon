@@ -72,14 +72,22 @@ export function InscriptionFiche({ detail }: Props) {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
-        {/* Prix + titre */}
+      <div className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
+        {/* Titre principal */}
+        <h1 className="font-serif text-3xl text-navy md:text-4xl">
+          {detail.genreProprieteDescr ? `${detail.genreProprieteDescr} — ` : ""}
+          {detail.adresseMaps}
+        </h1>
+        <p className="mt-1 mb-4 text-sm font-mono text-navy/50">
+          MLS® {detail.noInscription}
+        </p>
+
+        {/* Prix */}
         <div className="bg-navy text-white px-6 py-4 flex items-center justify-between flex-wrap gap-2 mb-6">
           <span className="font-serif text-2xl">
             {prix ? fmtCurrency(prix) : "Prix sur demande"}
             {!detail.prix && detail.prixLocation ? " /mois" : ""}
           </span>
-          <span className="text-sm text-white/60 font-mono">MLS® {detail.noInscription}</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
