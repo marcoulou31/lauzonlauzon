@@ -47,7 +47,7 @@ export function ExpertiseFeatured() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 66vw"
                     className="object-cover"
-                    quality={index === 0 ? 50 : 70}
+                    quality={index === 0 ? 50 : 60}
                     loading="lazy"
                   />
                 </div>
@@ -62,7 +62,7 @@ export function ExpertiseFeatured() {
                       fill
                       sizes="(min-width: 1024px) 33vw, 50vw"
                       className="object-cover"
-                      quality={65}
+                      quality={50}
                     />
                   </div>
                 ))}

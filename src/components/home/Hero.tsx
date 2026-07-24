@@ -10,7 +10,8 @@ export function Hero() {
         src="/proprietes-hero.jpg"
         alt="Propriété de prestige à Québec"
         fill
-        preload
+        loading="eager"
+        fetchPriority="high"
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 100vw"
         quality={70}
