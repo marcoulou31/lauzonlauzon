@@ -15,7 +15,7 @@ export function Footer() {
             <p className="mt-2 text-base italic text-cream/70">
               {siteConfig.slogan}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-cream/70">
+            <p className="mt-4 text-base leading-relaxed text-cream/85">
               {siteConfig.description}
             </p>
           </div>
@@ -30,7 +30,7 @@ export function Footer() {
                   <li>
                     <Link
                       href={link.href}
-                      className="text-base text-cream/80 transition-colors hover:text-gold-light"
+                      className="text-base text-cream/95 transition-colors hover:text-gold-light"
                     >
                       {link.label}
                     </Link>
@@ -39,7 +39,7 @@ export function Footer() {
                     <li>
                       <Link
                         href="/proprietes-vendues"
-                        className="text-base text-cream/80 transition-colors hover:text-gold-light"
+                        className="text-base text-cream/95 transition-colors hover:text-gold-light"
                       >
                         Propriétés vendues
                       </Link>
@@ -54,7 +54,7 @@ export function Footer() {
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.15em] text-gold-light">
               Coordonnées
             </p>
-            <address className="space-y-1 not-italic text-base text-cream/80">
+            <address className="space-y-1 not-italic text-base text-cream/95">
               <p>{siteConfig.broker.name}</p>
               <p>{siteConfig.contact.fullAddress}</p>
               <p>
@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-cream/10 pt-8 text-center text-xs text-cream/60">
+        <div className="mt-12 border-t border-cream/20 pt-8 text-center text-xs text-cream/80">
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. Tous droits
             réservés.
