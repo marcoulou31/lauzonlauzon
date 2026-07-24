@@ -17,6 +17,7 @@ export default function GuidesPage() {
         <div className="absolute inset-0 -z-10 bg-navy/70" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
+            as="h1"
             eyebrow="Ressources"
             title="Guide du vendeur et de l'acheteur"
             description="Pour vous accompagner tout au long de vos démarches immobilières."

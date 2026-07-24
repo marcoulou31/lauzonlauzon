@@ -21,6 +21,7 @@ export default async function PropertiesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex justify-center">
             <SectionHeading
+              as="h1"
               eyebrow="Inscriptions"
               title="Nos propriétés"
               light

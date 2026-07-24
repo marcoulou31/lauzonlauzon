@@ -27,6 +27,7 @@ export default async function ContactPage() {
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
+            as="h1"
             eyebrow="Contactez-nous"
             title="Parlons de votre projet"
             description="Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous vous répondrons dans les plus brefs délais."

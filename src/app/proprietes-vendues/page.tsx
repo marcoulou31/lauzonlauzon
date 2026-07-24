@@ -19,6 +19,7 @@ export default function SoldMosaicPage() {
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
+            as="h1"
             eyebrow="Réalisations"
             title="Propriétés vendues"
             description="Un aperçu des propriétés que nous avons eu le plaisir de vendre."

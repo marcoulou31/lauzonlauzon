@@ -8,6 +8,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   light?: boolean;
   eyebrowSize?: "base" | "lg";
+  as?: "h1" | "h2";
   children?: ReactNode;
 };
 
@@ -19,6 +20,7 @@ export function SectionHeading({
   align = "left",
   light = false,
   eyebrowSize = "lg",
+  as: HeadingTag = "h2",
   children,
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
@@ -36,11 +38,11 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2
+      <HeadingTag
         className={`font-serif text-4xl md:text-5xl lg:text-6xl leading-tight ${textColor}`}
       >
         {title}
-      </h2>
+      </HeadingTag>
       {description && (
         <p
           className={`mt-4 text-xl leading-relaxed ${descColor} ${descriptionClassName}`}

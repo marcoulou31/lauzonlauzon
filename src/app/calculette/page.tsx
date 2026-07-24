@@ -16,6 +16,7 @@ export default function CalculettePage() {
         <div className="absolute inset-0 -z-10 bg-navy/70" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
+            as="h1"
             eyebrow="Outils de calcul"
             title="Calculette hypothécaire"
             description="Estimez les frais liés à votre transaction immobilière ainsi que vos remboursements hypothécaires."

@@ -16,6 +16,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 -z-10 bg-navy/65" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
+            as="h1"
             eyebrow="Notre histoire"
             title={siteConfig.name}
             description={siteConfig.slogan}
