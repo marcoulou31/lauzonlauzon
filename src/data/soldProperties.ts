@@ -14,8 +14,8 @@ export type SoldPhoto = {
 /** Catégories affichées, dans l'ordre, sur la page des propriétés vendues. */
 export const soldCategories: { id: SoldCategory; title: string }[] = [
   { id: "bord-de-leau", title: "Propriétés au bord de l'eau" },
-  { id: "residences", title: "Résidences & maisons" },
-  { id: "immeubles", title: "Condos, tours & immeubles" },
+  { id: "residences", title: "Unifamiliales" },
+  { id: "immeubles", title: "Condos & édifices commerciaux" },
 ];
 
 /**
@@ -131,12 +131,6 @@ export const soldPhotos: SoldPhoto[] = [
     caption: "Propriété riveraine avec quai",
   },
   {
-    src: "/proprietes-vendues/thomas-maher-lac-saint-joseph-residence.jpg",
-    category: "bord-de-leau",
-    alt: "Résidence riveraine sur Thomas-Maher au lac Saint-Joseph",
-    caption: "Résidence riveraine — Thomas-Maher, lac Saint-Joseph",
-  },
-  {
     src: "/proprietes-vendues/thomas-maher-lac-saint-joseph-aerien.jpg",
     category: "bord-de-leau",
     alt: "Vue aérienne d'une propriété sur Thomas-Maher au lac Saint-Joseph",
@@ -159,6 +153,36 @@ export const soldPhotos: SoldPhoto[] = [
     category: "residences",
     alt: "Résidence en pierre avec grand terrain paysager",
     caption: "Résidence en pierre avec grand terrain",
+  },
+  {
+    src: "/proprietes-vendues/cottage-garage-double.jpg",
+    category: "residences",
+    alt: "Cottage avec garage double et entrée pavée",
+    caption: "Cottage avec garage double",
+  },
+  {
+    src: "/proprietes-vendues/residence-facade-brique.jpg",
+    category: "residences",
+    alt: "Façade en briques d'une résidence unifamiliale",
+    caption: "Résidence en briques",
+  },
+  {
+    src: "/proprietes-vendues/residence-brique-piscine.jpg",
+    category: "residences",
+    alt: "Résidence en briques avec piscine creusée",
+    caption: "Résidence en briques avec piscine",
+  },
+  {
+    src: "/proprietes-vendues/residence-familiale-piscine.jpg",
+    category: "residences",
+    alt: "Résidence familiale avec piscine et grand terrain",
+    caption: "Résidence familiale avec piscine",
+  },
+  {
+    src: "/proprietes-vendues/residence-exterieur-jardin.jpg",
+    category: "residences",
+    alt: "Extérieur d'une résidence avec aménagement paysager",
+    caption: "Résidence avec aménagement paysager",
   },
   {
     src: "/proprietes-vendues/lac-saint-joseph-residence-briques.jpg",
