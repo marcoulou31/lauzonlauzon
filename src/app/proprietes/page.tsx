@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description: `Découvrez les inscriptions actuelles de ${siteConfig.name}. Propriétés résidentielles et commerciales à Québec.`,
 };
 
+// Les inscriptions proviennent d'une base de données vivante : on régénère la
+// page au plus tôt toutes les 60 s (ISR) pour éviter d'afficher une liste figée
+// au moment du build.
+export const revalidate = 60;
+
 export default async function PropertiesPage() {
   const allProperties = await getAllInscriptionsForPage();
 
