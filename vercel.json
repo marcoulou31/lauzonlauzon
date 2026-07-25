@@ -3,6 +3,10 @@
     {
       "path": "/api/indexnow",
       "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/tache-ciq",
+      "schedule": "0 6 * * *"
     }
   ]
 }

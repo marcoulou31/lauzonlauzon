@@ -34,13 +34,13 @@ export function Header() {
           </Link>
           <Link
             href={siteConfig.contact.phoneHref}
-            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-lg font-medium tracking-wide text-navy/80 transition-colors hover:text-gold-dark md:block lg:hidden"
+            className="hidden -mt-1 self-end whitespace-nowrap pr-2 text-lg font-medium tracking-wide text-navy/80 transition-colors hover:text-gold-dark lg:block xl:hidden"
           >
             {siteConfig.contact.phone}
           </Link>
         </div>
 
-        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
+        <nav className="hidden items-center gap-6 lg:flex lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -56,14 +56,14 @@ export function Header() {
 
         <Link
           href={siteConfig.contact.phoneHref}
-          className="hidden shrink-0 whitespace-nowrap text-lg font-semibold tracking-wide text-navy transition-colors hover:text-gold-dark lg:block"
+          className="hidden shrink-0 whitespace-nowrap text-lg font-semibold tracking-wide text-navy transition-colors hover:text-gold-dark xl:block"
         >
           {siteConfig.contact.phone}
         </Link>
 
         <button
           type="button"
-          className="flex flex-col gap-1.5 md:hidden"
+          className="flex flex-col gap-1.5 lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={menuOpen}
@@ -81,7 +81,7 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <nav className="border-t border-cream-dark bg-cream px-6 py-4 md:hidden">
+        <nav className="border-t border-cream-dark bg-cream px-6 py-4 lg:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
