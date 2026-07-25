@@ -6,8 +6,8 @@ export function formatPrice(price: number): string {
   }).format(price);
 }
 
-export function formatArea(sqft: number): string {
-  return `${new Intl.NumberFormat("fr-CA").format(sqft)} pi²`;
+export function formatArea(area: number, unit = "pi²"): string {
+  return `${new Intl.NumberFormat("fr-CA").format(area)} ${unit}`;
 }
 
 export function formatPropertyType(type: string): string {

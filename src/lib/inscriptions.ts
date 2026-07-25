@@ -137,6 +137,11 @@ function annualToRef(annual: number | null): number | null {
   return annual;
 }
 
+function umLabel(um: string | null): string | null {
+  if (um === "MC") return "m²";
+  return um ?? null;
+}
+
 function aggregateDepenses(rows: DepenseRow[]) {
   const pick = (code: string) =>
     rows.find((r) => r.TDEP_CODE === code)?.MONTANT_DEPENSE ?? null;
@@ -382,17 +387,17 @@ export async function getInscriptionByNo(no: string): Promise<{
     facadeBatiment: row.FACADE_BATIMENT,
     profondeurBatiment: row.PROFONDEUR_BATIMENT,
     irregulierBatiment: row.IND_IRREGULIER_BATIMENT,
-    umDimensionBatiment: row.UM_DIMENSION_BATIMENT,
+    umDimensionBatiment: umLabel(row.UM_DIMENSION_BATIMENT),
     aireSol: row.AIRE_AU_SOL,
-    umAireSol: row.UM_AIRE_AU_SOL,
+    umAireSol: umLabel(row.UM_AIRE_AU_SOL),
     aireHabitable: row.AIRE_HABITABLE,
-    umAireHabitable: row.UM_AIRE_HABITABLE === "MC" ? "m²" : (row.UM_AIRE_HABITABLE ?? null),
+    umAireHabitable: umLabel(row.UM_AIRE_HABITABLE),
     facadeTerrain: row.FACADE_TERRAIN,
     profondeurTerrain: row.PROFONDEUR_TERRAIN,
     irregulierTerrain: row.IND_IRREGULIER_TERRAIN,
-    umDimensionTerrain: row.UM_DIMENSION_TERRAIN,
+    umDimensionTerrain: umLabel(row.UM_DIMENSION_TERRAIN),
     superficieTerrain: row.SUPERFICIE_TERRAIN,
-    umSuperficieTerrain: row.UM_SUPERFICIE_TERRAIN,
+    umSuperficieTerrain: umLabel(row.UM_SUPERFICIE_TERRAIN),
     descriptionGenerale: remarque || null,
     declarationVendeur: row.DECL_VENDEUR_DESC ?? row.CODE_DECLARATION_VENDEUR ?? null,
     inclusFrancais: row.INCLUS_FRANCAIS,
@@ -419,6 +424,7 @@ export async function getInscriptionByNo(no: string): Promise<{
     bedrooms: row.NB_CHAMBRES ?? undefined,
     bathrooms: row.NB_SALLES_BAINS ?? undefined,
     areaSqft: row.AIRE_HABITABLE ?? undefined,
+    areaUnit: detail.umAireHabitable ?? undefined,
     taxes: dep.taxesTotal ?? undefined,
     description: remarque.slice(0, 250),
     longDescription: remarque,
@@ -446,6 +452,7 @@ export async function getAllInscriptionsForPage(): Promise<Property[]> {
     NB_CHAMBRES: number | null;
     NB_SALLES_BAINS: number | null;
     AIRE_HABITABLE: number | null;
+    UM_AIRE_HABITABLE: string | null;
     NO_CIVIQUE_DEBUT: string | null;
     NOM_RUE_COMPLET: string | null;
     APPARTEMENT: string | null;
@@ -464,7 +471,7 @@ export async function getAllInscriptionsForPage(): Promise<Property[]> {
       gp.DESCRIPTION_FRANCAISE AS GENRE_PROPRIETE_DESC,
       i.CODE_STATUT,
       i.NB_CHAMBRES, i.NB_SALLES_BAINS,
-      i.AIRE_HABITABLE,
+      i.AIRE_HABITABLE, i.UM_AIRE_HABITABLE,
       i.NO_CIVIQUE_DEBUT, i.NOM_RUE_COMPLET, i.APPARTEMENT,
       m.DESCRIPTION AS MUNICIPALITE_DESC,
       r.TEXTE AS REMARQUE_TEXTE,
@@ -512,6 +519,7 @@ export async function getAllInscriptionsForPage(): Promise<Property[]> {
       bedrooms: row.NB_CHAMBRES ?? undefined,
       bathrooms: row.NB_SALLES_BAINS ?? undefined,
       areaSqft: row.AIRE_HABITABLE ?? undefined,
+      areaUnit: row.UM_AIRE_HABITABLE === "MC" ? "m²" : (row.UM_AIRE_HABITABLE ?? undefined),
       description: remarque.slice(0, 250),
       longDescription: remarque,
       features: [],

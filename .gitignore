@@ -46,3 +46,6 @@ next-env.d.ts
 
 # scripts locaux (génération d'assets)
 /scripts/generate-favicon.cjs
+
+# fichiers ETL locaux (données CIQ)
+/public/etl/

@@ -15,7 +15,7 @@ export function PropertyStats({ property }: PropertyStatsProps) {
     stats.push(`${property.bathrooms} sdb`);
   }
   if (property.areaSqft !== undefined) {
-    stats.push(formatArea(property.areaSqft));
+    stats.push(formatArea(property.areaSqft, property.areaUnit));
   }
   stats.push(formatPropertyType(property.type));
 

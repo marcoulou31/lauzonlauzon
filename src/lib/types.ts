@@ -18,6 +18,7 @@ export type Property = {
   bedrooms?: number;
   bathrooms?: number;
   areaSqft?: number;
+  areaUnit?: string;
   taxes?: number;
   description: string;
   longDescription: string;
