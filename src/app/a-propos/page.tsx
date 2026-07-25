@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ScrollIndicator } from "@/components/home/ScrollIndicator";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/site";
 
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden py-20">
+      <section className="relative isolate overflow-hidden bg-navy py-28 lg:py-32">
         <Image
-          src="/about-hero.jpg"
+          src="/about-hero-wide.jpg"
           alt="À propos de Lauzon & Lauzon"
           fill
           preload
@@ -32,9 +33,10 @@ export default function AboutPage() {
             light
           />
         </div>
+        <ScrollIndicator targetId="histoire" />
       </section>
 
-      <section className="py-20">
+      <section id="histoire" className="scroll-mt-[84px] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative aspect-9/10 overflow-hidden rounded-lg shadow-lg">

@@ -10,12 +10,62 @@ type Props = {
   showCaptions?: boolean;
 };
 
-// Ratios variés pour donner l'effet mosaïque (hauteurs différentes).
-const ASPECTS = ["aspect-4/3", "aspect-3/4", "aspect-square", "aspect-4/5", "aspect-5/4"];
+// Vignette de galerie (recadrage doux via object-cover, ratio uniforme par rangée).
+function MosaicThumb({
+  photo,
+  showCaptions,
+  aspectRatio,
+  onOpen,
+}: {
+  photo: SoldPhoto;
+  showCaptions: boolean;
+  aspectRatio: number;
+  onOpen: () => void;
+}) {
+  return (
+    <figure className="group break-inside-avoid">
+      <button
+        type="button"
+        onClick={onOpen}
+        className="relative block w-full overflow-hidden bg-cream-dark cursor-pointer"
+        style={{ aspectRatio }}
+        aria-label={`Ouvrir la photo : ${photo.caption}`}
+      >
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        <span className="pointer-events-none absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/10" />
+        {showCaptions && (
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-linear-to-t from-navy/80 to-transparent px-4 pb-3 pt-10 text-sm text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            {photo.caption}
+          </span>
+        )}
+      </button>
+    </figure>
+  );
+}
+
+// Découpe les photos en rangées alternées de 3 et de 2 pour casser la linéarité.
+function buildRows<T>(items: T[]): T[][] {
+  const rows: T[][] = [];
+  let i = 0;
+  let size = 3;
+  while (i < items.length) {
+    rows.push(items.slice(i, i + size));
+    i += size;
+    size = size === 3 ? 2 : 3;
+  }
+  return rows;
+}
 
 export function SoldMosaic({ photos, showCaptions = false }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
+  const [activeRatio, setActiveRatio] = useState<number | null>(null);
   const isOpen = activeIndex !== null;
   const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -80,6 +130,11 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
     });
   }, [isOpen, safeIndex]);
 
+  // Réinitialise le ratio pendant le chargement de la photo affichée.
+  useEffect(() => {
+    setActiveRatio(null);
+  }, [safeIndex]);
+
   if (photos.length === 0) return null;
 
   const open = (index: number) => {
@@ -89,32 +144,26 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
 
   const activePhoto = photos[safeIndex];
 
+  const rows = buildRows(photos.map((photo, index) => ({ photo, index })));
+
   return (
     <>
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:balance]">
-        {photos.map((photo, index) => (
-          <figure key={photo.src} className="group mb-6 break-inside-avoid">
-            <button
-              type="button"
-              onClick={() => open(index)}
-              className={`relative ${ASPECTS[index % ASPECTS.length]} w-full overflow-hidden bg-cream-dark cursor-pointer`}
-              aria-label={`Ouvrir la photo : ${photo.caption}`}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      <div className="flex flex-col gap-6">
+        {rows.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className={`grid gap-6 ${row.length === 3 ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1 sm:grid-cols-2"}`}
+          >
+            {row.map(({ photo, index }) => (
+              <MosaicThumb
+                key={photo.src}
+                photo={photo}
+                showCaptions={showCaptions}
+                aspectRatio={row.length === 3 ? 4 / 3 : 3 / 2}
+                onOpen={() => open(index)}
               />
-              <span className="pointer-events-none absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/10" />
-              {showCaptions && (
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-linear-to-t from-navy/80 to-transparent px-4 pb-3 pt-10 text-sm text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  {photo.caption}
-                </span>
-              )}
-            </button>
-          </figure>
+            ))}
+          </div>
         ))}
       </div>
 
@@ -161,12 +210,24 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
                 </div>
 
                 <div className="relative bg-cream p-3 sm:p-4">
-                  <div className="relative mx-auto aspect-4/3 max-h-[65vh] w-full overflow-hidden bg-cream-dark">
+                  <div
+                    className="relative mx-auto max-h-[65vh] w-full overflow-hidden bg-cream-dark"
+                    style={{
+                      aspectRatio: activeRatio ?? 4 / 3,
+                      maxWidth: activeRatio ? `calc(65vh * ${activeRatio})` : undefined,
+                    }}
+                  >
                     <Image
                       key={activePhoto.src}
                       src={activePhoto.src}
                       alt={activePhoto.alt}
                       fill
+                      onLoad={(event) => {
+                        const img = event.currentTarget;
+                        if (img.naturalWidth && img.naturalHeight) {
+                          setActiveRatio(img.naturalWidth / img.naturalHeight);
+                        }
+                      }}
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, 900px"
                       priority
