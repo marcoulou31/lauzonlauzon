@@ -19,13 +19,26 @@ export const maxDuration = 300;
  * Protégé par CRON_SECRET : Vercel envoie automatiquement l'en-tête
  * `Authorization: Bearer ${CRON_SECRET}` si la variable est définie.
  */
-export async function GET(request: Request) {
+function isAuthorized(request: Request): boolean {
   const cronSecret = process.env.CRON_SECRET;
+
+  // Un secret est configuré : on exige l'en-tête Bearer correspondant.
+  // C'est ce que Vercel Cron envoie automatiquement.
   if (cronSecret) {
-    const authHeader = request.headers.get("authorization");
-    if (authHeader !== `Bearer ${cronSecret}`) {
-      return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
-    }
+    return request.headers.get("authorization") === `Bearer ${cronSecret}`;
+  }
+
+  // Aucun secret configuré : autorisé uniquement hors production (dev local),
+  // pour éviter d'exposer publiquement un endpoint qui TRUNCATE + recharge la BD.
+  return (
+    process.env.VERCEL_ENV !== "production" &&
+    process.env.NODE_ENV !== "production"
+  );
+}
+
+export async function GET(request: Request) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 
   const ftpSource = ftpSourceFromEnv();
