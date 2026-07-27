@@ -492,7 +492,7 @@ export async function getAllInscriptionsForPage(): Promise<Property[]> {
         AND NOM_FICHIER_PHOTO IS NOT NULL
       ORDER BY rang
     ) p
-    ORDER BY i.DATE_INSCRIPTION DESC
+    ORDER BY COALESCE(i.PRIX_DEMANDE, i.PRIX_LOCATION_DEMANDE) DESC, i.DATE_INSCRIPTION DESC
     `,
   ).catch(() => ({ recordset: [] as Row[] }));
 
