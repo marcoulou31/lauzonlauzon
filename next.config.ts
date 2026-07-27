@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  // mssql/tedious ne doivent pas être bundlés : le driver s'appuie sur l'égalité
+  // référentielle des types (===). Bundler créerait deux copies du module et
+  // casserait le bulk insert (« c.type.generateTypeInfo is not a function »).
+  serverExternalPackages: ["mssql", "tedious"],
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [50, 60, 70, 75],
