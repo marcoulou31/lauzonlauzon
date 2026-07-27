@@ -28,6 +28,31 @@ The project now includes a reusable SQL Server connection layer for the named co
 
 ### Environment variables
 
+For CIQ ETL automation, you can also configure:
+
+```bash
+CIQ_FTP_HOST=""
+CIQ_FTP_USER=""
+CIQ_FTP_PASSWORD=""
+CIQ_FTP_DIR=""
+CIQ_FTP_SECURE="false"
+CIQ_ZIP_DIR=""
+CRON_SECRET=""
+```
+
+The ETL endpoint is available at:
+
+- `GET /api/tache-ciq` for normal execution
+- `GET /api/tache-ciq?dryRun=1` for a dry-run validation without writing to SQL
+- `GET /api/tache-ciq?force=1` to replay the latest available CIQ archive
+
+For local testing with the bundled sample data:
+
+```bash
+CIQ_ZIP_DIR="$PWD/public/etl" pnpm dev
+curl "http://127.0.0.1:3000/api/tache-ciq?dryRun=1"
+```
+
 Copy `.env.example` to `.env.local` and set:
 
 ```bash

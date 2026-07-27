@@ -26,9 +26,11 @@ export type DryRunResult = {
  * décompresse la plus récente en mémoire pour valider connexion + unzip.
  */
 export async function dryRunCiqEtl(source: ZipSource): Promise<DryRunResult> {
+  const startedAt = Date.now();
   const zips = await source.listNewZips(new Date(0));
 
   if (zips.length === 0) {
+    console.info("[ciq][etl][dry-run]", { availableZips: 0, durationMs: Date.now() - startedAt });
     return { availableZips: [], newestZip: null, entries: [] };
   }
 
@@ -38,6 +40,13 @@ export async function dryRunCiqEtl(source: ZipSource): Promise<DryRunResult> {
     .getEntries()
     .filter((entry) => !entry.isDirectory)
     .map((entry) => entry.entryName);
+
+  console.info("[ciq][etl][dry-run]", {
+    availableZips: zips.length,
+    newestZip: newest.name,
+    entryCount: entries.length,
+    durationMs: Date.now() - startedAt,
+  });
 
   return {
     availableZips: zips.map((z) => ({
@@ -59,12 +68,19 @@ export async function runCiqEtl(
   connectionName: SqlConnectionName = "LauzonConn",
   options: { force?: boolean } = {},
 ): Promise<EtlResult> {
+  const startedAt = Date.now();
   const lastUnzip = await getLastUnzipDate(connectionName);
   // En mode force, on ignore la dernière date traitée pour rejouer le dernier zip.
   const since = options.force ? new Date(0) : lastUnzip;
   const allZips = await source.listNewZips(since);
 
   if (allZips.length === 0) {
+    console.info("[ciq][etl][noop]", {
+      connectionName,
+      since: since.toISOString(),
+      lastUnzipDate: lastUnzip.toISOString(),
+      durationMs: Date.now() - startedAt,
+    });
     return {
       processedZips: [],
       loadedTables: [],
@@ -78,6 +94,14 @@ export async function runCiqEtl(
   // jour), ce qui suffit et évite de rejouer les jours intermédiaires.
   const maxDate = allZips[allZips.length - 1].date;
   const zips = allZips.filter((z) => z.date.getTime() === maxDate.getTime());
+
+  console.info("[ciq][etl][start]", {
+    connectionName,
+    since: since.toISOString(),
+    lastUnzipDate: lastUnzip.toISOString(),
+    candidateZips: allZips.map((zip) => zip.name),
+    selectedZips: zips.map((zip) => zip.name),
+  });
 
   // Décompression en mémoire des zip du jour retenu (les variantes se complètent).
   const files = new Map<string, Buffer>();
@@ -106,6 +130,15 @@ export async function runCiqEtl(
     const rows = await loadTable(connectionName, table, content);
     loadedTables.push({ table, rows });
   }
+
+  console.info("[ciq][etl][success]", {
+    connectionName,
+    processedZips: zips.map((zip) => zip.name),
+    loadedTables,
+    skippedTables,
+    lastUnzipDate: maxDate.toISOString(),
+    durationMs: Date.now() - startedAt,
+  });
 
   return {
     processedZips: zips.map((z) => z.name),
@@ -170,7 +203,10 @@ async function loadTable(
   const pool = await getSqlPool(connectionName);
   await pool.request().query(`TRUNCATE TABLE [${tableName}]`);
 
-  if (rows.length === 0) return 0;
+  if (rows.length === 0) {
+    console.info("[ciq][etl][table]", { tableName, rows: 0, columns: columns.length });
+    return 0;
+  }
 
   const columnList = columns.map((c) => `[${c.name}]`).join(", ");
   // Limite SQL Server : 2100 paramètres par requête. On garde une marge.
@@ -196,6 +232,13 @@ async function loadTable(
       throw new Error(`Insert ${tableName} échoué (lignes ${start}-${start + batch.length - 1}): ${message}`);
     }
   }
+
+  console.info("[ciq][etl][table]", {
+    tableName,
+    rows: rows.length,
+    columns: columns.length,
+    batches: Math.ceil(rows.length / Math.max(1, Math.floor(2000 / columns.length))),
+  });
 
   return rows.length;
 }
