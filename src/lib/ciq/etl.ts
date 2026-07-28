@@ -1,4 +1,5 @@
 import AdmZip from "adm-zip";
+import sql from "mssql";
 import { getSqlPool, runSqlQuery } from "@/lib/sql";
 import type { SqlConnectionName } from "@/lib/sql-config";
 import { decodeAnsi, parseCsvLine, splitLines } from "@/lib/ciq/csv";
@@ -25,12 +26,98 @@ export type DryRunResult = {
  * Test sans écriture en base : liste les archives disponibles sur la source et
  * décompresse la plus récente en mémoire pour valider connexion + unzip.
  */
+type CiqEtlLogLevel = "INFO" | "ERROR";
+
+type CiqEtlLogEntry = {
+  level: CiqEtlLogLevel;
+  message: string;
+  details?: unknown;
+  sourceType?: string;
+  connectionName?: SqlConnectionName;
+  durationMs?: number;
+  processedZips?: string[];
+  loadedTables?: { table: string; rows: number }[];
+  skippedTables?: string[];
+  lastUnzipDate?: string | null;
+  errorMessage?: string | null;
+};
+
+async function ensureCiqEtlLogsTable(connectionName: SqlConnectionName): Promise<void> {
+  await runSqlQuery(
+    connectionName,
+    `IF OBJECT_ID(N'dbo.CIQ_ETL_LOGS', N'U') IS NULL
+     BEGIN
+       CREATE TABLE dbo.CIQ_ETL_LOGS (
+         Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+         LoggedAt DATETIME2 NOT NULL,
+         Level NVARCHAR(20) NOT NULL,
+         Message NVARCHAR(500) NOT NULL,
+         Details NVARCHAR(MAX) NULL,
+         SourceType NVARCHAR(50) NULL,
+         ConnectionName NVARCHAR(100) NULL,
+         DurationMs INT NULL,
+         ProcessedZips NVARCHAR(MAX) NULL,
+         LoadedTables NVARCHAR(MAX) NULL,
+         SkippedTables NVARCHAR(MAX) NULL,
+         LastUnzipDate NVARCHAR(50) NULL,
+         ErrorMessage NVARCHAR(500) NULL
+       );
+     END`,
+  );
+}
+
+async function logCiqEtlEvent(
+  connectionName: SqlConnectionName,
+  entry: CiqEtlLogEntry,
+): Promise<void> {
+  try {
+    await ensureCiqEtlLogsTable(connectionName);
+
+    const pool = await getSqlPool(connectionName);
+    const request = pool.request();
+
+    request.input("loggedAt", sql.DateTime2(), new Date());
+    request.input("level", sql.NVarChar(20), entry.level);
+    request.input("message", sql.NVarChar(500), entry.message);
+    request.input("details", sql.NVarChar(sql.MAX), entry.details ? JSON.stringify(entry.details) : null);
+    request.input("sourceType", sql.NVarChar(50), entry.sourceType ?? null);
+    request.input("connectionName", sql.NVarChar(100), entry.connectionName ?? null);
+    request.input("durationMs", sql.Int(), entry.durationMs ?? null);
+    request.input("processedZips", sql.NVarChar(sql.MAX), entry.processedZips ? JSON.stringify(entry.processedZips) : null);
+    request.input("loadedTables", sql.NVarChar(sql.MAX), entry.loadedTables ? JSON.stringify(entry.loadedTables) : null);
+    request.input("skippedTables", sql.NVarChar(sql.MAX), entry.skippedTables ? JSON.stringify(entry.skippedTables) : null);
+    request.input("lastUnzipDate", sql.NVarChar(50), entry.lastUnzipDate ?? null);
+    request.input("errorMessage", sql.NVarChar(500), entry.errorMessage ?? null);
+
+    await request.query(`
+      INSERT INTO dbo.CIQ_ETL_LOGS (
+        LoggedAt, Level, Message, Details, SourceType, ConnectionName, DurationMs,
+        ProcessedZips, LoadedTables, SkippedTables, LastUnzipDate, ErrorMessage
+      ) VALUES (
+        @loggedAt, @level, @message, @details, @sourceType, @connectionName, @durationMs,
+        @processedZips, @loadedTables, @skippedTables, @lastUnzipDate, @errorMessage
+      )
+    `);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error("[ciq][etl-log-failed]", { message });
+  }
+}
+
 export async function dryRunCiqEtl(source: ZipSource): Promise<DryRunResult> {
   const startedAt = Date.now();
   const zips = await source.listNewZips(new Date(0));
 
   if (zips.length === 0) {
     console.info("[ciq][etl][dry-run]", { availableZips: 0, durationMs: Date.now() - startedAt });
+    await logCiqEtlEvent("LauzonConn", {
+      level: "INFO",
+      message: "CIQ dry-run completed with no available zips",
+      sourceType: "dry-run",
+      connectionName: "LauzonConn",
+      durationMs: Date.now() - startedAt,
+      details: { availableZips: 0 },
+    });
     return { availableZips: [], newestZip: null, entries: [] };
   }
 
@@ -46,6 +133,18 @@ export async function dryRunCiqEtl(source: ZipSource): Promise<DryRunResult> {
     newestZip: newest.name,
     entryCount: entries.length,
     durationMs: Date.now() - startedAt,
+  });
+  await logCiqEtlEvent("LauzonConn", {
+    level: "INFO",
+    message: "CIQ dry-run completed",
+    sourceType: "dry-run",
+    connectionName: "LauzonConn",
+    durationMs: Date.now() - startedAt,
+    details: {
+      availableZips: zips.length,
+      newestZip: newest.name,
+      entryCount: entries.length,
+    },
   });
 
   return {
@@ -80,6 +179,18 @@ export async function runCiqEtl(
       since: since.toISOString(),
       lastUnzipDate: lastUnzip.toISOString(),
       durationMs: Date.now() - startedAt,
+    });
+    await logCiqEtlEvent(connectionName, {
+      level: "INFO",
+      message: "CIQ ETL skipped because no newer zip was found",
+      sourceType: "etl",
+      connectionName,
+      durationMs: Date.now() - startedAt,
+      details: {
+        since: since.toISOString(),
+        lastUnzipDate: lastUnzip.toISOString(),
+      },
+      lastUnzipDate: lastUnzip.toISOString(),
     });
     return {
       processedZips: [],
@@ -139,6 +250,17 @@ export async function runCiqEtl(
     lastUnzipDate: maxDate.toISOString(),
     durationMs: Date.now() - startedAt,
   });
+  await logCiqEtlEvent(connectionName, {
+    level: "INFO",
+    message: "CIQ ETL completed successfully",
+    sourceType: "etl",
+    connectionName,
+    durationMs: Date.now() - startedAt,
+    processedZips: zips.map((zip) => zip.name),
+    loadedTables,
+    skippedTables,
+    lastUnzipDate: maxDate.toISOString(),
+  });
 
   return {
     processedZips: zips.map((z) => z.name),
@@ -146,6 +268,13 @@ export async function runCiqEtl(
     skippedTables,
     lastUnzipDate: maxDate.toISOString(),
   };
+}
+
+export async function logCiqRequestEvent(
+  connectionName: SqlConnectionName,
+  entry: CiqEtlLogEntry,
+): Promise<void> {
+  await logCiqEtlEvent(connectionName, entry);
 }
 
 async function getLastUnzipDate(
