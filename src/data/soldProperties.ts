@@ -191,12 +191,6 @@ export const soldPhotos: SoldPhoto[] = [
     caption: "Cité Verte — place publique, Québec",
   },
   {
-    src: "/proprietes-vendues/immeuble-commercial-quebec.jpg",
-    category: "immeubles",
-    alt: "Immeuble commercial à Québec",
-    caption: "Immeuble commercial — Québec",
-  },
-  {
     src: "/proprietes-vendues/immeuble-multifamilial-quebec.jpg",
     category: "immeubles",
     alt: "Immeuble multifamilial à Québec",

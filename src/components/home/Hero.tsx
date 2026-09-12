@@ -30,8 +30,9 @@ export function Hero() {
             {siteConfig.slogan}
           </p>
           <p className="mt-3 max-w-lg text-base leading-relaxed text-cream/75">
-            Courtier immobilier résidentiel et commercial à Québec. Plus de 25
-            ans d&apos;expérience au service de votre projet.
+            Courtier expérimenté pour vos investissements immobiliers;
+            <br />
+            Résidentiel, immeuble à revenus, commercial et industriel
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Button href="/proprietes" variant="secondary">

@@ -15,10 +15,6 @@ export function ExpertiseFeatured() {
   return (
     <section id="expertise-details" className="relative scroll-mt-21 py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h3 className="font-serif text-4xl text-navy md:text-5xl mb-6">
-          Notre expertise
-        </h3>
-
         <div className="space-y-8 lg:space-y-10">
           {featured.map((item, index) => (
             <div
@@ -51,10 +47,14 @@ export function ExpertiseFeatured() {
                     loading="lazy"
                   />
                 </div>
-                {item.images.slice(1).map((src) => (
+                {item.images.slice(1).map((src, imageIndex, images) => (
                   <div
                     key={src}
-                    className="relative aspect-4/3 overflow-hidden rounded-lg shadow-md"
+                    className={`relative aspect-4/3 overflow-hidden rounded-lg shadow-md ${
+                      images.length % 2 === 1 && imageIndex === images.length - 1
+                        ? "col-span-2 aspect-video"
+                        : ""
+                    }`}
                   >
                     <Image
                       src={src}

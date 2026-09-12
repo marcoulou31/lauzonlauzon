@@ -36,22 +36,22 @@ export const siteConfig = {
     {
       title: "Exclusivité de ses produits",
       description:
-        "Des inscriptions sélectionnées avec soin pour offrir des opportunités uniques sur le marché.",
+        "Des inscriptions sélectionnées et une mise en marché adaptées",
     },
     {
-      title: "Force de son réseautage",
+      title: "Ampleur de son réseautage",
       description:
-        "Un réseau solide de professionnels et d'acheteurs potentiels pour maximiser vos chances de succès.",
+        "Facilité de l'identification de l'acheteur potentiel",
     },
     {
       title: "Professionnalisme",
       description:
-        "Une approche rigoureuse et transparente à chaque étape de votre transaction immobilière.",
+        "Une approche rigoureuse et transparente tout au long du processus",
     },
     {
       title: "Service personnalisé",
       description:
-        "Une stratégie sur mesure pour chaque dossier, qu'il soit résidentiel, commercial ou spécialisé.",
+        "Adapté spécifiquement aux besoins et à la situation",
     },
   ],
   expertise: [
@@ -59,51 +59,39 @@ export const siteConfig = {
       title: "Résidentiel",
       subtitle: "Lac St-Joseph, Sillery, Montcalm, Ste-Foy et St-Sacrement",
       description:
-        "Résidences secondaires, maisons unifamiliales, condominiums dans les secteurs les plus recherchés.",
+        "Résidences principales et secondaires, copropriétés divises et indivises, immeubles à revenus résidentiels",
       images: [
-        "/residentiel-1.jpg",
-        "/residentiel-2.jpg",
-        "/residentiel-3.jpg",
+        "/accueil/residentiel/residentiel-1.jpg",
+        "/accueil/residentiel/residentiel-2.jpg",
+        "/accueil/residentiel/residentiel-3.jpg",
+        "/accueil/residentiel/secondaire-1.jpg",
+        "/accueil/residentiel/secondaire-2.jpg",
+        "/accueil/residentiel/secondaire-3.jpg",
+        "/accueil/residentiel/Bennemore.jpg",
+        "/accueil/residentiel/Boisé des Augustines.jpg",
+        "/accueil/residentiel/Ensemble immobilier Jardins Mérici.jpg",
+        "/accueil/residentiel/Sous les bois.jpg",
       ],
     },
     {
-      title: "Terrains et propriétés secondaires",
-      subtitle: "Excellente connaissance du marché",
+      title: "Immeubles à revenus",
+      subtitle: "Résidentiel et commercial",
       description:
-        "Expertise approfondie dans l'identification et la commercialisation de terrains et propriétés résidentiels secondaires.",
+        "Connaissance du marché, élaboration des états financiers et pro-formats. Excellente capacité d'analyse de la valeur, des revenus et du potentiel de l'immeuble. Maîtrise des baux commerciaux et des conditions locatives. Habileté en négociation. Écoute des besoins des clients.",
       images: [
-        "/secondaire-1.jpg",
-        "/secondaire-2.jpg",
-        "/secondaire-3.jpg",
+        "/accueil/revenus/commercial-1.jpg",
+        "/accueil/revenus/medicale-1.jpg",
+        "/accueil/revenus/hotel-1.jpg",
+        "/accueil/revenus/DJI_0845.jpg",
+        "/accueil/revenus/immeuble-commercial-quebec.jpg",
       ],
     },
     {
       title: "Bâtiments industriels",
       subtitle: "Vente et location",
       description:
-        "Filière importante de contacts dans plusieurs secteurs d'activités.",
-      images: ["/industriel-1.jpg"],
-    },
-    {
-      title: "Immeubles à revenus",
-      subtitle: "Résidentiel et commercial",
-      description:
-        "Liste importante de vendeurs et d'acheteurs potentiels pour vos projets d'investissement immobilier.",
-      images: ["/commercial-1.jpg"],
-    },
-    {
-      title: "Cliniques médicales",
-      subtitle: "Recherche de sites convoités",
-      description:
-        "Expertise en recherche de produits et de sites stratégiques pour les professionnels de la santé.",
-      images: ["/medicale-1.jpg"],
-    },
-    {
-      title: "Hôtels",
-      subtitle: "Évaluation financière",
-      description:
-        "Expérience reconnue dans le secteur hôtelier et compétence en évaluation financière.",
-      images: ["/hotel-1.jpg"],
+        "Connaissance du marché local, connaissance technique des bâtiments (superficie, hauteur libre, quais, entreposage, électricité, zonage), douée pour trouver un produit de qualité, vision stratégique, sens de l'analyse et de l'évaluation, réseau d'acheteurs et d'investisseurs. Service personnalisé.",
+      images: ["/accueil/industriel/industriel-1.jpg"],
     },
   ],
   guides: [
