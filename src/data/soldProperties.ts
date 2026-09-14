@@ -143,12 +143,6 @@ export const soldPhotos: SoldPhoto[] = [
     caption: "Condo contemporain — rue Saint-Jean, Québec",
   },
   {
-    src: "/proprietes-vendues/tour-residentielle.jpg",
-    category: "immeubles",
-    alt: "Tour résidentielle entourée d'arbres matures",
-    caption: "Tour résidentielle",
-  },
-  {
     src: "/proprietes-vendues/residence-pierre-terrain.jpg",
     category: "residences",
     alt: "Résidence en pierre avec grand terrain paysager",
@@ -185,12 +179,6 @@ export const soldPhotos: SoldPhoto[] = [
     caption: "Résidence riveraine — Lac Saint-Joseph",
   },
   {
-    src: "/proprietes-vendues/cite-verte-place-publique.jpg",
-    category: "immeubles",
-    alt: "Place publique du projet Cité Verte à Québec",
-    caption: "Cité Verte — place publique, Québec",
-  },
-  {
     src: "/proprietes-vendues/immeuble-multifamilial-quebec.jpg",
     category: "immeubles",
     alt: "Immeuble multifamilial à Québec",
@@ -213,24 +201,6 @@ export const soldPhotos: SoldPhoto[] = [
     category: "immeubles",
     alt: "Condo de prestige à Québec",
     caption: "Condo de prestige — Québec",
-  },
-  {
-    src: "/proprietes-vendues/vieux-quebec-granit.jpg",
-    category: "immeubles",
-    alt: "Immeuble en granit dans le Vieux-Québec",
-    caption: "Immeuble en granit — Vieux-Québec",
-  },
-  {
-    src: "/proprietes-vendues/tour-residentielle-01.jpg",
-    category: "immeubles",
-    alt: "Tour résidentielle avec entrée couverte à Québec",
-    caption: "Tour résidentielle — Québec",
-  },
-  {
-    src: "/proprietes-vendues/chalet-foret-bouleaux.jpg",
-    category: "residences",
-    alt: "Chalet en bois dans une forêt de bouleaux",
-    caption: "Chalet en forêt",
   },
 ];
 
