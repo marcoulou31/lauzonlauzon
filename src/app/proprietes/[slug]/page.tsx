@@ -36,5 +36,5 @@ export default async function PropertyPage({ params }: PageProps) {
   const result = await getInscriptionByNo(slug);
   if (!result) notFound();
 
-  return <InscriptionFiche detail={result.detail} />;
+  return <InscriptionFiche detail={result.detail} status={result.property.status} />;
 }

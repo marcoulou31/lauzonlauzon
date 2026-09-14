@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { InscriptionDetail } from "@/lib/types";
+import type { InscriptionDetail, PropertyStatus } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/Button";
 import { MapView } from "@/components/ui/MapView";
 import { InscriptionPhotoAlbum } from "@/components/properties/InscriptionPhotoAlbum";
+import { SoldRibbon } from "@/components/properties/SoldRibbon";
 
-type Props = { detail: InscriptionDetail };
+type Props = {
+  detail: InscriptionDetail;
+  status: PropertyStatus;
+};
 
 function fmt(value: number | null, suffix = ""): string {
   if (value === null || value === undefined) return "—";
@@ -45,7 +49,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-export function InscriptionFiche({ detail }: Props) {
+export function InscriptionFiche({ detail, status }: Props) {
   const prix = detail.prix ?? detail.prixLocation;
 
   // Group caracteristiques by type
@@ -97,7 +101,7 @@ export function InscriptionFiche({ detail }: Props) {
             <Section title="Propriété">
               <div className="grid sm:grid-cols-2 gap-4">
                 {detail.photoUrl && (
-                  <div className="relative aspect-4/3 bg-cream-dark">
+                  <div className="relative aspect-4/3 overflow-hidden bg-cream-dark">
                     <Image
                       src={detail.photoUrl}
                       alt={detail.adresseMaps}
@@ -105,6 +109,9 @@ export function InscriptionFiche({ detail }: Props) {
                       className="object-cover"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
+                    {status === "vendu" && (
+                      <SoldRibbon />
+                    )}
                   </div>
                 )}
                 <div className="space-y-0.5">

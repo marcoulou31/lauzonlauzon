@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PropertyStats } from "@/components/properties/PropertyStats";
+import { SoldRibbon } from "@/components/properties/SoldRibbon";
 import { Button } from "@/components/ui/Button";
 import type { Property } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
@@ -30,6 +31,9 @@ export function PropertySpotlight({ property, index }: PropertySpotlightProps) {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 60vw"
             />
+            {property.status === "vendu" && (
+              <SoldRibbon />
+            )}
           </div>
 
           <div className="lg:col-span-2 lg:[direction:ltr]">
