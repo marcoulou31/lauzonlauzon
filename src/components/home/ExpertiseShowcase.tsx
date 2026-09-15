@@ -9,7 +9,7 @@ export function ExpertiseShowcase() {
             Établie depuis plus de 25 années
           </h2>
           <p className="mt-4 text-xl leading-relaxed text-cream/80">
-            Une bannière respectée et reconnue pour :
+            Une bannière respectée et reconnue
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">

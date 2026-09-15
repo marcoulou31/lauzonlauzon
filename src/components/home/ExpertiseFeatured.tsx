@@ -36,7 +36,16 @@ export function ExpertiseFeatured() {
         <div className="space-y-8 lg:space-y-10">
           {featured.map((item, index) => {
             const secondaryImages = item.images.slice(1);
-            const mosaicRows = buildMosaicRows(secondaryImages);
+            const wideText = "wideText" in item && item.wideText;
+            const inlineImages = wideText ? secondaryImages.slice(0, 2) : [];
+            const mosaicImages = wideText
+              ? secondaryImages.slice(2)
+              : secondaryImages;
+            const wideMosaicLead =
+              "wideMosaicLead" in item && item.wideMosaicLead;
+            const mosaicRows = wideMosaicLead
+              ? [mosaicImages.slice(0, 2), ...buildMosaicRows(mosaicImages.slice(2))]
+              : buildMosaicRows(mosaicImages);
 
             return (
               <div
@@ -45,12 +54,22 @@ export function ExpertiseFeatured() {
                   index > 0 ? "border-t border-gold/40 pt-8 lg:pt-10" : ""
                 }`}
               >
-                <div className="grid gap-8 lg:grid-cols-3 lg:items-start lg:gap-12">
+                <div
+                  className={`grid gap-8 lg:items-start lg:gap-12 ${
+                    wideText ? "lg:grid-cols-2" : "lg:grid-cols-3"
+                  }`}
+                >
                   <div
                     className={index % 2 === 1 ? "lg:order-2" : "lg:order-1"}
                   >
-                    <h4 className="font-serif text-3xl text-navy">{item.title}</h4>
-                    <p className="mt-2 text-lg font-medium uppercase tracking-wide text-navy/85">
+                    <h4
+                      className={`font-serif text-3xl text-navy ${
+                        item.emphasizedTitle ? "font-bold" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </h4>
+                    <p className="mt-2 whitespace-pre-line text-lg font-medium uppercase tracking-wide text-navy/85">
                       {item.subtitle}
                     </p>
                     <p className="mt-4 leading-relaxed text-xl text-navy/70">
@@ -59,23 +78,51 @@ export function ExpertiseFeatured() {
                   </div>
 
                   <div
-                    className={`relative aspect-video overflow-hidden rounded-lg shadow-md lg:col-span-2 ${
+                    className={`${
+                      wideText ? "lg:col-span-1" : "lg:col-span-2"
+                    } ${
                       index % 2 === 1 ? "lg:order-1" : "lg:order-2"
                     }`}
                   >
-                    <Image
-                      src={item.images[0]}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 66vw"
-                      className="object-cover"
-                      quality={index === 0 ? 50 : 60}
-                      loading="lazy"
-                    />
+                    <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
+                      <Image
+                        src={item.images[0]}
+                        alt={item.title}
+                        fill
+                        sizes={
+                          wideText
+                            ? "(max-width: 1024px) 100vw, 50vw"
+                            : "(max-width: 1024px) 100vw, 66vw"
+                        }
+                        className="object-cover"
+                        quality={index === 0 ? 50 : 60}
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {inlineImages.length > 0 && (
+                      <div className="mt-4 grid grid-cols-2 gap-4">
+                        {inlineImages.map((src) => (
+                          <div
+                            key={src}
+                            className="relative aspect-4/3 overflow-hidden rounded-lg shadow-md"
+                          >
+                            <Image
+                              src={src}
+                              alt={item.title}
+                              fill
+                              sizes="(max-width: 1024px) 50vw, 25vw"
+                              className="object-cover"
+                              quality={50}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                {secondaryImages.length > 0 && (
+                {mosaicImages.length > 0 && (
                   <div className="space-y-4">
                     {mosaicRows.map((row, rowIndex) => (
                       <div
@@ -88,13 +135,18 @@ export function ExpertiseFeatured() {
                               : "grid-cols-1"
                         }`}
                       >
-                        {row.map((src) => (
-                          <div
-                            key={src}
-                            className={`relative overflow-hidden rounded-lg shadow-md ${
-                              row.length === 3 ? "aspect-4/3" : "aspect-3/2"
-                            }`}
-                          >
+                        {row.map((src) => {
+                          const isPanoramic = src.includes("commercial-2.jpg");
+
+                          return (
+                            <div
+                              key={src}
+                              className={`relative overflow-hidden rounded-lg shadow-md ${
+                                row.length === 3
+                                    ? "aspect-4/3"
+                                    : "aspect-3/2"
+                              }`}
+                            >
                             <Image
                               src={src}
                               alt={item.title}
@@ -104,11 +156,14 @@ export function ExpertiseFeatured() {
                                   ? "(max-width: 767px) 50vw, 33vw"
                                   : "50vw"
                               }
-                              className="object-cover"
+                              className={`object-cover ${
+                                isPanoramic ? "object-left" : ""
+                              }`}
                               quality={50}
                             />
-                          </div>
-                        ))}
+                            </div>
+                          );
+                        })}
                       </div>
                     ))}
                   </div>

@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [50, 60, 70, 75],
+    localPatterns: [
+      {
+        pathname: "/**",
+        search: "",
+      },
+      {
+        pathname: "/accueil/revenus/commercial-2.jpg",
+        search: "?v=3",
+      },
+    ],
     remotePatterns: [
       {
         protocol: "https",

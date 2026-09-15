@@ -56,7 +56,9 @@ export default async function ContactPage() {
                   <p className="text-sm font-medium uppercase tracking-wider text-gold-dark">
                     Courtier
                   </p>
-                  <p className="mt-1">{siteConfig.broker.name}</p>
+                  <p className="mt-1">
+                    {siteConfig.broker.name}, {siteConfig.broker.credentials}
+                  </p>
                 </div>
 
                 <div>
