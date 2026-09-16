@@ -80,15 +80,16 @@ export const siteConfig = {
       wideMosaicLead: true,
       subtitle: "Résidentiel et commercial",
       description:
-        "Connaissance du marché, élaboration des états financiers et pro-formats. Excellente capacité d'analyse de la valeur, des revenus et du potentiel de l'immeuble. Maîtrise des baux commerciaux et des conditions locatives. Habileté en négociation. Écoute des besoins des clients.",
+        "Connaissance du marché, élaboration des états financiers et pro-formats. Excellente capacité d'analyse de la valeur des revenus et du potentiel de l'immeuble. Maîtrise des baux commerciaux et des conditions locatives. Habileté à négocier. À l'écoute des besoins du client.",
       images: [
+        "/accueil/revenus/immeuble-revenus-principal.jpg",
         "/accueil/revenus/hotel-1.jpg",
         "/accueil/revenus/commercial-1.jpg",
         "/accueil/revenus/commercial-2.jpg",
         "/accueil/revenus/medicale-1.jpg",
         "/accueil/revenus/DJI_0845.jpg",
         "/accueil/revenus/immeuble-commercial-quebec.jpg",
-          "/accueil/revenus/revenus-1.jpg",
+        "/accueil/revenus/revenus-1.jpg",
       ],
     },
     {
@@ -96,7 +97,7 @@ export const siteConfig = {
       emphasizedTitle: true,
       subtitle: "Vente et location",
       description:
-        "Connaissance du marché local, connaissance technique des bâtiments (superficie, hauteur libre, quais, entreposage, électricité, zonage), douée pour trouver un produit de qualité, vision stratégique, sens de l'analyse et de l'évaluation, réseau d'acheteurs et d'investisseurs. Services personnalisés.",
+        "Connaissance du marché local, des techniques de construction et des règlements de zonage. Douée pour trouver les produits recherchés. Formée pour l'analyse financière. Offre un service personnalisé.",
       images: ["/accueil/industriel/industriel-1.jpg"],
     },
     {

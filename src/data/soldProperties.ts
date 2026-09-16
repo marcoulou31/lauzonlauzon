@@ -202,6 +202,90 @@ export const soldPhotos: SoldPhoto[] = [
     alt: "Condo de prestige à Québec",
     caption: "Condo de prestige — Québec",
   },
+  {
+    src: "/proprietes-vendues/cite-verte-place-publique.jpg",
+    category: "immeubles",
+    alt: "Place publique et immeubles résidentiels de La Cité Verte",
+    caption: "La Cité Verte — place publique",
+  },
+  {
+    src: "/proprietes-vendues/cite-verte-panneau.jpg",
+    category: "immeubles",
+    alt: "Panneau présentant le projet de condos La Cité Verte",
+    caption: "La Cité Verte — projet de condos",
+  },
+  {
+    src: "/proprietes-vendues/cite-verte-facade.jpg",
+    category: "immeubles",
+    alt: "Façade contemporaine d'une habitation à La Cité Verte",
+    caption: "La Cité Verte — habitation contemporaine",
+  },
+  {
+    src: "/proprietes-vendues/cite-verte-piscine.jpg",
+    category: "immeubles",
+    alt: "Piscine intérieure de La Cité Verte",
+    caption: "La Cité Verte — piscine intérieure",
+  },
+  {
+    src: "/proprietes-vendues/cite-verte-condo-interieur-01.jpg",
+    category: "immeubles",
+    alt: "Aire de vie d'un condo à La Cité Verte",
+    caption: "La Cité Verte — intérieur d'un condo",
+  },
+  {
+    src: "/proprietes-vendues/cite-verte-condo-interieur-02.jpg",
+    category: "immeubles",
+    alt: "Salon d'un condo à La Cité Verte",
+    caption: "La Cité Verte — salon d'un condo",
+  },
+  {
+    src: "/proprietes-vendues/domaine-sillery-vue-aerienne.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne du Domaine de Sillery",
+    caption: "Domaine de Sillery — vue aérienne",
+  },
+  {
+    src: "/proprietes-vendues/domaine-sillery-terrain-jumele.jpg",
+    category: "immeubles",
+    alt: "Terrain jumelé au Domaine de Sillery",
+    caption: "Domaine de Sillery — terrain jumelé",
+  },
+  {
+    src: "/proprietes-vendues/domaine-sillery-vue-fleuve-01.jpg",
+    category: "immeubles",
+    alt: "Vue sur le fleuve depuis le Domaine de Sillery",
+    caption: "Domaine de Sillery — vue sur le fleuve",
+  },
+  {
+    src: "/proprietes-vendues/domaine-sillery-vue-fleuve-02.jpg",
+    category: "immeubles",
+    alt: "Vue panoramique sur le fleuve depuis le Domaine de Sillery",
+    caption: "Domaine de Sillery — vue panoramique",
+  },
+  {
+    src: "/proprietes-vendues/Bennemore.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne du complexe résidentiel Le Bennemore",
+    caption: "Le Bennemore — vue aérienne",
+  },
+  {
+    src: "/proprietes-vendues/Boisé des Augustines.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne du Boisé des Augustines",
+    caption: "Boisé des Augustines — vue aérienne",
+  },
+  {
+    src: "/proprietes-vendues/jardins-merici-bloc-20.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne des Jardins Mérici",
+    caption: "Jardins Mérici — vue aérienne",
+  },
+  {
+    src: "/proprietes-vendues/Sous les bois.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne du complexe résidentiel Sous les bois",
+    caption: "Sous les bois — vue aérienne",
+  },
 ];
 
 export function getSoldPhotos(): SoldPhoto[] {
