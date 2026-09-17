@@ -8,11 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "images:check-names": "node scripts/check-image-names.cjs",
-    "images:home": "node scripts/optimize-home-images.cjs",
-    "images:home:apply": "node scripts/optimize-home-images.cjs --apply",
-    "images:sold": "node scripts/optimize-home-images.cjs --sold",
-    "images:sold:apply": "node scripts/optimize-home-images.cjs --sold --apply"
+    "images:check-names": "node scripts/check-image-names.cjs"
   },
   "dependencies": {
     "@botpoison/browser": "^0.1.30",

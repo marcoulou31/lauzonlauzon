@@ -39,7 +39,7 @@ function MosaicThumb({
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes={sizes}
-          quality={50}
+          quality={70}
         />
         <span className="pointer-events-none absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/10" />
         {showCaptions && (

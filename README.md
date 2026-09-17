@@ -26,11 +26,9 @@ Les images publiques utilisent des noms descriptifs en minuscules ASCII, avec de
 
 ```bash
 pnpm images:check-names
-pnpm images:home
-pnpm images:sold
 ```
 
-Les deux dernières commandes auditent aussi le poids des images référencées. Le suffixe `:apply` applique leur optimisation lorsque de nouvelles sources sont ajoutées.
+Les fichiers sources sont conservés à leur qualité originale. Next.js produit les formats et dimensions adaptés à chaque affichage sans modifier ces fichiers.
 
 ## SQL Server
 

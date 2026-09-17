@@ -95,7 +95,7 @@ export function ExpertiseFeatured() {
                             : "(max-width: 1023px) calc(100vw - 48px), 795px"
                         }
                         className="object-cover"
-                        quality={index === 0 ? 50 : 60}
+                        quality={70}
                         loading="lazy"
                       />
                     </div>
@@ -113,7 +113,7 @@ export function ExpertiseFeatured() {
                               fill
                               sizes="(max-width: 1023px) calc(50vw - 32px), 284px"
                               className="object-cover"
-                              quality={50}
+                              quality={70}
                             />
                           </div>
                         ))}
@@ -161,7 +161,7 @@ export function ExpertiseFeatured() {
                               className={`object-cover ${
                                 isPanoramic ? "object-left" : ""
                               }`}
-                              quality={50}
+                              quality={70}
                             />
                             </div>
                           );
