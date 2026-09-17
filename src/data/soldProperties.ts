@@ -263,6 +263,12 @@ export const soldPhotos: SoldPhoto[] = [
     caption: "Domaine de Sillery — vue panoramique",
   },
   {
+    src: "/proprietes-vendues/domaine-sillery-batiment-patrimonial.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne du bâtiment patrimonial du Domaine de Sillery",
+    caption: "Domaine de Sillery — bâtiment patrimonial",
+  },
+  {
     src: "/proprietes-vendues/Bennemore.jpg",
     category: "immeubles",
     alt: "Vue aérienne du complexe résidentiel Le Bennemore",

@@ -82,12 +82,11 @@ export const siteConfig = {
       description:
         "Connaissance du marché, élaboration des états financiers et pro-formats. Excellente capacité d'analyse de la valeur des revenus et du potentiel de l'immeuble. Maîtrise des baux commerciaux et des conditions locatives. Habileté à négocier. À l'écoute des besoins du client.",
       images: [
-        "/accueil/revenus/immeuble-revenus-principal.jpg",
+        "/accueil/revenus/immeuble-revenus-vue-aerienne.jpg",
         "/accueil/revenus/hotel-1.jpg",
         "/accueil/revenus/commercial-1.jpg",
         "/accueil/revenus/commercial-2.jpg",
         "/accueil/revenus/medicale-1.jpg",
-        "/accueil/revenus/DJI_0845.jpg",
         "/accueil/revenus/immeuble-commercial-quebec.jpg",
         "/accueil/revenus/revenus-1.jpg",
       ],
