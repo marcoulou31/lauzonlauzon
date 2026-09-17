@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "files": {
+    "/accueil/residentiel/copropriete-contemporaine.jpg": {
+      "inputHash": "6b33e2f8aa61de09da83b3c8276ae1fca92fd1e752edece05b648244190508da",
+      "outputHash": "011c555a66d823d3f37ef6686a2efa59376d577615db8b03b05f098fbc74ae9b",
+      "width": 1200,
+      "height": 800,
+      "bytesBefore": 652643,
+      "bytesAfter": 110566
+    },
+    "/accueil/residentiel/bennemore-vue-aerienne.jpg": {
+      "inputHash": "2da98f101644f74d2fefdd5117d230e344031459fe2297db195b5c3b94973f25",
+      "outputHash": "351116b57bf9eada303dcdb848cfa6784fdc24a976bf9b5a54baa32077772707",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 5966476,
+      "bytesAfter": 375492
+    },
+    "/accueil/residentiel/coproprietes-vue-fleuve.jpg": {
+      "inputHash": "d480ec5891f9ac27aaa8aaf2780f70f9fe21097c8faaef0072303a8e14d9ed4d",
+      "outputHash": "aae94944a72d6c207ee4b538361ae2051f7f51042b98f3902c71d35734dbdc00",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 1361958,
+      "bytesAfter": 262260
+    },
+    "/accueil/residentiel/boise-augustines-vue-aerienne.jpg": {
+      "inputHash": "6d42babd524cbe91da5ac03f80d03ddfbcad537b5ae61c7194883e0f1ab5fb5d",
+      "outputHash": "e8a2a010c7262d5387e3c409e777b05da5f1b103e107564c91ef26962bb08fea",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 5791747,
+      "bytesAfter": 347140
+    },
+    "/accueil/residentiel/jardins-merici-vue-aerienne.jpg": {
+      "inputHash": "fc00049e3f0ee1e65c6027038a7281a6e549b919e7a79420486c02ad98bc4faf",
+      "outputHash": "08732d729624e1c2f05b06d030a98dd966849fb898f769eb311761d3d61f3577",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 6005532,
+      "bytesAfter": 428113
+    },
+    "/accueil/residentiel/chalet-bois-terrain-paysager.jpg": {
+      "inputHash": "70b1be421435ad52c5f52e6a50c97c132f63a54c1e18fd74489706683a3135b3",
+      "outputHash": "7c2e92ac2fff01f44d5bbf318bd7cde7e404ef4e06df0b455bcc87f0761cd346",
+      "width": 1280,
+      "height": 960,
+      "bytesBefore": 345257,
+      "bytesAfter": 282270
+    },
+    "/accueil/residentiel/sous-les-bois-vue-aerienne.jpg": {
+      "inputHash": "056d6e75f56f876d38d9b6fc0efdf20a8388c988716a7c0d94faadee6f93b4d7",
+      "outputHash": "b6ff5a4d9c631360e2c0a4b073861c8f394aa9d0cdacfd330f6d6a5f4d87bc74",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 5698051,
+      "bytesAfter": 349112
+    },
+    "/accueil/residentiel/residence-riveraine-terrasse.jpg": {
+      "inputHash": "d7d0f352b09eceedabf247ef4586b6cd87b681b67886b7ab12437899bc2f8755",
+      "outputHash": "ca9d7ed663f662e2c53bbd02421a420445413ebd87703669e7f2522afed6539d",
+      "width": 1917,
+      "height": 1280,
+      "bytesBefore": 4651941,
+      "bytesAfter": 921832
+    },
+    "/accueil/revenus/immeuble-revenus-vue-aerienne.jpg": {
+      "inputHash": "d92603efd6006065be8b5d002751f2d279789eb71fc6b311f3793555f7e2e019",
+      "outputHash": "48c3d771d725241de3633d08f4fa7bd5496c9151d0f66a047929d1aa2808d486",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 1356874,
+      "bytesAfter": 416868
+    },
+    "/accueil/revenus/immeuble-commercial-avenue-cartier.jpg": {
+      "inputHash": "bae25deb861edba8e51581227544bda44a052c0abfdfc5987b7196886c726e77",
+      "outputHash": "535e8b25b5f1c096271b5bc5e46b835da426765f186d73a6dede29044f2dd11e",
+      "width": 1920,
+      "height": 781,
+      "bytesBefore": 826171,
+      "bytesAfter": 235725
+    },
+    "/accueil/revenus/immeuble-locatif-2908.jpg": {
+      "inputHash": "0d966cf1749d6bede910533c4716e91099a8dcc0632f66eee4da7c3dbc70c4fe",
+      "outputHash": "a005a4c217976f7a9b675dd32db3ca9fd9de059215ba4eef56b5735a356dc98d",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 2953800,
+      "bytesAfter": 595306
+    },
+    "/accueil/industriel/parc-industriel-vue-aerienne.jpg": {
+      "inputHash": "cd7175d8af53f53ced41ab19e240d32c1ae8e9d3a41602f2072586812cab6940",
+      "outputHash": "9d7ec4b86ee89e5348dec1142f8cfbb8535bb3d7b2d71aa04528784d5a67f9a4",
+      "width": 1920,
+      "height": 1440,
+      "bytesBefore": 5295161,
+      "bytesAfter": 541545
+    },
+    "/accueil/cite-verte/cite-verte-place-publique-rendu.jpg": {
+      "inputHash": "e3a85e570ca5f0802886ef5601ecadf0cd2978406b639d429e12561445f8718d",
+      "outputHash": "139444284e19f09f9dcad9bb3004e80f72b6b3f8f3574a980f580adbac45aa23",
+      "width": 1920,
+      "height": 1243,
+      "bytesBefore": 2401494,
+      "bytesAfter": 279305
+    },
+    "/accueil/cite-verte/cite-verte-panneau-publicitaire.jpg": {
+      "inputHash": "c920a2bb4d85e436f7b8f0277499dfb52626b48fcdba6bcae98f956f4f3e9c77",
+      "outputHash": "56737d16edb6f35f47db1c96f5f0aa29c62751ae42cd6053a49737e1703c1d36",
+      "width": 1440,
+      "height": 1920,
+      "bytesBefore": 3329491,
+      "bytesAfter": 459309
+    },
+    "/accueil/cite-verte/cite-verte-maison-de-ville.jpg": {
+      "inputHash": "cb6a9afda2227de8b081c3eb35538b1b0326b0da8d9168c1578ae8591b56b06a",
+      "outputHash": "9db7564b6bd8e0186594d85472fb128a3c475778eec59274fca55ff22f582179",
+      "width": 1920,
+      "height": 1536,
+      "bytesBefore": 1330849,
+      "bytesAfter": 516239
+    },
+    "/accueil/cite-verte/cite-verte-piscine-interieure.jpg": {
+      "inputHash": "dba3d9f292b11f92020784ba00ec5ef29734c23f7a894f67d6a64b2ec1ebdda3",
+      "outputHash": "5e378f9f78edea728c1f6d7bf211c5f8da8217013c7076fc475122c1d386d83b",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 3562985,
+      "bytesAfter": 291722
+    },
+    "/accueil/cite-verte/cite-verte-condo-aire-de-vie.jpg": {
+      "inputHash": "fa114af203b3ed2db051587835ddfebe620a4ead54efa9b15655318a6f4899d5",
+      "outputHash": "6a28ca5592b1c0880099c11f648b78afff7b41802c912a4f1deb9113de678103",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 1620109,
+      "bytesAfter": 298938
+    },
+    "/accueil/cite-verte/cite-verte-condo-salon.jpg": {
+      "inputHash": "80e87ef31a6f778632996ca8ff6221209c75e14490ec49ead6ee3c7d9b8077ee",
+      "outputHash": "bcabd9e8d69ae9682aba3ac0c2c622991b5473b42df705db4d73584f231e6ba0",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 1525913,
+      "bytesAfter": 246197
+    },
+    "/accueil/domaine-sillery/domaine-sillery-vue-aerienne.jpg": {
+      "inputHash": "185bd2d4ef2a53d69973abd3afbb0257a850e6a906ba2c5b150874c42b184d67",
+      "outputHash": "7812ab6729399049cb82def312b43b4ecae1c363bedf5b466dc5ab880364be06",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 6442782,
+      "bytesAfter": 516401
+    },
+    "/accueil/domaine-sillery/domaine-sillery-parc-vue-fleuve.jpg": {
+      "inputHash": "498d30f4d4e69beb66ae3406538e22672f205d28cbc02537b0fd3f7d851e6c30",
+      "outputHash": "dbcd750d8aa3d1dd315260171c346c2e2830b1947293626766714d6ebaab129b",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 6289645,
+      "bytesAfter": 407552
+    },
+    "/accueil/domaine-sillery/domaine-sillery-piscine-patrimoniale.jpg": {
+      "inputHash": "ec26f6c8c06b5b83d162b58d305efad397b886a913d96cb2da9369321659ef6b",
+      "outputHash": "650341f0a61e1851b4dc910ac44fe18492a565c2751713b6cf7d928d73756128",
+      "width": 1200,
+      "height": 801,
+      "bytesBefore": 1032118,
+      "bytesAfter": 132656
+    },
+    "/accueil/domaine-sillery/domaine-sillery-chapelle-patrimoniale.jpg": {
+      "inputHash": "b6b18a20b09dbf18570ff90c15cb0692dd5b180828bd5fa68c5b3695f7de50eb",
+      "outputHash": "7c10a16513cd1a21466f979564239f66c6968a4b3d943a56cd6c6c494689cce4",
+      "width": 1200,
+      "height": 801,
+      "bytesBefore": 960723,
+      "bytesAfter": 117184
+    },
+    "/propriete-contemporaine-piscine.jpg": {
+      "inputHash": "cf043ba3ecf11cd3131ef6650fc0845ea4a2b583eb50a9d4bd9ddecec80d5856",
+      "outputHash": "894a07ca0dd21d43c39f329ff86edb21e2051f8be46200215cb80d238baaacad",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 369840,
+      "bytesAfter": 262919
+    }
+  }
+}

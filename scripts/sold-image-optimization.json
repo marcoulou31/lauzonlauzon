@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "files": {
+    "/proprietes-vendues/lac-saint-joseph-residence-hiver.jpg": {
+      "inputHash": "fa3283a037a9330d70f1e7fd5b184aa044f7c3af8449ba02cd77cff8c08f47d4",
+      "outputHash": "f0f81b0c6d57282b9d03213825c253b14a38204dada8093e35bbb5d5d6f2a7d4",
+      "width": 1917,
+      "height": 1280,
+      "bytesBefore": 4562948,
+      "bytesAfter": 927473
+    },
+    "/proprietes-vendues/lac-saint-joseph-riveraine.jpg": {
+      "inputHash": "dcb1b3b168b0dbf93a4641a4d6a6c63b8a5cd43721bfe2c7be26c8341f6399b7",
+      "outputHash": "7c5e5dcc999adef3a885930ea143c0b6740c20fe52a871bc3d20f44e1e1b1a37",
+      "width": 1200,
+      "height": 800,
+      "bytesBefore": 806166,
+      "bytesAfter": 146621
+    },
+    "/proprietes-vendues/lac-saint-joseph-vue-aerienne.jpg": {
+      "inputHash": "4e9a80d4948d0bfd2b5a6ac48c17b8ff03a973d7f7b3901b8ee31e6ed504e7e5",
+      "outputHash": "5feaebf466421d800fc3e68e2fc67f293df09d2391c9b81e31ec6672d5063998",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 3622731,
+      "bytesAfter": 826101
+    },
+    "/proprietes-vendues/saint-augustin-terrain-riverain.jpg": {
+      "inputHash": "7e8bb26171c811dd538d15f1fae4bf649274231bf036e4d0ba927a28b5bfb7c7",
+      "outputHash": "e495670e56cc8dba9aaab942dfe90472eea218a7055f75a1846deffec87746d8",
+      "width": 1917,
+      "height": 1280,
+      "bytesBefore": 3501113,
+      "bytesAfter": 635726
+    },
+    "/proprietes-vendues/saint-augustin-residence-bois.jpg": {
+      "inputHash": "cb34c204239910b62c01154035bafdf1affe104b80dbdf9fd566e9548c71e3a7",
+      "outputHash": "9ad295844ba9325e984e55f53aa70037190c9733af4d43727e2a828551a841ec",
+      "width": 1917,
+      "height": 1280,
+      "bytesBefore": 3806376,
+      "bytesAfter": 683695
+    },
+    "/proprietes-vendues/grande-residence-familiale.jpg": {
+      "inputHash": "9af16b62feafc4bbbc5212bdaf4bfe3334cc6bc92a4694c403393bc6333d3205",
+      "outputHash": "73abfc3eed10aa8f175595f5fde0cfdafcb2fba1363e32092bf36d670a048e45",
+      "width": 1200,
+      "height": 800,
+      "bytesBefore": 1044534,
+      "bytesAfter": 211894
+    },
+    "/proprietes-vendues/acces-lac-quai.jpg": {
+      "inputHash": "662e5b56c84af976fe07860f497124a6210ff5208514e9cdb646cc0d18040da4",
+      "outputHash": "07d1cf00cf70cfb2b7a5a98cf84b670bbf5fed6a9941d417f63b6ee520d3ddc4",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 2573504,
+      "bytesAfter": 525383
+    },
+    "/proprietes-vendues/residence-contemporaine.jpg": {
+      "inputHash": "0f67948edce8c969ca0cedf1ed7a3142a23d2248c63f4755f93eec7eb782a974",
+      "outputHash": "4839ba7c07ef8c82ac1394278e1e1e9d616943a3a3177d3c3030eef09bafd1d0",
+      "width": 768,
+      "height": 1024,
+      "bytesBefore": 109712,
+      "bytesAfter": 98133
+    },
+    "/proprietes-vendues/chalet-bord-eau.jpg": {
+      "inputHash": "501980f2cf0a2c221bd8d5d113d65c2eda468861e3205f3c8956686074c9299b",
+      "outputHash": "146430d49ebeca31c9a9c090619208ff3878db6cb277b56e27fc28da3e62627c",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 5622249,
+      "bytesAfter": 551187
+    },
+    "/proprietes-vendues/propriete-nature.jpg": {
+      "inputHash": "65b73a6a278a4da8a74f3961d6b6e5c9d39ce110bacc0a4ac4ba148ba16784e9",
+      "outputHash": "4db3a4e63fddac8f05362427a1c42d20ebece618ead8ba5e993f681a32284f35",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 5463020,
+      "bytesAfter": 564762
+    },
+    "/proprietes-vendues/maison-campagne.jpg": {
+      "inputHash": "dfbd240d16fea13873dd4f2575536f44c8564abd57628e17f1c71a4e64817918",
+      "outputHash": "e0bb3737b88e7568f1d8590d14fb417da62259a88a9d1baf183cdf53469399f4",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 5552801,
+      "bytesAfter": 522409
+    },
+    "/proprietes-vendues/terrain-paysager.jpg": {
+      "inputHash": "d701eb9db3bc3dd2b595437c43d21ffab5526ae320b2a0db1fef78b952565c69",
+      "outputHash": "f2bbf0eae9c973359eb085928d305147f8642a3e5f5309268f79b5c5640bc1c1",
+      "width": 1920,
+      "height": 1440,
+      "bytesBefore": 5699831,
+      "bytesAfter": 625694
+    },
+    "/proprietes-vendues/plage-privee-quai.jpg": {
+      "inputHash": "928d70e8cffe2c46f241fcb261d2f06eef22e5189f4bb4b8a28eb337038c4993",
+      "outputHash": "d739130699a5a9deaa0d6b2f2f90b9f6f09c04829d65012b82dd3e2270daf399",
+      "width": 1920,
+      "height": 1440,
+      "bytesBefore": 6425402,
+      "bytesAfter": 691969
+    },
+    "/proprietes-vendues/residence-vue-montagnes.jpg": {
+      "inputHash": "de09cb5af22db0d62faf7f22b679da0d3d70f44a79dd33943efef270c2076cc3",
+      "outputHash": "8642292ab95cc17f889d302729577421add187eb1d8f1e9ee2ed0d28dee5c20b",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 6671085,
+      "bytesAfter": 741458
+    },
+    "/proprietes-vendues/amenagement-foyer.jpg": {
+      "inputHash": "6f8e764484428a74158118369d6a95bdda22264d8752ea95438ee9fae189d72d",
+      "outputHash": "cd4056250e753c059e3ae2e74ae012eaae3030a852c89abbbf819c2978df8b58",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 4598498,
+      "bytesAfter": 424116
+    },
+    "/proprietes-vendues/cottage-champetre.jpg": {
+      "inputHash": "99ab920bdb1055a7e1eaed917c2b89939a4dae7dbfa4c04d89f3e9f541ade271",
+      "outputHash": "244515b30bcf2f25750c4932fd2fcc048ca736ae984eba6733f9cedd7d56552e",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 5650565,
+      "bytesAfter": 537257
+    },
+    "/proprietes-vendues/propriete-riveraine-quai.jpg": {
+      "inputHash": "3378585c750c2ff1179db594fa25351e91f2bbc0eb1b10474ef560c2eb9d5d23",
+      "outputHash": "71b5d5efb1b1835152b37ff217403e5f518232cdce919620ef68ef359a3f37fd",
+      "width": 1920,
+      "height": 1440,
+      "bytesBefore": 5585216,
+      "bytesAfter": 590277
+    },
+    "/proprietes-vendues/thomas-maher-lac-saint-joseph-aerien.jpg": {
+      "inputHash": "f90bbe044c901d78f72af8d554e3d1d7316371d7709d2ff407ffca580bab45c1",
+      "outputHash": "cc26fc5fa2e471b39bc07260f2956204f948c281e12036d585d4f0ce36535319",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 4157817,
+      "bytesAfter": 867794
+    },
+    "/proprietes-vendues/condo-saint-jean-quebec.jpg": {
+      "inputHash": "e9dd17cb9f9b80a197f2aad1e3c887d4fd188fb0645e9808f507c8b0e56d23c1",
+      "outputHash": "fe58c93c3754c137e24f30b6daadebc9739878d825b4b4e61a30a0da42090e54",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 3995967,
+      "bytesAfter": 393336
+    },
+    "/proprietes-vendues/residence-pierre-terrain.jpg": {
+      "inputHash": "dc51b75e1d0b68367293b793715531eec2a0dfb7da64bf3a04fbe7668f1d12b0",
+      "outputHash": "4e83c75e749a78b984ea2dca981dd8e61ebb1060b6f4a46a9075f8f97188f4ec",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 6781366,
+      "bytesAfter": 660980
+    },
+    "/proprietes-vendues/cottage-garage-double.jpg": {
+      "inputHash": "7dca88e1be4d4af77d6c40b3d007c289c003a9c9ec61a513afca3ba8f52c5a9e",
+      "outputHash": "f4948faac4e18760fc5c28206a06d73c8e430498ef3f41f1ce0f26afa3467283",
+      "width": 1200,
+      "height": 800,
+      "bytesBefore": 1285980,
+      "bytesAfter": 276310
+    },
+    "/proprietes-vendues/residence-brique-piscine.jpg": {
+      "inputHash": "bd305c13693cfe75aee4ed99d780385c136bdfb2d73cd48328f57d39c32a8a6f",
+      "outputHash": "adbbacfdc6ad9a376268239d87b49f93fa21f7b5048451ec1009bfb5d8f9a381",
+      "width": 1920,
+      "height": 1440,
+      "bytesBefore": 2612155,
+      "bytesAfter": 435071
+    },
+    "/proprietes-vendues/residence-familiale-piscine.jpg": {
+      "inputHash": "f5e933bf94beeadc441618f882ebe3cbd8bcaebdcc8e61ffed0c89eacbb35bb4",
+      "outputHash": "1ca9c23d5bea2976acd7f593836f94c3ebad69374839c30789927503cad36468",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 2367757,
+      "bytesAfter": 489712
+    },
+    "/proprietes-vendues/residence-exterieur-jardin.jpg": {
+      "inputHash": "59232dcee9eea7eeaf193f5154bbcdac6a0bdd3213443694ff56185d4002784c",
+      "outputHash": "1a608f6e9e4ec6e9ff0ad77a8b45c61545d92e288a554fcb5d466dd45ae6f260",
+      "width": 1200,
+      "height": 800,
+      "bytesBefore": 1091069,
+      "bytesAfter": 227547
+    },
+    "/proprietes-vendues/cite-verte-panneau.jpg": {
+      "inputHash": "4c17fd7c9d093e9e8d6812e7e12fee462f40ccc8f3332ccdbaf17bc7716e615d",
+      "outputHash": "6d1e468c47262668f3c8d0e655b5033b4f20cd02ea75615afbd7af8593edfca6",
+      "width": 1440,
+      "height": 1920,
+      "bytesBefore": 1434677,
+      "bytesAfter": 449011
+    },
+    "/proprietes-vendues/cite-verte-facade.jpg": {
+      "inputHash": "321656a44a48afc43059ebc553fd6581c06db02287d607aafeb64044cae47397",
+      "outputHash": "ebb3029ae21030ab86c064edfa87b73f54da103bdbc49d57f08b6e55686c6692",
+      "width": 1920,
+      "height": 1536,
+      "bytesBefore": 1430341,
+      "bytesAfter": 512825
+    },
+    "/proprietes-vendues/cite-verte-piscine.jpg": {
+      "inputHash": "17f19cab2867182b50b18473c81d3c62716e9b29a77cc5e285cf1e00260c750e",
+      "outputHash": "81e21ffc8b8587f129b7489724af5a283349dfc350226a715a4136202fee9b95",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 842477,
+      "bytesAfter": 280344
+    },
+    "/proprietes-vendues/cite-verte-condo-aire-de-vie.jpg": {
+      "inputHash": "0b2c68ac5e7fec6b8ae855f26542a9e9802437a11aa705475cc55cb47df9064e",
+      "outputHash": "186de732a1828975908eec2cff58a2e0f0b63b57c4fb127f23a280c877381fc5",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 897069,
+      "bytesAfter": 294254
+    },
+    "/proprietes-vendues/cite-verte-condo-salon.jpg": {
+      "inputHash": "7318af192019c8d5e252d9f6dcf28e46f8f25d855d8b0ef9af33b5e743ddb63a",
+      "outputHash": "50f35562ca9673ad4124de173cf84aa83aca75dfdec71bb75367b346c71b94a2",
+      "width": 1920,
+      "height": 1280,
+      "bytesBefore": 818500,
+      "bytesAfter": 242884
+    },
+    "/proprietes-vendues/domaine-sillery-vue-aerienne.jpg": {
+      "inputHash": "2859121a3800f186dfa4b9a8497e0ecc3c7a04dbf0044a3bfaeb11e5029b31bc",
+      "outputHash": "d4447b47eff60b3084d9b04b18d0bd8307ed78697727b2db07bf6fb6bd743e12",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 1544350,
+      "bytesAfter": 502262
+    },
+    "/proprietes-vendues/domaine-sillery-terrain-jumele.jpg": {
+      "inputHash": "7afcb972d3ba5fb3089c0a3d7bac3d742ebfd45d8a81aa48fc3249b4a7a26a1f",
+      "outputHash": "ed7c22660a951496b87662dda3f3e1b7a85ad68fb0f6a0d760521a073716f9c6",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 1283368,
+      "bytesAfter": 396964
+    },
+    "/proprietes-vendues/domaine-sillery-piscine-patrimoniale.jpg": {
+      "inputHash": "43bc14d020d5ac78851ae09c97e4b8d0dcf5b0d57b670fb12884d64613fb58f6",
+      "outputHash": "63d290dddedd404ca359b5dc0e2233014c9dd4eff325df41dea33a378607ea2c",
+      "width": 1200,
+      "height": 801,
+      "bytesBefore": 380732,
+      "bytesAfter": 133827
+    },
+    "/proprietes-vendues/domaine-sillery-chapelle-patrimoniale.jpg": {
+      "inputHash": "449734955c1cefe15912d3b8c84459ce580232cc58886a243f2a586b0325b3f5",
+      "outputHash": "107796c805d9f505f045fe9c813cf471f4010536a8707bf45f6dea20ba396116",
+      "width": 1200,
+      "height": 801,
+      "bytesBefore": 344628,
+      "bytesAfter": 118708
+    },
+    "/proprietes-vendues/domaine-sillery-batiment-patrimonial.jpg": {
+      "inputHash": "22d69744e52c655a52a2bfd4cab162df127ee76ef83f3b183909e0a9f5df235f",
+      "outputHash": "66e8138230426f87d8ec359c3b7a952708ac3bced22c195878591c2766c73112",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 1468750,
+      "bytesAfter": 478037
+    },
+    "/proprietes-vendues/bennemore-vue-aerienne.jpg": {
+      "inputHash": "2da98f101644f74d2fefdd5117d230e344031459fe2297db195b5c3b94973f25",
+      "outputHash": "351116b57bf9eada303dcdb848cfa6784fdc24a976bf9b5a54baa32077772707",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 5966476,
+      "bytesAfter": 375492
+    },
+    "/proprietes-vendues/boise-augustines-vue-aerienne.jpg": {
+      "inputHash": "6d42babd524cbe91da5ac03f80d03ddfbcad537b5ae61c7194883e0f1ab5fb5d",
+      "outputHash": "e8a2a010c7262d5387e3c409e777b05da5f1b103e107564c91ef26962bb08fea",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 5791747,
+      "bytesAfter": 347140
+    },
+    "/proprietes-vendues/sous-les-bois-vue-aerienne.jpg": {
+      "inputHash": "056d6e75f56f876d38d9b6fc0efdf20a8388c988716a7c0d94faadee6f93b4d7",
+      "outputHash": "b6ff5a4d9c631360e2c0a4b073861c8f394aa9d0cdacfd330f6d6a5f4d87bc74",
+      "width": 1920,
+      "height": 1080,
+      "bytesBefore": 5698051,
+      "bytesAfter": 349112
+    }
+  }
+}

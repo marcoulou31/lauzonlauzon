@@ -25,7 +25,7 @@ export default async function ContactPage() {
     <>
       <section className="relative isolate overflow-hidden py-20">
         <Image
-          src="/contact-hero.jpg"
+          src="/contact-salon-residentiel.jpg"
           alt="Contact Lauzon & Lauzon"
           fill
           preload

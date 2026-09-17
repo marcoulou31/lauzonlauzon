@@ -15,7 +15,7 @@ export default function GuidesPage() {
     <>
       <section className="relative isolate overflow-hidden py-12">
         <Image
-          src="/guides-hero.jpg"
+          src="/guides-signature-transaction.jpg"
           alt="Guides vendeur et acheteur"
           fill
           preload

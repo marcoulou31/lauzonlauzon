@@ -23,7 +23,7 @@ export default async function PropertiesPage() {
     <>
       <section className="relative isolate overflow-hidden py-8 md:py-12">
         <Image
-          src="/proprietes-hero.jpg"
+          src="/propriete-contemporaine-piscine.jpg"
           alt="Nos propriétés à Québec"
           fill
           preload

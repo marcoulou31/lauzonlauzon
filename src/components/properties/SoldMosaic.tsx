@@ -15,11 +15,13 @@ function MosaicThumb({
   photo,
   showCaptions,
   aspectRatio,
+  sizes,
   onOpen,
 }: {
   photo: SoldPhoto;
   showCaptions: boolean;
   aspectRatio: number;
+  sizes: string;
   onOpen: () => void;
 }) {
   return (
@@ -36,7 +38,8 @@ function MosaicThumb({
           alt={photo.alt}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes={sizes}
+          quality={50}
         />
         <span className="pointer-events-none absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/10" />
         {showCaptions && (
@@ -160,6 +163,11 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
                 photo={photo}
                 showCaptions={showCaptions}
                 aspectRatio={row.length === 3 ? 4 / 3 : 3 / 2}
+                sizes={
+                  row.length === 3
+                    ? "(max-width: 767px) calc(50vw - 36px), (max-width: 1279px) calc(33.333vw - 32px), 389px"
+                    : "(max-width: 639px) calc(100vw - 48px), (max-width: 1279px) calc(50vw - 36px), 596px"
+                }
                 onOpen={() => open(index)}
               />
             ))}
@@ -229,8 +237,9 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
                         }
                       }}
                       className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 900px"
-                      priority
+                      sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 64px), 864px"
+                      quality={70}
+                      loading="eager"
                     />
                   </div>
 

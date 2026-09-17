@@ -14,7 +14,7 @@ export default function CalculettePage() {
     <>
       <section className="relative isolate overflow-hidden py-12">
         <Image
-          src="/calculette-hero.jpg"
+          src="/calculette-financement-immobilier.jpg"
           alt="Calculette hypothécaire"
           fill
           preload

@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <section className="relative isolate overflow-hidden bg-navy py-28 lg:py-32">
         <Image
-          src="/about-hero-wide.jpg"
+          src="/a-propos-residence-contemporaine.jpg"
           alt="À propos de Lauzon & Lauzon"
           fill
           preload

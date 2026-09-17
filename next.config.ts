@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
         search: "",
       },
       {
-        pathname: "/accueil/revenus/commercial-2.jpg",
+        pathname: "/accueil/revenus/immeuble-commercial-avenue-cartier.jpg",
         search: "?v=3",
       },
     ],

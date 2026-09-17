@@ -20,6 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Images
+
+Les images publiques utilisent des noms descriptifs en minuscules ASCII, avec des mots séparés par des tirets. Les noms de caméra, accents, espaces et numéros de séquence sont interdits.
+
+```bash
+pnpm images:check-names
+pnpm images:home
+pnpm images:sold
+```
+
+Les deux dernières commandes auditent aussi le poids des images référencées. Le suffixe `:apply` applique leur optimisation lorsque de nouvelles sources sont ajoutées.
+
 ## SQL Server
 
 The project now includes a reusable SQL Server connection layer for the named connection:

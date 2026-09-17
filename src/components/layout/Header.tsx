@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex shrink-0 flex-col items-start">
           <Link href="/" className="group">
             <Image
-              src="/logo-v2.png"
+              src="/logo-lauzon-lauzon.png"
               alt={siteConfig.name}
               width={2329}
               height={428}

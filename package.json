@@ -4,9 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "pnpm images:check-names",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "images:check-names": "node scripts/check-image-names.cjs",
+    "images:home": "node scripts/optimize-home-images.cjs",
+    "images:home:apply": "node scripts/optimize-home-images.cjs --apply",
+    "images:sold": "node scripts/optimize-home-images.cjs --sold",
+    "images:sold:apply": "node scripts/optimize-home-images.cjs --sold --apply"
   },
   "dependencies": {
     "@botpoison/browser": "^0.1.30",
@@ -31,6 +37,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "sharp": "0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

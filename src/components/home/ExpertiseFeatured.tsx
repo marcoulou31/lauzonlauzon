@@ -91,8 +91,8 @@ export function ExpertiseFeatured() {
                         fill
                         sizes={
                           wideText
-                            ? "(max-width: 1024px) 100vw, 50vw"
-                            : "(max-width: 1024px) 100vw, 66vw"
+                            ? "(max-width: 1023px) calc(100vw - 48px), 584px"
+                            : "(max-width: 1023px) calc(100vw - 48px), 795px"
                         }
                         className="object-cover"
                         quality={index === 0 ? 50 : 60}
@@ -111,7 +111,7 @@ export function ExpertiseFeatured() {
                               src={src}
                               alt={item.title}
                               fill
-                              sizes="(max-width: 1024px) 50vw, 25vw"
+                              sizes="(max-width: 1023px) calc(50vw - 32px), 284px"
                               className="object-cover"
                               quality={50}
                             />
@@ -136,7 +136,9 @@ export function ExpertiseFeatured() {
                         }`}
                       >
                         {row.map((src) => {
-                          const isPanoramic = src.includes("commercial-2.jpg");
+                          const isPanoramic = src.includes(
+                            "immeuble-commercial-avenue-cartier.jpg",
+                          );
 
                           return (
                             <div
@@ -153,8 +155,8 @@ export function ExpertiseFeatured() {
                               fill
                               sizes={
                                 row.length === 3
-                                  ? "(max-width: 767px) 50vw, 33vw"
-                                  : "50vw"
+                                  ? "(max-width: 767px) calc(50vw - 32px), (max-width: 1279px) calc(33.333vw - 27px), 395px"
+                                  : "(max-width: 1279px) calc(50vw - 32px), 600px"
                               }
                               className={`object-cover ${
                                 isPanoramic ? "object-left" : ""
