@@ -68,7 +68,7 @@ function buildRows<T>(items: T[]): T[][] {
 export function SoldMosaic({ photos, showCaptions = false }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
-  const [activeRatio, setActiveRatio] = useState<number | null>(null);
+  const [photoRatios, setPhotoRatios] = useState<Record<string, number>>({});
   const isOpen = activeIndex !== null;
   const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -133,11 +133,6 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
     });
   }, [isOpen, safeIndex]);
 
-  // Réinitialise le ratio pendant le chargement de la photo affichée.
-  useEffect(() => {
-    setActiveRatio(null);
-  }, [safeIndex]);
-
   if (photos.length === 0) return null;
 
   const open = (index: number) => {
@@ -146,6 +141,7 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
   };
 
   const activePhoto = photos[safeIndex];
+  const activeRatio = photoRatios[activePhoto.src] ?? null;
 
   const rows = buildRows(photos.map((photo, index) => ({ photo, index })));
 
@@ -233,7 +229,12 @@ export function SoldMosaic({ photos, showCaptions = false }: Props) {
                       onLoad={(event) => {
                         const img = event.currentTarget;
                         if (img.naturalWidth && img.naturalHeight) {
-                          setActiveRatio(img.naturalWidth / img.naturalHeight);
+                          const ratio = img.naturalWidth / img.naturalHeight;
+                          setPhotoRatios((current) =>
+                            current[activePhoto.src] === ratio
+                              ? current
+                              : { ...current, [activePhoto.src]: ratio },
+                          );
                         }
                       }}
                       className="object-contain"
