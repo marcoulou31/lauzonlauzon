@@ -20,9 +20,11 @@ export function ExpertiseGrid() {
               className="border border-cream/10 bg-navy-light/30 p-8 transition-colors hover:border-gold/30"
             >
               <h3 className="font-serif text-2xl text-cream">{item.title}</h3>
-              <p className="mt-2 text-sm font-medium uppercase tracking-wider text-gold-light">
-                {item.subtitle}
-              </p>
+              {"subtitle" in item && item.subtitle && (
+                <p className="mt-2 text-sm font-medium uppercase tracking-wider text-gold-light">
+                  {item.subtitle}
+                </p>
+              )}
               <p className="mt-4 leading-relaxed text-cream/75">
                 {item.description}
               </p>

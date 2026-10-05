@@ -4,9 +4,15 @@ import { siteConfig } from "@/data/site";
 
 type ExpertiseItem = (typeof siteConfig.expertise)[number];
 type FeaturedItem = Extract<ExpertiseItem, { images: readonly string[] }>;
+type ProjectsItem = Extract<ExpertiseItem, { projects: readonly unknown[] }>;
+type RenderableItem = FeaturedItem | ProjectsItem;
 
-function isFeatured(item: ExpertiseItem): item is FeaturedItem {
-  return "images" in item;
+function isRenderable(item: ExpertiseItem): item is RenderableItem {
+  return "images" in item || "projects" in item;
+}
+
+function hasProjects(item: RenderableItem): item is ProjectsItem {
+  return "projects" in item;
 }
 
 function buildMosaicRows<T>(items: readonly T[]): T[][] {
@@ -27,7 +33,7 @@ function buildMosaicRows<T>(items: readonly T[]): T[][] {
   return rows;
 }
 
-const featured = siteConfig.expertise.filter(isFeatured);
+const featured = siteConfig.expertise.filter(isRenderable);
 
 export function ExpertiseFeatured() {
   return (
@@ -35,6 +41,59 @@ export function ExpertiseFeatured() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="space-y-8 lg:space-y-10">
           {featured.map((item, index) => {
+            const separatorClass =
+              index > 0 ? "border-t border-gold/40 pt-8 lg:pt-10" : "";
+
+            if (hasProjects(item)) {
+              return (
+                <div key={item.title} className={`space-y-8 ${separatorClass}`}>
+                  <div>
+                    <h4
+                      className={`font-serif text-3xl text-navy ${
+                        item.emphasizedTitle ? "font-bold" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </h4>
+                    <p className="mt-4 leading-relaxed text-xl text-navy/70">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {item.projects.map((project) => (
+                    <div key={project.title} className="space-y-4">
+                      <div>
+                        <h5 className="font-serif text-2xl text-navy">
+                          {project.title}
+                        </h5>
+                        <p className="mt-1 text-lg font-medium uppercase tracking-wide text-navy/85">
+                          {project.promoter}
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+                        {project.images.map((src) => (
+                          <div
+                            key={src}
+                            className="relative aspect-4/3 overflow-hidden rounded-lg shadow-md"
+                          >
+                            <Image
+                              src={src}
+                              alt={project.title}
+                              fill
+                              sizes="(max-width: 639px) calc(50vw - 32px), (max-width: 1023px) calc(33.333vw - 27px), 384px"
+                              className="object-cover"
+                              quality={70}
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+
             const secondaryImages = item.images.slice(1);
             const wideText = "wideText" in item && item.wideText;
             const inlineImages = wideText ? secondaryImages.slice(0, 2) : [];

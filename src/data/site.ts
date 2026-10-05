@@ -102,22 +102,32 @@ export const siteConfig = {
     {
       title: "Courtier exclusif pour la vente de projets neufs (condominium)",
       emphasizedTitle: true,
-      wideText: true,
-      subtitle:
-        "La Cité Verte (promoteur la SSQ)\nLe Domaine de Sillery (promoteur NORPLEX)",
+      fullWidthText: true,
       description:
         "Étudier le marché de la concurrence, déterminer le type de clientèle visée, évaluer le nombre et le type de condo, établir le prix de vente, collaborer avec les architectes et l'ensemble des professionnels, impliquer les institutions financières au projet, déterminer les caractéristiques recherchées par les acheteurs, préparer un plan de mise en marché, monter une équipe et un bureau des ventes, sélection des matériaux à offrir, élaboration d'une convention de copropriété, faire signer les contrats préliminaires, vérifier la solvabilité des acquéreurs et assurer le suivi des transactions chez le notaire.",
-      images: [
-        "/accueil/cite-verte/cite-verte-place-publique-rendu.jpg",
-        "/accueil/cite-verte/cite-verte-panneau-publicitaire.jpg",
-        "/accueil/cite-verte/cite-verte-maison-de-ville.jpg",
-        "/accueil/cite-verte/cite-verte-piscine-interieure.jpg",
-        "/accueil/cite-verte/cite-verte-condo-aire-de-vie.jpg",
-        "/accueil/cite-verte/cite-verte-condo-salon.jpg",
-        "/accueil/domaine-sillery/domaine-sillery-vue-aerienne.jpg",
-        "/accueil/domaine-sillery/domaine-sillery-parc-vue-fleuve.jpg",
-        "/accueil/domaine-sillery/domaine-sillery-piscine-patrimoniale.jpg",
-        "/accueil/domaine-sillery/domaine-sillery-chapelle-patrimoniale.jpg",
+      projects: [
+        {
+          title: "La Cité Verte",
+          promoter: "Promoteur : la SSQ",
+          images: [
+            "/accueil/cite-verte/cite-verte-place-publique-rendu.jpg",
+            "/accueil/cite-verte/cite-verte-panneau-publicitaire.jpg",
+            "/accueil/cite-verte/cite-verte-maison-de-ville.jpg",
+            "/accueil/cite-verte/cite-verte-piscine-interieure.jpg",
+            "/accueil/cite-verte/cite-verte-condo-aire-de-vie.jpg",
+            "/accueil/cite-verte/cite-verte-condo-salon.jpg",
+          ],
+        },
+        {
+          title: "Le Domaine de Sillery",
+          promoter: "Promoteur : NORPLEX",
+          images: [
+            "/accueil/domaine-sillery/domaine-sillery-vue-aerienne.jpg",
+            "/accueil/domaine-sillery/domaine-sillery-parc-vue-fleuve.jpg",
+            "/accueil/domaine-sillery/domaine-sillery-piscine-patrimoniale.jpg",
+            "/accueil/domaine-sillery/domaine-sillery-chapelle-patrimoniale.jpg",
+          ],
+        },
       ],
     },
   ],
