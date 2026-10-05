@@ -102,14 +102,21 @@ type AddendaRow = {
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-function mapPropertyType(
-  categorie: string | null,
-  genre: string | null,
-): PropertyType {
-  if (categorie === "T") return "terrain";
-  if (categorie === "C" || categorie === "I") return "commercial";
-  if (genre === "AP") return "condo";
-  return "maison";
+function mapPropertyType(categorie: string | null): PropertyType {
+  switch (categorie) {
+    case "M":
+      return "multiplex";
+    case "C":
+      return "commercial";
+    case "I":
+      return "industriel";
+    case "F":
+      return "ferme";
+    case "T":
+      return "terrain";
+    default:
+      return "residentiel";
+  }
 }
 
 function mapPropertyStatus(code: string | null): PropertyStatus {
@@ -419,7 +426,7 @@ export async function getInscriptionByNo(no: string): Promise<{
     address,
     city: row.MUNICIPALITE_DESC ?? "",
     price: row.PRIX_DEMANDE ?? row.PRIX_LOCATION_DEMANDE ?? 0,
-    type: mapPropertyType(row.CATEGORIE_PROPRIETE, row.GENRE_PROPRIETE),
+    type: mapPropertyType(row.CATEGORIE_PROPRIETE),
     status: mapPropertyStatus(row.CODE_STATUT),
     bedrooms: row.NB_CHAMBRES ?? undefined,
     bathrooms: row.NB_SALLES_BAINS ?? undefined,
@@ -505,7 +512,7 @@ export async function getAllInscriptionsForPage(): Promise<Property[]> {
 
     const remarque = row.REMARQUE_TEXTE ?? "";
     const photoSrc = row.NOM_FICHIER_PHOTO ?? FALLBACK_IMAGE;
-    const type = mapPropertyType(row.CATEGORIE_PROPRIETE, row.GENRE_PROPRIETE);
+    const type = mapPropertyType(row.CATEGORIE_PROPRIETE);
     const genreDesc = row.GENRE_PROPRIETE_DESC ?? row.GENRE_PROPRIETE ?? "Propriété";
 
     return {

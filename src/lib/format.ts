@@ -12,9 +12,11 @@ export function formatArea(area: number, unit = "pi²"): string {
 
 export function formatPropertyType(type: string): string {
   const labels: Record<string, string> = {
-    condo: "Condo",
-    maison: "Maison",
+    residentiel: "Résidentiel",
+    multiplex: "Multiplex",
     commercial: "Commercial",
+    industriel: "Industriel",
+    ferme: "Ferme",
     terrain: "Terrain",
   };
   return labels[type] ?? type;

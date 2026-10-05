@@ -1,4 +1,10 @@
-export type PropertyType = "condo" | "maison" | "commercial" | "terrain";
+export type PropertyType =
+  | "residentiel"
+  | "multiplex"
+  | "commercial"
+  | "industriel"
+  | "ferme"
+  | "terrain";
 
 export type PropertyStatus = "à vendre" | "à louer" | "vendu";
 
