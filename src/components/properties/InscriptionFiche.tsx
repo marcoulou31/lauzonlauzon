@@ -27,6 +27,24 @@ function fmtMensuel(annual: number | null): string {
   return fmtCurrency(Math.round(annual / 12));
 }
 
+function slugify(value: string, fallback: string): string {
+  const slug = value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return slug || fallback;
+}
+
+function centrisUrl(detail: InscriptionDetail): string {
+  const typeSlug = slugify(detail.genreProprieteDescr, "propriete");
+  const transaction = !detail.prix && detail.prixLocation ? "a-louer" : "a-vendre";
+  const ville = detail.adresseMaps.split(",").pop() ?? "";
+  const villeSlug = slugify(ville, "quebec");
+  return `https://www.centris.ca/fr/${typeSlug}~${transaction}~${villeSlug}/${detail.noInscription}`;
+}
+
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   if (value === null || value === undefined || value === "—" || value === "")
     return null;
@@ -385,17 +403,19 @@ export function InscriptionFiche({ detail, status }: Props) {
           </div>
         )}
 
-        {/* Lien Centris */}
-        <div className="mt-6 text-center">
-          <a
-            href={`https://www.centris.ca/fr/proprietes~a-vendre~${detail.noInscription}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-gold-dark hover:text-navy transition-colors"
-          >
-            Voir sur Centris.ca →
-          </a>
-        </div>
+        {/* Lien Centris (masqué pour les propriétés vendues, retirées de Centris) */}
+        {status !== "vendu" && (
+          <div className="mt-6 text-center">
+            <a
+              href={centrisUrl(detail)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gold-dark hover:text-navy transition-colors"
+            >
+              Voir sur Centris.ca →
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );

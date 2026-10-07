@@ -36,6 +36,22 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Ancien site : fiches de propriétés via passerelle Centris
+      // (passerelle.centris.ca/redirect.aspx?NoMLS=…) qui pointait vers
+      // /fiche-proprietes.html?noMLS=9956039. On récupère ces liens vers la
+      // nouvelle route /proprietes/<noMLS>. On couvre les deux casses de clé.
+      {
+        source: "/fiche-proprietes.html",
+        has: [{ type: "query", key: "noMLS", value: "(?<noMLS>\\d+)" }],
+        destination: "/proprietes/:noMLS",
+        permanent: true,
+      },
+      {
+        source: "/fiche-proprietes.html",
+        has: [{ type: "query", key: "NoMLS", value: "(?<noMLS>\\d+)" }],
+        destination: "/proprietes/:noMLS",
+        permanent: true,
+      },
     ];
   },
 };
