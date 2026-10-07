@@ -226,6 +226,48 @@ export const soldPhotos: SoldPhoto[] = [
     alt: "Vue aérienne du complexe résidentiel Sous les bois",
     caption: "Sous les bois — vue aérienne",
   },
+  {
+    src: "/proprietes-vendues/condo-tour-fleuve-automne.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne d'une tour à condos avec vue sur le fleuve Saint-Laurent",
+    caption: "Tour à condos avec vue sur le fleuve",
+  },
+  {
+    src: "/proprietes-vendues/condo-bord-fleuve-marina.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne d'un immeuble à condos en bord de fleuve près d'une marina",
+    caption: "Condo en bord de fleuve avec marina",
+  },
+  {
+    src: "/proprietes-vendues/condo-monastere-patrimonial.jpg",
+    category: "immeubles",
+    alt: "Façade d'un ancien monastère patrimonial converti en condos",
+    caption: "Condos dans un ancien monastère patrimonial",
+  },
+  {
+    src: "/proprietes-vendues/condo-tours-quartier-urbain.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne de tours à condos dans un quartier urbain verdoyant",
+    caption: "Tours à condos en milieu urbain",
+  },
+  {
+    src: "/proprietes-vendues/jardins-merici-tours-piscines.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne des tours et des piscines des Jardins Mérici",
+    caption: "Jardins Mérici — tours et piscines",
+  },
+  {
+    src: "/proprietes-vendues/condo-brique-patrimonial.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne d'un ensemble résidentiel patrimonial en brique",
+    caption: "Ensemble résidentiel patrimonial en brique",
+  },
+  {
+    src: "/proprietes-vendues/jardins-merici-vue-aerienne.jpg",
+    category: "immeubles",
+    alt: "Vue aérienne de l'ensemble immobilier des Jardins Mérici",
+    caption: "Jardins Mérici — ensemble immobilier",
+  },
 ];
 
 export function getSoldPhotos(): SoldPhoto[] {
